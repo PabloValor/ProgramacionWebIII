@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/Base/Base.Master" AutoEventWireup="true" CodeBehind="Anonimo.master.cs" Inherits="AlquilaCocheras.Web.MasterPages.Anonimo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head_Base" runat="server">
-    <title>hola</title>
+    <title>EstacionaLo</title>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder_Head" runat="server">
     </asp:ContentPlaceHolder>    
 </asp:Content>

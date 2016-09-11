@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="MasterPages\Base\Base.Master" />
     <Content Include="MasterPages\Anonimo.Master" />
@@ -84,7 +85,9 @@
     <Content Include="propietarios\perfil.aspx" />
     <Content Include="propietarios\reservas.aspx" />
     <Content Include="registracion.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clientes\confirmar-reserva.aspx.cs">
@@ -129,6 +132,10 @@
     <Compile Include="error\desconocido.aspx.designer.cs">
       <DependentUpon>desconocido.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\EntornoHelper.cs" />
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -195,9 +202,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
-    <Folder Include="imagenes\cocheras\" />
-    <Folder Include="js\" />
+    <Folder Include="Contenidos\css\" />
+    <Folder Include="Contenidos\imagenes\cocheras\" />
+    <Folder Include="Contenidos\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlquilaCocheras.Negocio\AlquilaCocheras.Negocio.csproj">
+      <Project>{f46f4abf-2fcf-455a-93b1-168a0ce1535e}</Project>
+      <Name>AlquilaCocheras.Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

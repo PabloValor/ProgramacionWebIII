@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlquilaCocheras.Web", "AlquilaCocheras.Web\AlquilaCocheras.Web.csproj", "{A8F611B9-DEEA-4558-86D3-00C99677AADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlquilaCocheras.Data", "AlquilaCocheras.Data\AlquilaCocheras.Data.csproj", "{77E23F3B-0ECC-4AB5-895E-BC83E6581DB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlquilaCocheras.Negocio", "AlquilaCocheras.Negocio\AlquilaCocheras.Negocio.csproj", "{F46F4ABF-2FCF-455A-93B1-168A0CE1535E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,14 @@ Global
 		{A8F611B9-DEEA-4558-86D3-00C99677AADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8F611B9-DEEA-4558-86D3-00C99677AADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8F611B9-DEEA-4558-86D3-00C99677AADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E23F3B-0ECC-4AB5-895E-BC83E6581DB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E23F3B-0ECC-4AB5-895E-BC83E6581DB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E23F3B-0ECC-4AB5-895E-BC83E6581DB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E23F3B-0ECC-4AB5-895E-BC83E6581DB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F46F4ABF-2FCF-455A-93B1-168A0CE1535E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F46F4ABF-2FCF-455A-93B1-168A0CE1535E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F46F4ABF-2FCF-455A-93B1-168A0CE1535E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F46F4ABF-2FCF-455A-93B1-168A0CE1535E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
