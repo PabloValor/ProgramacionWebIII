@@ -1,20 +1,26 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="AlquilaCocheras.Web.MasterPages.Base" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<%--    <title></title>--%>
+<!doctype html>
+<html class="no-js" lang="es">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>EstacionaLo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../assets/css/dist/main.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head_Base" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <!--[if lte IE 9]>
+            <p>Estas usando un browser desactualizado. Por favor, <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia en el sitio y su seguridad.</p>
+        <![endif]-->
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder_Principal_Base" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder_Principal_Base" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
     </form>
 </body>
 </html>

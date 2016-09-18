@@ -1,15 +1,13 @@
 'use strict';
+var path = require('path');
 var gulp = require('gulp');
-var less = require('gulp-less');
+var sass = require('gulp-sass');
+var fs = require('fs');
 
 var paths = {
-	base: '',
 	css: {
-		src: '',
-		dest: '',
-		vendors: {
-			src: ''
-		}
+		src: 'D:\\repos\\ProgramacionWebIII\\TP\\AlquilaCocheras.Web\\assets\\css\\main.scss',
+		dest: 'D:\\repos\\ProgramacionWebIII\\TP\\AlquilaCocheras.Web\\assets\\css\\dist',
 	},
 	js: {
 		src: '',
@@ -26,6 +24,13 @@ var paths = {
 		}
 	}
 };
+
+
+gulp.task('sass', function () {
+  return gulp.src(paths.css.src)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(paths.css.dest));
+});
 
 gulp.task('default', function(){
 	return console.log('hola');
