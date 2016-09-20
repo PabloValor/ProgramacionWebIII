@@ -16,11 +16,17 @@
     <!--[if lte IE 9]>
             <p>Estas usando un browser desactualizado. Por favor, <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia en el sitio y su seguridad.</p>
         <![endif]-->
+    <header>
+        header
+    </header>
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder_Principal_Base" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <footer>
+        footer
+    </footer>
 </body>
 </html>
