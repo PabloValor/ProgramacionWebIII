@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="AlquilaCocheras.Web.MasterPages.Base" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="AlquilaCocheras.Web.MasterPages.Base" %>
 
 <!doctype html>
 <html class="no-js" lang="es">
@@ -8,7 +9,7 @@
     <title>EstacionaLo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../assets/css/dist/main.css" rel="stylesheet" />
+    <link href="../../assets/css/dist/main.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head_Base" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -28,5 +29,6 @@
     <footer>
         footer
     </footer>
+    <script src="../../assets/js/dist/vendors.min.js"></script>
 </body>
 </html>
