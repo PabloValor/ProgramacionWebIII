@@ -68,8 +68,11 @@
   <ItemGroup>
     <None Include="assets\css\00-vendor\bootstrap-paper-default.min.scss" />
     <None Include="assets\css\02-base\99-main.scss" />
+    <Content Include="assets\js\dist\componentes.js" />
+    <Content Include="assets\js\dist\componentes.min.js" />
     <Content Include="assets\js\dist\vendors.js" />
     <Content Include="assets\js\dist\vendors.min.js" />
+    <Content Include="assets\js\shared\layout-base.js" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="MasterPages\Base\Base.Master" />

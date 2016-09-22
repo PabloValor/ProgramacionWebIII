@@ -1,5 +1,4 @@
-﻿
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="AlquilaCocheras.Web.MasterPages.Base" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="AlquilaCocheras.Web.MasterPages.Base" %>
 
 <!doctype html>
 <html class="no-js" lang="es">
@@ -15,9 +14,9 @@
 </head>
 <body>
     <!--[if lte IE 9]>
-            <p>Estas usando un browser desactualizado. Por favor, <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia en el sitio y su seguridad.</p>
+            <p>Estas usando un browser desactualizado. Por favor, <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia en el sitio y seguridad.</p>
         <![endif]-->
-    <header>
+    <header id="header">
         header
     </header>
     <form id="form1" runat="server">
@@ -30,5 +29,6 @@
         footer
     </footer>
     <script src="../../assets/js/dist/vendors.min.js"></script>
+    <script src="../../assets/js/shared/layout-base.js"></script>
 </body>
 </html>
