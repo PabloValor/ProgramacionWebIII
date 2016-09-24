@@ -1,7 +1,6 @@
-var path 			= require('path'),
-	gulp 			= require('gulp'),
+var gulp 			= require('gulp'),
 	sass 			= require('gulp-sass'),
-	concatFiles 	= require('gulp-concat'),
+	concat 			= require('gulp-concat'),
 	cssmin 			= require('gulp-cssmin'),
 	rename			= require('gulp-rename'),
 	uglify 			= require('gulp-uglify'),
@@ -40,7 +39,7 @@ var paths = {
 
 
 gulp.task('css', function () {
-	return gulp.src([paths.css.vendor.materialize, paths.css.src + '\\main.scss'])
+	return gulp.src([paths.css.src + '\\main.scss'])
 		.pipe(sass().on('error', sass.logError))
 		.pipe(cssmin({ keepSpecialComments: 0 }))
 		.pipe(rename({ basename: 'estacionalo', suffix: '.min'}))
@@ -52,7 +51,7 @@ gulp.task('js.vendor', function(){
 		paths.js.vendor.jquery,
 		paths.js.vendor.materialize
 		])
-		.pipe(concatFiles('vendors.js'))
+		.pipe(concat('vendors.js'))
 		.pipe(gulp.dest(paths.js.dist))
 });
 
@@ -60,7 +59,7 @@ gulp.task('js.componentes', function(){
 	return gulp.src([
 		paths.js.componentes.baseLayout
 		])
-		.pipe(concatFiles('componentes.js'))
+		.pipe(concat('componentes.js'))
 		//.pipe(jslint({this: true}))
 		//.pipe(jslint.reporter('default'))
 		//.pipe(jslint.reporter('stylish'))
@@ -72,7 +71,7 @@ gulp.task('js', ['js.vendor', 'js.componentes'], function(){
 		paths.js.dist + '\\vendors.js',
 		paths.js.dist + '\\componentes.js'
 		])
-		.pipe(concatFiles('estacionalo.js'))
+		.pipe(concat('estacionalo.js'))
 		.pipe(gulp.dest(paths.js.dist))
 		.pipe(uglify({ compress: true }))
 		.pipe(rename({ basename: 'estacionalo', suffix: '.min' }))
@@ -84,4 +83,4 @@ gulp.task('watch', function(){
 	gulp.watch([paths.js.src + '\\**\\*.js', '!' + paths.js.dist + '\\*.js'], ['js']);
 });
 
-gulp.task('default', ['css', 'js.vendor', 'js', 'watch']);
+gulp.task('default', ['css', 'js', 'watch']);

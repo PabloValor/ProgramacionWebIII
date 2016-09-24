@@ -2,7 +2,7 @@
     'use strict';
 
     this.cargar = function () {
-        var $header = $('header');
+        var $header = $('#home-header');
         var $window = $(window);
 
         header($header, $window);

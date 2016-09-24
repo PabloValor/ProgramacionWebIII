@@ -5,8 +5,6 @@
 <head id="Head1" runat="server">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>EstacionaLo</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../assets/css/dist/estacionalo.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head_Base" runat="server">
@@ -16,9 +14,6 @@
     <!--[if lte IE 9]>
             <p>Estas usando un browser desactualizado. Por favor, <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia en el sitio y seguridad.</p>
         <![endif]-->
-    <header id="header">
-        header
-    </header>
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder_Principal_Base" runat="server">
@@ -28,12 +23,6 @@
     <footer>
         footer
     </footer>
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function() {
-            var layoutBase = new LayoutBase();
-            layoutBase.cargar();
-        });
-    </script>
     <script type="text/javascript" src="../../assets/js/dist/estacionalo.js"></script>
 </body>
 </html>
