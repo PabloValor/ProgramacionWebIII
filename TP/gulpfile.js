@@ -79,7 +79,7 @@ gulp.task('js', ['js.vendor', 'js.componentes'], function(){
 });
 
 gulp.task('watch', function(){
-	gulp.watch(paths.css.src + '\\*.scss', ['css']);
+	gulp.watch(paths.css.src + '\\**\\*.scss', ['css']);
 	gulp.watch([paths.js.src + '\\**\\*.js', '!' + paths.js.dist + '\\*.js'], ['js']);
 });
 

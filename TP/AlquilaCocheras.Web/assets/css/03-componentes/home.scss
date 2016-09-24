@@ -1,6 +1,6 @@
 ﻿#home-header {
-    background-image: url(../../img/bg-home.jpg), url(../../img/punto-bg.png);
-    background-repeat: no-repeat, repeat;
-    background-position: center center;
-    background-size: cover;
+    background-image: url(../../img/punto-bg.png), url(../../img/bg-home.jpg);
+    background-repeat: repeat, no-repeat;
+    background-position: initial, center center;
+    background-size: auto, cover;
 }
