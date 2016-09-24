@@ -12,6 +12,3 @@
         $header.height($window.height());
     }
 };
-
-var layoutBase = new LayoutBase();
-layoutBase.cargar();

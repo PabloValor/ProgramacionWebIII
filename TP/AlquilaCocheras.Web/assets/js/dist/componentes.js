@@ -12,6 +12,3 @@ var LayoutBase = function () {
         $header.height($window.height());
     }
 };
-
-var layoutBase = new LayoutBase();
-layoutBase.cargar();

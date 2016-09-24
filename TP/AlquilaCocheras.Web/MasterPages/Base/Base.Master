@@ -8,7 +8,7 @@
     <title>EstacionaLo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../assets/css/dist/main.min.css" rel="stylesheet" />
+    <link href="../../assets/css/dist/estacionalo.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head_Base" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -28,7 +28,12 @@
     <footer>
         footer
     </footer>
-    <script src="../../assets/js/dist/vendors.min.js"></script>
-    <script src="../../assets/js/shared/layout-base.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            var layoutBase = new LayoutBase();
+            layoutBase.cargar();
+        });
+    </script>
+    <script type="text/javascript" src="../../assets/js/dist/estacionalo.js"></script>
 </body>
 </html>
