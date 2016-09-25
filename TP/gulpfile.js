@@ -5,7 +5,7 @@ var gulp 			= require('gulp'),
 	rename			= require('gulp-rename'),
 	uglify 			= require('gulp-uglify'),
 	jslint 			= require('gulp-jslint');
-	
+
 
 var BASE_PATH = 'D:\\repos\\ProgramacionWebIII\\TP\\';
 
@@ -24,6 +24,7 @@ var paths = {
 			materialize: BASE_PATH + 'bower_components\\materialize\\dist\\js\\materialize.js'
 		},
 		componentes: {
+			baseMaster: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\shared\\base-master.js',
 			baseLayout: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\shared\\layout-base.js'
 		},
 		dist: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\dist'
@@ -57,6 +58,7 @@ gulp.task('js.vendor', function(){
 
 gulp.task('js.componentes', function(){
 	return gulp.src([
+		paths.js.componentes.baseMaster,
 		paths.js.componentes.baseLayout
 		])
 		.pipe(concat('componentes.js'))

@@ -17541,6 +17541,17 @@ Picker.extend( 'pickadate', DatePicker )
       }
     }; // Plugin end
 }( jQuery ));
+var BaseMaster = function() {
+    'use strict';
+    this.cargar = function() {
+        cargarSidenav();
+    }
+
+    function cargarSidenav() {
+        $(".button-collapse").sideNav();
+    }
+};
+
 var LayoutBase = function () {
     'use strict';
 
