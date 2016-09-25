@@ -78,6 +78,7 @@
     <Content Include="assets\js\dist\vendors.js" />
     <Content Include="assets\js\shared\base-master.js" />
     <Content Include="assets\js\shared\layout-base.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="MasterPages\Base\Base.Master" />
@@ -152,7 +153,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\EntornoHelper.cs" />
+    <Compile Include="helpers\EntornoHelper.cs" />
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

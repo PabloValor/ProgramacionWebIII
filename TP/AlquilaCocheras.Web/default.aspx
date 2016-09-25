@@ -2,12 +2,19 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_Head" runat="server">
     <title>EstacionaLo - Home</title>
-    <meta name="description" content="">
+    <meta name="description" content="Estacionalo es una plataforma donde podes publicar tu cochera cuando quieras, el tiempo que quieras, o también encontrar tu cochera ideal">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
     <header id="home-header">
-        header
+        <div class="contenido">
+            <h1>EstacionaLo</h1>
+            <h2>subtitulo</h2>
+            <p class="center-align">
+                <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a>
+                <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a>
+            </p>
+        </div>
     </header>
     <%--Esto va en un UserControl--%>
     <%--Inicio User Control--%>

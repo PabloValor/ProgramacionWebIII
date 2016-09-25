@@ -3,4 +3,17 @@
     background-repeat: repeat, no-repeat;
     background-position: initial, center center;
     background-size: auto, cover;
+    color: white;
+    font-size: 40px;
+    .contenido {
+        padding-top: 100px;
+        text-align: center;
+    }
+}
+
+.navbar-fixed {
+    position: fixed;
+    nav {
+        background: rgba(0, 0, 0, .5);
+    }
 }
