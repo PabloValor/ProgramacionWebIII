@@ -13,15 +13,6 @@ namespace AlquilaCocheras.Web {
     public partial class _default {
         
         /// <summary>
-        /// label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label1;
-        
-        /// <summary>
         /// txtUbicacion control.
         /// </summary>
         /// <remarks>
@@ -31,15 +22,6 @@ namespace AlquilaCocheras.Web {
         protected global::System.Web.UI.WebControls.TextBox txtUbicacion;
         
         /// <summary>
-        /// label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label3;
-        
-        /// <summary>
         /// txtFechaInicio control.
         /// </summary>
         /// <remarks>
@@ -47,15 +29,6 @@ namespace AlquilaCocheras.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaInicio;
-        
-        /// <summary>
-        /// label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label4;
         
         /// <summary>
         /// txtFechaFin control.

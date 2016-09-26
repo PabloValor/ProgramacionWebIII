@@ -15,23 +15,32 @@
             </p>
         </div>
     </header>
-    <div class="container">
+    <section>
+        <div class="container">
+            <%--seccion que habla sobre el producto--%>
+        </div>
+    </section>
+    <div class="container" id="form-buscador-servicio-anonimo">
         <div class="row">
             <div class="input-field col s12">
-                <asp:Label ID="label1" runat="server" Text="Ubicación: "></asp:Label>
+                <i class="material-icons prefix">pin_drop</i>
                 <asp:TextBox ID="txtUbicacion" runat="server" ClientIDMode="Static"></asp:TextBox>
+                <label for="txtUbicacion">Ubicación:</label>
+
             </div>
             <div class="input-field col s12 m6">
-                <asp:Label ID="label3" runat="server" Text="Período Disponible Inicio: "></asp:Label>
+                <i class="material-icons prefix">date_range</i>
                 <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
+                <label for="txtFechaInicio">Período Disponible Inicio</label>
             </div>
             <div class="input-field col s12 m6">
-                <asp:Label ID="label4" runat="server" Text="Período Disponible Fin: "></asp:Label>
+                <i class="material-icons prefix">date_range</i>
                 <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static"></asp:TextBox>
+                <label for="txtFechaFin">Período Disponible Inicio</label>
             </div>
         </div>
         <div class="input-field col s12 center-align">
-            <asp:Button ID="btnFiltrar" runat="server" Text="Buscar" ClientIDMode="Static" CssClass="btn"/>
+            <asp:Button ID="btnFiltrar" runat="server" Text="Buscar" ClientIDMode="Static" CssClass="btn" />
             <%--si no se encuentran resultados mostrar mensaje "No se encontraron resultados"--%>
             <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
