@@ -1,10 +1,2 @@
-.table {
-    display: table;
-    width: 100%;
-    .table-row {
-        display: table-row;
-        .table-cell {
-            display: table-cell;
-        }
-    }
-}
+@import "base.scss";
+@import "footer.scss";
