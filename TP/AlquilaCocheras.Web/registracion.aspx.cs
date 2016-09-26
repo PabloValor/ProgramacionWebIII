@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace AlquilaCocheras.Web
 {
     public partial class registracion : System.Web.UI.Page
@@ -13,5 +14,8 @@ namespace AlquilaCocheras.Web
         {
            
         }
+
+      
+
     }
 }
