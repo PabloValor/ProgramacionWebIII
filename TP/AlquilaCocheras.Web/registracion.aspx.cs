@@ -15,7 +15,11 @@ namespace AlquilaCocheras.Web
            
         }
 
-      
+        protected void btnRegistrarUsuario_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid) {
 
+            }
+        }
     }
 }
