@@ -31,12 +31,12 @@
             <div class="input-field col s12 m6">
                 <i class="material-icons prefix">date_range</i>
                 <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
-                <label for="txtFechaInicio">Período Disponible Inicio</label>
+                <label for="txtFechaInicio">Período de inicio</label>
             </div>
             <div class="input-field col s12 m6">
                 <i class="material-icons prefix">date_range</i>
                 <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static"></asp:TextBox>
-                <label for="txtFechaFin">Período Disponible Inicio</label>
+                <label for="txtFechaFin">Período de fin</label>
             </div>
         </div>
         <div class="input-field col s12 center-align">
