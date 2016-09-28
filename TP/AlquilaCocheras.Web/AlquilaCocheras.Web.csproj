@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="assets\css\00-vendor\materialize.scss" />
     <None Include="assets\css\02-base\99-main.scss" />
+    <None Include="assets\css\01-variables\colores.scss" />
     <Content Include="assets\css\03-componentes\99-main.scss" />
     <None Include="assets\css\03-componentes\home.scss" />
     <Content Include="assets\css\dist\estacionalo.min.css" />
@@ -90,6 +91,7 @@
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="assets\css\03-componentes\quienes-somos.scss" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="clientes\confirmar-reserva.aspx" />
@@ -220,7 +222,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\css\01-variables\" />
     <Folder Include="assets\css\04-responsive\" />
     <Folder Include="assets\css\05-keyframes\" />
     <Folder Include="assets\img\cocheras\" />
