@@ -8,6 +8,7 @@ namespace AlquilaCocheras.Data.Entidades
 {
     class Cochera
     {
+        public int id_cochera { get; set; }
         public int ubicacion { get; set; }
         public DateTime fecha_inicio { get; set; }
         public DateTime fecha_fin { get; set; }

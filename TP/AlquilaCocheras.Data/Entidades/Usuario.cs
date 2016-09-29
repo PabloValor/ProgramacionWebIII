@@ -8,11 +8,11 @@ namespace AlquilaCocheras.Data.Entidades
 {
     class Usuario
     {
-        public int Id_Usuario { get; set; }
-        public String Nombre { get; set; }
-        public String Apellido { get; set; }
-        public String Email { get; set; }
-        public String Password { get; set; }
-        public int Perfil { get; set; }
+        public int id_usuario { get; set; }
+        public String nombre { get; set; }
+        public String apellido { get; set; }
+        public String email { get; set; }
+        public String password { get; set; }
+        public int perfil { get; set; }
     }
 }

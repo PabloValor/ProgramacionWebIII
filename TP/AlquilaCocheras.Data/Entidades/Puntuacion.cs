@@ -8,9 +8,9 @@ namespace AlquilaCocheras.Data.Entidades
 {
     class Puntuacion
     {
-        public int Id_Usuario { get; set; }
-        public int Id_Cochera { get; set; }
-        public int Califiacion { get; set; }
+        public int id_usuario { get; set; }
+        public int id_cochera { get; set; }
+        public int califiacion { get; set; }
 
     }
 }
