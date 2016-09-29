@@ -39,6 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Cochera.cs" />
+    <Compile Include="Entidades\Propietario.cs" />
+    <Compile Include="Entidades\Puntuacion.cs" />
+    <Compile Include="Entidades\Reserva.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
