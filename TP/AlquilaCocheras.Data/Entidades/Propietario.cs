@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlquilaCocheras.Data.Entidades
 {
-    class Propietario
+    class Propietario:Usuario
     {
     }
 }
