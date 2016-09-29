@@ -37,7 +37,7 @@
    
 
     <asp:Label ID="lblResultado" runat="server"></asp:Label>
-    <asp:Button ID="btnRegistrarUsuario" runat="server" Text="Registrar usuario" ClientIDMode="Static" />
+    <asp:Button ID="btnRegistrarUsuario" runat="server" Text="Registrar usuario" ClientIDMode="Static" OnClick="btnRegistrarUsuario_Click" />
     
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
 </asp:Content>
