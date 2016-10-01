@@ -7,12 +7,12 @@
 
     <asp:Label ID="label3" runat="server" Text="Email: "></asp:Label>
     <asp:TextBox ID="txtEmail" runat="server" ClientIDMode="Static"></asp:TextBox>
-    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese un email valido" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese un Email" ControlToValidate="txtEmail">*</asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidatorEmail" runat="server" ErrorMessage="Ingrese un email valido" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic">*</asp:RegularExpressionValidator>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server" ErrorMessage="Ingrese un Email" ControlToValidate="txtEmail" Display="Dynamic">*</asp:RequiredFieldValidator>
 
     <asp:Label ID="label2" runat="server" Text="Contraseña: "></asp:Label>
     <asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese una contraseña" ControlToValidate="txtContrasenia">*</asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidatorContrasenia" runat="server" ErrorMessage="Ingrese una contraseña" ControlToValidate="txtContrasenia" Display="Dynamic">*</asp:RequiredFieldValidator>
    
      <%--Si el usuario no existe o si no coinciden las credenciales, mostrar mensaje "Usuario y/o Contraseña inválidos"--%>
     <asp:Label ID="lblResultado" runat="server"></asp:Label>
