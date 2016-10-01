@@ -18,7 +18,7 @@ namespace AlquilaCocheras.Web.propietarios
         {
             if (Page.IsValid)
             {
-
+                lblResultado.Text = "Operacion Exitosa";
 
 
             }

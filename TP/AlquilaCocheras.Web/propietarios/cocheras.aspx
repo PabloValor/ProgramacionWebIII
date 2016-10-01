@@ -76,7 +76,7 @@
     <asp:FileUpload ID="fuFoto" runat="server" ClientIDMode="Static" />
     <asp:RequiredFieldValidator ID="RequiredFieldValidatorFoto" runat="server" ErrorMessage="Ingrese una Foto" ControlToValidate="fuFoto">*</asp:RequiredFieldValidator>
 
-
+    <asp:Label ID="lblResultado" runat="server"></asp:Label>
     <asp:Button ID="btnCrearCochera" runat="server" Text="Crear Cochera" ClientIDMode="Static" OnClick="btnCrearCochera_Click"/>   
 
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
