@@ -31,22 +31,22 @@ namespace AlquilaCocheras.Web {
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// RequiredFieldValidatorNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNombre;
         
         /// <summary>
-        /// RegularExpressionValidator2 control.
+        /// RegularExpressionValidatorNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorNombre;
         
         /// <summary>
         /// label2 control.
@@ -67,22 +67,22 @@ namespace AlquilaCocheras.Web {
         protected global::System.Web.UI.WebControls.TextBox txtApellido;
         
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// RequiredFieldValidatorApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorApellido;
         
         /// <summary>
-        /// RegularExpressionValidator3 control.
+        /// RegularExpressionValidatorApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorApellido;
         
         /// <summary>
         /// label3 control.
@@ -103,22 +103,22 @@ namespace AlquilaCocheras.Web {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// RequiredFieldValidatorEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmail;
         
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// RegularExpressionValidatorEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorEmail;
         
         /// <summary>
         /// label4 control.
@@ -139,13 +139,22 @@ namespace AlquilaCocheras.Web {
         protected global::System.Web.UI.WebControls.TextBox txtContrasenia;
         
         /// <summary>
-        /// RequiredFieldValidator4 control.
+        /// RequiredFieldValidatorContrasenia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorContrasenia;
+        
+        /// <summary>
+        /// RegularExpressionValidatorContrasenia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorContrasenia;
         
         /// <summary>
         /// label5 control.
@@ -166,22 +175,22 @@ namespace AlquilaCocheras.Web {
         protected global::System.Web.UI.WebControls.TextBox txtConfContrasenia;
         
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// RequiredFieldValidatorConfContrasenia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorConfContrasenia;
         
         /// <summary>
-        /// CompareValidator1 control.
+        /// CompareValidatorConfContrasenia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorConfContrasenia;
         
         /// <summary>
         /// rblPerfil control.
@@ -193,13 +202,13 @@ namespace AlquilaCocheras.Web {
         protected global::System.Web.UI.WebControls.RadioButtonList rblPerfil;
         
         /// <summary>
-        /// RequiredFieldValidator6 control.
+        /// RequiredFieldValidatorPerfil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPerfil;
         
         /// <summary>
         /// lblResultado control.
