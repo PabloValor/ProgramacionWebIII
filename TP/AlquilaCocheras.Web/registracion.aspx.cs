@@ -19,6 +19,7 @@ namespace AlquilaCocheras.Web
         {
             if (Page.IsValid) {
 
+                lblResultado.Text = "Registración exitosa, diríjase al <a href='#'>Login</a>";
             }
         }
     }
