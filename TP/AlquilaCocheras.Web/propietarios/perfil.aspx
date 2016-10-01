@@ -34,7 +34,7 @@
     <asp:RequiredFieldValidator ID="RequiredFieldValidatorPerfil" runat="server" ErrorMessage="Ingrese una opcion" ControlToValidate="rblPerfil">*</asp:RequiredFieldValidator>
 
     <asp:Label ID="lblResultado" runat="server"></asp:Label>
-    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar perfil" ClientIDMode="Static" />
+    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar perfil" ClientIDMode="Static" OnClick="btnActualizar_Click" />
     <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
 </asp:Content>

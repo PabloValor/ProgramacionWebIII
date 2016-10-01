@@ -13,5 +13,14 @@ namespace AlquilaCocheras.Web.propietarios
         {
 
         }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid) {
+
+                lblResultado.Text = "Operación exitosa";
+
+            }
+        }
     }
 }
