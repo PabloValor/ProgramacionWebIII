@@ -6,15 +6,13 @@ namespace AlquilaCocheras.Data.Entidades
     {
         public int Id { get; set; }
         public string Ubicacion { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }
         public string Descripcion { get; set; }
-        public string latitud { get; set; }
-        public string longitud { get; set; }
-        public int superficieM2 { get; set; }
-        public int tipo { get; set; }
-        public decimal PrecioPorHora { get; set; }
+        public string Latitud { get; set; }
+        public string Longitud { get; set; }
+        public double SuperficieM2 { get; set; }
         public string Foto { get; set; }
+        public double PuntajePromedio { get; set; }
 
+        public int tipo { get; set; } // ?
     }
 }

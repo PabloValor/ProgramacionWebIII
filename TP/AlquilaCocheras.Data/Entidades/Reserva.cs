@@ -6,9 +6,11 @@ namespace AlquilaCocheras.Data.Entidades
     {
         public int Id { get; set; }
         public Cliente Cliente { get; set; }
+        public Propietario Propietario { get; set; }
         public Cochera Cochera { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
-        public decimal PrecioFinal { get; set; }
+        public double PrecioPorHora { get; set; }
+        public int CantidadHoras { get; set; }
     }
 }
