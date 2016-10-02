@@ -2,6 +2,7 @@
 {
     public class ReservaMapeada
     {
+        public int Id { get; set; }
         public string NombrePropietario { get; set; }
         public string ApellidoPropietario { get; set; }
         public double PrecioPorHora { get; set; }

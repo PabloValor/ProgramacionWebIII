@@ -59,18 +59,35 @@
                 <div class="row">
                     <div class="col s12">
                         <div class="listado-reservas">
-                            <asp:Repeater runat="server" ID="rResultadoReservasFiltradas">
-                                <ItemTemplate>
-                                    <div class="reserva">
-                                        <%# Eval("NombrePropietario") %>
-                                        <%# Eval("ApellidoPropietario") %>
-                                        <%# Eval("PrecioPorHora") %>
-                                        <%# Eval("Imagen") %>
-                                        <%# Eval("Latitud") %>
-                                        <%# Eval("Longitud") %>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:Repeater>
+                            <div class="row">
+                                <h3><%= CantidadReservas %></h3>
+                                <asp:Repeater runat="server" ID="rResultadoReservasFiltradas">
+                                    <ItemTemplate>
+                                        <div class="col s12 m6 l4">
+                                            <div class="card">
+                                                <div class="card-image waves-effect waves-block waves-light">
+                                                    <img class="activator" src="<%# Eval("Imagen") %>">
+                                                </div>
+                                                <div class="card-content">
+                                                    <span class="card-title activator grey-text text-darken-4">Cochera<i class="material-icons right">more_vert</i></span>
+                                                    <p>
+                                                        <%--<asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl="'<%# Eval("Id","/clientes/confirmar-reserva.aspx?idcochera={0}") %>'">Reservar</asp:HyperLink>--%>
+                                                        <asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl="/clientes/confirmar-reserva.aspx?idcochera=123">Reservar</asp:HyperLink>
+                                                    </p>
+                                                </div>
+                                                <div class="card-reveal">
+                                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                                    <%# Eval("NombrePropietario") %>
+                                                    <%# Eval("ApellidoPropietario") %>
+                                                    <%# Eval("PrecioPorHora") %>
+                                                    <%# Eval("Latitud") %>
+                                                    <%# Eval("Longitud") %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,7 +106,6 @@
         donde deberán cambiarle dinamicamente el link y ponerle el idcochera correspondiente
                 --%>
                 <div class="input-field col s12">
-                    <asp:HyperLink ID="aConfirmar" runat="server" ClientIDMode="Static" NavigateUrl="/clientes/confirmar-reserva.aspx?idcochera=123">Reservar</asp:HyperLink>
                 </div>
             </div>
         </div>

@@ -12,6 +12,7 @@ namespace AlquilaCocheras.Negocio.Mapeos
             return reservas.Select(r =>
                 new ReservaMapeada
                 {
+                    Id = r.Id,
                     NombrePropietario = r.Propietario.Nombre,
                     ApellidoPropietario = r.Propietario.Apellido,
                     Imagen = r.Cochera.Imagen,
