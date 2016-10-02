@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AlquilaCocheras.Negocio.Managers;
 
 namespace AlquilaCocheras.Web.clientes
 {
@@ -11,7 +12,10 @@ namespace AlquilaCocheras.Web.clientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!SesionesManager.EsUsuarioLogueado())
+            {
+                Response.RedirectPermanent("/default.aspx");
+            }
         }
     }
 }
