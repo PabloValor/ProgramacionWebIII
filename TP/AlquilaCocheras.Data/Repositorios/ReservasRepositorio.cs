@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using AlquilaCocheras.Data.Entidades;
 
 namespace AlquilaCocheras.Data.Repositorios
@@ -10,12 +9,13 @@ namespace AlquilaCocheras.Data.Repositorios
     {
         #region Métodos Publicos
 
-        public List<Reserva> ObtenerTodas()
+        public List<Reserva> Obtener()
         {
-            return new List<Reserva>();
+            var reservas = ObtenerListadoReservasMock();
+            return reservas;
         }
 
-        public List<Reserva> ObtenerReservas(string ubicacion, DateTime fechaInicio, DateTime fechaFin)
+        public List<Reserva> Obtener(string ubicacion, DateTime fechaInicio, DateTime fechaFin)
         {
             var reservas = ObtenerListadoReservasMock();
             return reservas;
