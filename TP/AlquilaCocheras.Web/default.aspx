@@ -58,12 +58,12 @@
 
                 <div class="row">
                     <div class="col s12">
-                        <asp:DataList ID="DLResultadosReservas" runat="server">
-                            <%--<ItemTemplate>
-                                <%# Eval("CantidadHoras") %>
-                            </ItemTemplate>--%>
-                        </asp:DataList>
                     </div>
+                    <asp:DataList ID="DLResultadosReservas" runat="server">
+                        <ItemTemplate>
+                            <%# Eval("CantidadHoras") %>
+                        </ItemTemplate>
+                    </asp:DataList>
                 </div>
 
 

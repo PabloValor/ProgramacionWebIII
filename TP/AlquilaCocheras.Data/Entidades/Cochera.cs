@@ -1,4 +1,4 @@
-﻿using System;
+﻿using AlquilaCocheras.Data.Enums;
 
 namespace AlquilaCocheras.Data.Entidades
 {
@@ -10,9 +10,8 @@ namespace AlquilaCocheras.Data.Entidades
         public string Latitud { get; set; }
         public string Longitud { get; set; }
         public double SuperficieM2 { get; set; }
-        public string Foto { get; set; }
-        public double PuntajePromedio { get; set; }
-
-        public int tipo { get; set; } // ?
+        public string Imagen { get; set; }
+        public Puntaje Puntaje { get; set; }
+        public TipoCochera TipoCochera { get; set; }
     }
 }

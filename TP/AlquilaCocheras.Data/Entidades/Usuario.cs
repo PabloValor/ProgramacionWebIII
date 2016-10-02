@@ -6,10 +6,10 @@ namespace AlquilaCocheras.Data.Entidades
     public class Usuario
     {
         public int Id { get; set; }
-        public String Nombre { get; set; }
-        public String Apellido { get; set; }
-        public String Email { get; set; }
-        public String Password { get; set; }
-        public PerfilUsuario Perfil { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public TipoPerfilUsuario Perfil { get; set; }
     }
 }

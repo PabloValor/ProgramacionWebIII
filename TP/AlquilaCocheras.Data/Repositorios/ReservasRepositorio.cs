@@ -39,8 +39,12 @@ namespace AlquilaCocheras.Data.Repositorios
                     Ubicacion = "Florencio Varela 1903, San Justo, Buenos Aires, AR",
                     Latitud = "-34.670370",
                     Longitud = "-58.563390",
-                    Foto = "http://www.el1digital.com.ar/multimedia/imagen/56860_falcodesa2.jpg",
-                    PuntajePromedio = 7.6
+                    Imagen = "http://www.el1digital.com.ar/multimedia/imagen/56860_falcodesa2.jpg",
+                    Puntaje = new Puntaje
+                    {
+                        CantidadVotos = 41,
+                        PuntajeTotal = 300
+                    }
                 },
                 Propietario = new Propietario
                 {
