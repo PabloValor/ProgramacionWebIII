@@ -7,10 +7,10 @@ namespace AlquilaCocheras.Negocio.Mapeos
 {
     public static class ReservaMap
     {
-        public static List<ReservaMapeada> Mapear(IList<Reserva> reservas)
+        public static List<CocheraDisponibleMap> Mapear(IList<Reserva> reservas)
         {
             return reservas.Select(r =>
-                new ReservaMapeada
+                new CocheraDisponibleMap
                 {
                     Id = r.Id,
                     NombrePropietario = r.Propietario.Nombre,

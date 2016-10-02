@@ -60,7 +60,7 @@
                     <div class="col s12">
                         <div class="listado-reservas">
                             <div class="row">
-                                <h3><%= CantidadReservas %></h3>
+                                <h3>Se encontraron x cocheras disponibles</h3>
                                 <asp:Repeater runat="server" ID="rResultadoReservasFiltradas">
                                     <ItemTemplate>
                                         <div class="col s12 m6 l4">
@@ -69,7 +69,7 @@
                                                     <img class="activator" src="<%# Eval("Imagen") %>">
                                                 </div>
                                                 <div class="card-content">
-                                                    <span class="card-title activator grey-text text-darken-4">Cochera<i class="material-icons right">more_vert</i></span>
+                                                    <span class="card-title activator grey-text text-darken-4">Disponible<i class="material-icons right">more_vert</i></span>
                                                     <p>
                                                         <%--<asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl="'<%# Eval("Id","/clientes/confirmar-reserva.aspx?idcochera={0}") %>'">Reservar</asp:HyperLink>--%>
                                                         <asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl="/clientes/confirmar-reserva.aspx?idcochera=123">Reservar</asp:HyperLink>

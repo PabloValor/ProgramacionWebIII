@@ -1,6 +1,6 @@
 ﻿namespace AlquilaCocheras.Data.Mapeos
 {
-    public class ReservaMapeada
+    public class CocheraDisponibleMap
     {
         public int Id { get; set; }
         public string NombrePropietario { get; set; }
