@@ -105,6 +105,7 @@
     <Content Include="propietarios\perfil.aspx" />
     <Content Include="propietarios\reservas.aspx" />
     <Content Include="registracion.aspx" />
+    <Content Include="userControls\UCFormularioBusqueda.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -219,6 +220,13 @@
     </Compile>
     <Compile Include="registracion.aspx.designer.cs">
       <DependentUpon>registracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\UCFormularioBusqueda.ascx.cs">
+      <DependentUpon>UCFormularioBusqueda.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userControls\UCFormularioBusqueda.ascx.designer.cs">
+      <DependentUpon>UCFormularioBusqueda.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

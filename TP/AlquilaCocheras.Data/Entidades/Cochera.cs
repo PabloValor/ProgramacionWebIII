@@ -1,26 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlquilaCocheras.Data.Entidades
 {
-    class Cochera
+    public class Cochera
     {
-        public int id_cochera { get; set; }
-        public int ubicacion { get; set; }
-        public DateTime fecha_inicio { get; set; }
-        public DateTime fecha_fin { get; set; }
-        public DateTime horario_inicio { get; set; }
-        public DateTime horario_fin { get; set; }
-        public String descripcion { get; set; }
-        public int latitud { get; set; }
-        public int longitud { get; set; }
-        public int superficie_m2 { get; set; }
+        public int Id { get; set; }
+        public string Ubicacion { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
+        public string Descripcion { get; set; }
+        public string latitud { get; set; }
+        public string longitud { get; set; }
+        public int superficieM2 { get; set; }
         public int tipo { get; set; }
-        public int precio_por_hora { get; set; }
-        public int foto { get; set; }
+        public decimal PrecioPorHora { get; set; }
+        public string Foto { get; set; }
 
     }
 }

@@ -2,7 +2,11 @@
     background: #CCC;
 }
 #form-buscador-servicio-anonimo {
-    background: white;
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     margin: 40px auto;
+}
+.mensaje-error-validacion {
+    color: red;
+    font-size: .3em;
 }

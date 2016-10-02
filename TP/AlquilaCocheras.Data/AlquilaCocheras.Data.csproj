@@ -42,14 +42,13 @@
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Cochera.cs" />
     <Compile Include="Entidades\Propietario.cs" />
-    <Compile Include="Entidades\Puntuacion.cs" />
     <Compile Include="Entidades\Reserva.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Enums\PerfilUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\ReservasRepositorio.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositorios\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

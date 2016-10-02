@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace AlquilaCocheras.Data.Entidades
 {
-    class Propietario:Usuario
+    class Propietario : Usuario
     {
+        public List<Cochera> Cocheras { get; set; }
     }
 }
