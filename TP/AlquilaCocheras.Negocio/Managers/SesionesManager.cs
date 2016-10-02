@@ -1,4 +1,5 @@
-﻿using AlquilaCocheras.Data.Constantes;
+﻿using System;
+using AlquilaCocheras.Data.Constantes;
 
 namespace AlquilaCocheras.Negocio.Managers
 {
@@ -15,7 +16,7 @@ namespace AlquilaCocheras.Negocio.Managers
             }
             else
             {
-                // mandar mensaje de error 
+                throw new Exception("Error: Email o Contraseña incorrectos");
             }
         }
 

@@ -6,6 +6,8 @@ namespace AlquilaCocheras.Web
 {
     public partial class login : System.Web.UI.Page
     {
+        public string MensajeError { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,17 +19,24 @@ namespace AlquilaCocheras.Web
             {
                 var urlRetorno = string.Empty;
 
-                SesionesManager.LoguearUsuario(txtEmail.Text, txtContrasenia.Text);
-
-                urlRetorno = VariblesSesionManager.Obtener<string>(Constantes.URL_RETORNO);
-
-                if (!string.IsNullOrEmpty(urlRetorno))
+                try
                 {
-                    Response.Redirect(urlRetorno);
+                    SesionesManager.LoguearUsuario(txtEmail.Text, txtContrasenia.Text);
+
+                    urlRetorno = VariblesSesionManager.Obtener<string>(Constantes.URL_RETORNO);
+
+                    if (!string.IsNullOrEmpty(urlRetorno))
+                    {
+                        Response.Redirect(urlRetorno);
+                    }
+                    else
+                    {
+                        Response.Redirect("default.aspx");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Response.Redirect("default.aspx");
+                    MensajeError = ex.Message;
                 }
             }
             else

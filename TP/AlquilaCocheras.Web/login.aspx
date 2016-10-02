@@ -32,7 +32,7 @@
             <div class="row">
                 <%--Si el usuario no existe o si no coinciden las credenciales, mostrar mensaje "Usuario y/o Contraseña inválidos"--%>
                 <div class="col s12">
-                    <asp:Label ID="lblResultado" runat="server"></asp:Label>
+                    <asp:Label ID="lblResultado" runat="server"><%= MensajeError %></asp:Label>
                 </div>
                 <div class="center-align">
                     <div class="col s12">
