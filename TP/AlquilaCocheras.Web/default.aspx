@@ -33,8 +33,12 @@
                         <div class="mensaje-error-validacion">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
                                 runat="server" ControlToValidate="txtFechaInicio"
-                                ErrorMessage="(*) Por favor, seleccione una fecha de inicio">
+                                ErrorMessage="(*) Por favor, seleccione una fecha de inicio" Display="Dynamic">
                             </asp:RequiredFieldValidator>
+                            <asp:CompareValidator ID="CompareValidatorFechaInicio" runat="server"
+                                 ControlToValidate="txtFechaInicio" ErrorMessage="(*) Entre una fecha de inicio valida - dd/mm/aaaa"
+                                 Operator="DataTypeCheck" Type="Date" Display="Dynamic">
+                            </asp:CompareValidator>
                         </div>
                     </div>
 
@@ -46,8 +50,16 @@
                         <div class="mensaje-error-validacion">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
                                 runat="server" ControlToValidate="txtFechaFin"
-                                ErrorMessage="(*) Por favor, seleccione una fecha de fin">
+                                ErrorMessage="(*) Por favor, seleccione una fecha de fin" Display="Dynamic">
                             </asp:RequiredFieldValidator>
+                            <asp:CompareValidator ID="CompareValidatorFechaFin" runat="server"
+                                 ControlToValidate="txtFechaFin" ErrorMessage="(*) Entre una fecha de fin valida - dd/mm/aaaa"
+                                 Operator="DataTypeCheck" Type="Date" Display="Dynamic">
+                            </asp:CompareValidator>
+                            <asp:CompareValidator ID="CompareValidatorFecha" ControlToCompare="txtFechaInicio"  ControlToValidate="txtFechaFin"
+                                 Type="Date" Operator="GreaterThanEqual" 
+                                ErrorMessage="(*) La fecha de inicio tiene que ser anterior a la fecha de fin" runat="server" Display="Dynamic">
+                            </asp:CompareValidator>
                         </div>
                     </div>
                 </div>
