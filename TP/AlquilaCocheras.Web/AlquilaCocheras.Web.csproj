@@ -76,6 +76,7 @@
     <Content Include="assets\css\dist\estacionalo.min.css" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\js\dist\componentes.js" />
+    <Content Include="assets\js\dist\datepicker.js" />
     <Content Include="assets\js\dist\estacionalo.js" />
     <Content Include="assets\js\dist\estacionalo.min.js" />
     <Content Include="assets\js\dist\vendors.js" />

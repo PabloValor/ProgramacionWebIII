@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../../assets/css/dist/estacionalo.min.css" rel="stylesheet" />
+
+
     <asp:ContentPlaceHolder ID="head_Base" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -55,5 +57,6 @@
         });
     </script>
     <script type="text/javascript" src="../../assets/js/dist/estacionalo.js"></script>
+    <script type="text/javascript" src="../../assets/js/dist/datepicker.js"></script>
 </body>
 </html>
