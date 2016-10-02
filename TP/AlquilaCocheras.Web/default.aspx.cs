@@ -16,6 +16,11 @@ namespace AlquilaCocheras.Web
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            CargarListaFiltradaReservasDisponibles();
+        }
+
+        private void CargarListaFiltradaReservasDisponibles()
+        {
             _reservasServicio = new ReservasServicio();
 
             var reservas = _reservasServicio.ObtenerReservas(txtUbicacion.Text, new DateTime(), new DateTime());
