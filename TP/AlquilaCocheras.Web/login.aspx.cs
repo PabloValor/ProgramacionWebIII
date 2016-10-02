@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using AlquilaCocheras.Data.Constantes;
+using AlquilaCocheras.Negocio.Managers;
 
 namespace AlquilaCocheras.Web
 {
@@ -11,13 +8,31 @@ namespace AlquilaCocheras.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                        
+
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid){
+            if (Page.IsValid)
+            {
+                var urlRetorno = string.Empty;
 
+                SesionesManager.LoguearUsuario(txtEmail.Text, txtContrasenia.Text);
+
+                urlRetorno = VariblesSesionManager.Obtener<string>(Constantes.URL_RETORNO);
+
+                if (!string.IsNullOrEmpty(urlRetorno))
+                {
+                    Response.Redirect(urlRetorno);
+                }
+                else
+                {
+                    Response.Redirect("default.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("default.aspx");
             }
         }
     }

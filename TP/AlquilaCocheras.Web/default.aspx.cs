@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using AlquilaCocheras.Data.Constantes;
 using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Mapeos;
 using AlquilaCocheras.Negocio.Servicios;
 
@@ -27,6 +31,19 @@ namespace AlquilaCocheras.Web
             rResultadoReservasFiltradas.DataSource = ReservaMap.Mapear(_listadoReservas);
 
             rResultadoReservasFiltradas.DataBind();
+        }
+
+        public void ConfirmarReserva(object sender, EventArgs e)
+        {
+            if (!SesionesManager.EsUsuarioLogueado())
+            {
+                VariblesSesionManager.Guardar<string>(Constantes.URL_RETORNO, "/clientes/confirmar-reserva.aspx?idcochera=123");
+                Response.Redirect("login.aspx");
+            }
+            else
+            {
+                Response.Redirect("/clientes/confirmar-reserva.aspx?idcochera=123");
+            }
         }
     }
 }

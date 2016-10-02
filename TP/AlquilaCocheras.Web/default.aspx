@@ -83,8 +83,8 @@
                                                 <div class="card-content">
                                                     <span class="card-title activator grey-text text-darken-4">Disponible<i class="material-icons right">more_vert</i></span>
                                                     <p>
-                                                        <%--<asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl="'<%# Eval("Id","/clientes/confirmar-reserva.aspx?idcochera={0}") %>'">Reservar</asp:HyperLink>--%>
-                                                        <asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl="/clientes/confirmar-reserva.aspx?idcochera=123">Reservar</asp:HyperLink>
+                                                        <%--<asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl="/clientes/confirmar-reserva.aspx?idcochera=123" Click="ConfirmarReserva">Reservar</asp:HyperLink>--%>
+                                                        <asp:LinkButton runat="server" id="LinkButton1" OnClick="ConfirmarReserva">Reservar</asp:LinkButton>
                                                     </p>
                                                 </div>
                                                 <div class="card-reveal">

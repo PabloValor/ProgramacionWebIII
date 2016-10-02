@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace AlquilaCocheras.Data.Constantes
+﻿namespace AlquilaCocheras.Data.Constantes
 {
     public static class Constantes
     {
-        public static string VAR_SESSION_USARIO_LOGUEADO { get { return "usuarioLogueado"; } }
+        public static string USARIO_LOGUEADO_OK { get { return "usuarioLogueadoOk"; } }
+        public static string URL_RETORNO { get { return "urlRetorno"; } }
     }
 }
