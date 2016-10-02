@@ -1,5 +1,6 @@
 ﻿using System;
 using AlquilaCocheras.Data.Constantes;
+using AlquilaCocheras.Negocio.Mapeos;
 using AlquilaCocheras.Negocio.Servicios;
 
 namespace AlquilaCocheras.Web
@@ -19,9 +20,9 @@ namespace AlquilaCocheras.Web
 
             var reservas = _reservasServicio.ObtenerReservas(txtUbicacion.Text, new DateTime(), new DateTime());
 
-            DLResultadosReservas.DataSource = reservas;
+            rResultadoReservasFiltradas.DataSource = ReservaMap.Mapear(reservas);
 
-            DLResultadosReservas.DataBind();
+            rResultadoReservasFiltradas.DataBind();
         }
     }
 }

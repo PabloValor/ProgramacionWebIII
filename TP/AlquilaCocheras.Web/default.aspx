@@ -58,12 +58,21 @@
 
                 <div class="row">
                     <div class="col s12">
+                        <div class="listado-reservas">
+                            <asp:Repeater runat="server" ID="rResultadoReservasFiltradas">
+                                <ItemTemplate>
+                                    <div class="reserva">
+                                        <%# Eval("NombrePropietario") %>
+                                        <%# Eval("ApellidoPropietario") %>
+                                        <%# Eval("PrecioPorHora") %>
+                                        <%# Eval("Imagen") %>
+                                        <%# Eval("Latitud") %>
+                                        <%# Eval("Longitud") %>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
-                    <asp:DataList ID="DLResultadosReservas" runat="server">
-                        <ItemTemplate>
-                            <%# Eval("CantidadHoras") %>
-                        </ItemTemplate>
-                    </asp:DataList>
                 </div>
 
 

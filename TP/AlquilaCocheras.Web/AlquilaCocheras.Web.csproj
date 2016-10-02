@@ -71,6 +71,7 @@
     <None Include="assets\css\01-variables\colores.scss" />
     <Content Include="assets\css\03-componentes\99-main.scss" />
     <None Include="assets\css\03-componentes\home.scss" />
+    <None Include="assets\css\03-componentes\listado-reservas.scss" />
     <Content Include="assets\css\dist\estacionalo.min.css" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\js\dist\componentes.js" />

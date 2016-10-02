@@ -1,5 +1,4 @@
-﻿using System;
-using AlquilaCocheras.Data.Enums;
+﻿using AlquilaCocheras.Data.Enums;
 
 namespace AlquilaCocheras.Data.Entidades
 {
@@ -10,6 +9,7 @@ namespace AlquilaCocheras.Data.Entidades
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Avatar { get; set; }
         public TipoPerfilUsuario Perfil { get; set; }
     }
 }
