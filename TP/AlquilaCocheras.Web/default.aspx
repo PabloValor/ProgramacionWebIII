@@ -53,9 +53,19 @@
                 </div>
                 <div class="input-field col s12 center-align">
                     <asp:Button ID="btnFiltrar" runat="server" Text="Buscar" ClientIDMode="Static" CssClass="btn" OnClick="btnFiltrar_Click" />
-                    <%--si no se encuentran resultados mostrar mensaje "No se encontraron resultados"--%>
                     <asp:Label ID="lblResultado" runat="server"></asp:Label>
                 </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <asp:DataList ID="DLResultadosReservas" runat="server">
+                            <%--<ItemTemplate>
+                                <%# Eval("CantidadHoras") %>
+                            </ItemTemplate>--%>
+                        </asp:DataList>
+                    </div>
+                </div>
+
 
                 <%--    LISTADO  (gridview, repeater o datalist)
     Por cada disponibilidad se deberá mostrar la siguiente información:

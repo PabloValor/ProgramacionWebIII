@@ -31,8 +31,11 @@ namespace AlquilaCocheras.Data.Repositorios
 
             var reserva = new Reserva
             {
+                PrecioPorHora = 5.5,
+                CantidadHoras = 4,
                 Cochera = new Cochera
                 {
+                    Id = 123,
                     Ubicacion = "Florencio Varela 1903, San Justo, Buenos Aires, AR",
                     Latitud = "-34.670370",
                     Longitud = "-58.563390",
@@ -43,9 +46,7 @@ namespace AlquilaCocheras.Data.Repositorios
                 {
                     Nombre = "José",
                     Apellido = "Perez"
-                },
-                PrecioPorHora = 5.5,
-                CantidadHoras = 4
+                }
             };
 
             for (var i = 0; i < 10; i++)

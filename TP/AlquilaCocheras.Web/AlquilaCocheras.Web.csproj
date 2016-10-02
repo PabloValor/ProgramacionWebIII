@@ -235,6 +235,10 @@
     <Folder Include="assets\img\cocheras\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AlquilaCocheras.Data\AlquilaCocheras.Data.csproj">
+      <Project>{77e23f3b-0ecc-4ab5-895e-bc83e6581db9}</Project>
+      <Name>AlquilaCocheras.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AlquilaCocheras.Negocio\AlquilaCocheras.Negocio.csproj">
       <Project>{f46f4abf-2fcf-455a-93b1-168a0ce1535e}</Project>
       <Name>AlquilaCocheras.Negocio</Name>

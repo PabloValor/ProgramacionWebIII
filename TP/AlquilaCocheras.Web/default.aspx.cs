@@ -15,7 +15,7 @@ namespace AlquilaCocheras.Web
 
 
         protected void Page_Load(object sender, EventArgs e)
-        { 
+        {
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
@@ -24,6 +24,9 @@ namespace AlquilaCocheras.Web
 
             var reservas = _reservasServicio.ObtenerReservas(txtUbicacion.Text, new DateTime(), new DateTime());
 
+            DLResultadosReservas.DataSource = reservas;
+
+            DLResultadosReservas.DataBind();
         }
     }
 }
