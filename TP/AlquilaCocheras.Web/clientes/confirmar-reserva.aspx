@@ -24,8 +24,11 @@
         <asp:Label ID="lblPrecioHora" ClientIDMode="Static" runat="server"></asp:Label>
         <asp:Label ID="lblPrecioTotal" ClientIDMode="Static" runat="server"></asp:Label>
 
-        <asp:Label ID="lblResultado" runat="server"></asp:Label>
+        <asp:Label ID="lblResultado" runat="server">
+            <%= MensajeError %>
+            <%= MensajeExito %>
+        </asp:Label>
         <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar Reserva" ClientIDMode="Static" OnClick="btnConfirmar_Click" />
-        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" />
+        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" OnClick="btnCancelar_Click"/>
     </div>
 </asp:Content>

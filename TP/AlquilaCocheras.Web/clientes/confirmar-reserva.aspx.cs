@@ -9,8 +9,9 @@ namespace AlquilaCocheras.Web.clientes
 {
     public partial class confirmar_reserva : System.Web.UI.Page
     {
-        #region Atributos
+        #region Propiedades
 
+        public string MensajeExito { get; set; }
         public string MensajeError { get; set; }
         public Cochera Cochera { get; set; }
 
@@ -21,7 +22,6 @@ namespace AlquilaCocheras.Web.clientes
         private ReservasServicio _reservasServicio = new ReservasServicio();
         private CocherasServicio _cocherasServicio = new CocherasServicio();
         private UsuarioService _usuarioService = new UsuarioService();
-        private int _idCochera;
 
         #endregion
 
@@ -32,9 +32,9 @@ namespace AlquilaCocheras.Web.clientes
                 Response.RedirectPermanent("/login.aspx");
             }
 
-            _idCochera = int.Parse(HttpContext.Current.Request.QueryString.Get("idcochera")); // TODO: Validar que un usuario no vea una cochera que no le corresponde
+            var idCochera = int.Parse(HttpContext.Current.Request.QueryString.Get("idcochera")); // TODO: Validar que no metan cualquier cosa
 
-            Cochera = _cocherasServicio.ObtenerCocheraPorId(_idCochera);
+            Cochera = _cocherasServicio.ObtenerCocheraPorId(Math.Abs(idCochera));
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
@@ -51,6 +51,13 @@ namespace AlquilaCocheras.Web.clientes
             {
                 MensajeError = ex.Message;
             }
+
+            MensajeExito = "La cochera se ha reservado con éxito";
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/default.aspx");
         }
     }
 }
