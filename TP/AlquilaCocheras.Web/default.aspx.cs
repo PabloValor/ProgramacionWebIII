@@ -10,6 +10,7 @@ namespace AlquilaCocheras.Web
 {
     public partial class _default : System.Web.UI.Page
     {
+        public int CantidadCocherasDisponibles { get; set; }
 
         List<Reserva> _listadoReservas;
 
@@ -21,13 +22,15 @@ namespace AlquilaCocheras.Web
         {
             var reservasServicio = new ReservasServicio();
             _listadoReservas = reservasServicio.ObtenerReservas(txtUbicacion.Text, new DateTime(), new DateTime());
+
+            CantidadCocherasDisponibles = _listadoReservas.Count;
+
             CargarListaFiltradaReservasDisponibles();
         }
 
         private void CargarListaFiltradaReservasDisponibles()
         {
             rResultadoReservasFiltradas.DataSource = ReservaMap.Mapear(_listadoReservas);
-
             rResultadoReservasFiltradas.DataBind();
         }
 

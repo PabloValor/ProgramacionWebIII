@@ -22,6 +22,12 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         #region Métodos Publicos
 
+        public Usuario ObtenerUsuarioPorEmail(string email)
+        {
+            var usuario = _usuariosRepositorio.ObtenerUsuarioPorEmail(email);
+            return usuario;
+        }
+
         public Usuario ObtenerUsuarioPorId(int id)
         {
             var usuario = _usuariosRepositorio.ObtenerUsuarioPorId(id);

@@ -33,6 +33,12 @@ namespace AlquilaCocheras.Data.Repositorios
             return usuario;
         }
 
+        public Usuario ObtenerUsuarioPorEmail(string email)
+        {
+            var usuario = _usuarios.FirstOrDefault(u => u.Email == email);
+            return usuario;
+        }
+
         public Cliente ObtenerClientePorId(int id)
         {
             var cliente = _clientes.FirstOrDefault(u => u.Id == id && u.Perfil == TipoPerfilUsuario.Cliente);

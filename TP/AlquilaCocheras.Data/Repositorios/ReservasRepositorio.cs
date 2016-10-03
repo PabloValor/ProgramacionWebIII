@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using AlquilaCocheras.Data.Entidades;
 
 namespace AlquilaCocheras.Data.Repositorios
@@ -47,7 +46,6 @@ namespace AlquilaCocheras.Data.Repositorios
 
         private List<Reserva> ObtenerListadoReservasMock()
         {
-
             var reserva = new Reserva
             {
                 Cochera = new Cochera

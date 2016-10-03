@@ -10,7 +10,7 @@ namespace AlquilaCocheras.Data.Entidades
         public string Descripcion { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }
-        public double SuperficieM2 { get; set; }
+        public int SuperficieM2 { get; set; }
         public string Imagen { get; set; }
         public double PrecioPorHora { get; set; }
         public Puntaje Puntaje { get; set; }

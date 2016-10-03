@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using AlquilaCocheras.Data.Constantes;
 using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
@@ -38,11 +39,13 @@ namespace AlquilaCocheras.Web.clientes
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            var cliente = _usuarioService.ObtenerClientePorId(123); //TODO: Cuando este EF, se le va a pasar el Id del usuario que se está guardando en sesion (actualmente se guarda el email solo para pruebas)
+            var idCliente = VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID);
+
+            var cliente = _usuarioService.ObtenerClientePorId(idCliente);
 
             try
             {
-                _reservasServicio.GenerarReserva(cliente, Cochera, DateTime.Now, new DateTime().AddDays(1));
+                _reservasServicio.GenerarReserva(cliente, Cochera, DateTime.Now, new DateTime().AddDays(1)); //  (!) Fechas hardcodeadas
             }
             catch (Exception ex)
             {

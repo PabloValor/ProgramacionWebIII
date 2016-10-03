@@ -36,8 +36,8 @@
                                 ErrorMessage="(*) Por favor, seleccione una fecha de inicio" Display="Dynamic">
                             </asp:RequiredFieldValidator>
                             <asp:CompareValidator ID="CompareValidatorFechaInicio" runat="server"
-                                 ControlToValidate="txtFechaInicio" ErrorMessage="(*) Entre una fecha de inicio valida - dd/mm/aaaa"
-                                 Operator="DataTypeCheck" Type="Date" Display="Dynamic">
+                                ControlToValidate="txtFechaInicio" ErrorMessage="(*) Entre una fecha de inicio valida - dd/mm/aaaa"
+                                Operator="DataTypeCheck" Type="Date" Display="Dynamic">
                             </asp:CompareValidator>
                         </div>
                     </div>
@@ -53,11 +53,11 @@
                                 ErrorMessage="(*) Por favor, seleccione una fecha de fin" Display="Dynamic">
                             </asp:RequiredFieldValidator>
                             <asp:CompareValidator ID="CompareValidatorFechaFin" runat="server"
-                                 ControlToValidate="txtFechaFin" ErrorMessage="(*) Entre una fecha de fin valida - dd/mm/aaaa"
-                                 Operator="DataTypeCheck" Type="Date" Display="Dynamic">
+                                ControlToValidate="txtFechaFin" ErrorMessage="(*) Entre una fecha de fin valida - dd/mm/aaaa"
+                                Operator="DataTypeCheck" Type="Date" Display="Dynamic">
                             </asp:CompareValidator>
-                            <asp:CompareValidator ID="CompareValidatorFecha" ControlToCompare="txtFechaInicio"  ControlToValidate="txtFechaFin"
-                                 Type="Date" Operator="GreaterThanEqual" 
+                            <asp:CompareValidator ID="CompareValidatorFecha" ControlToCompare="txtFechaInicio" ControlToValidate="txtFechaFin"
+                                Type="Date" Operator="GreaterThanEqual"
                                 ErrorMessage="(*) La fecha de inicio tiene que ser anterior a la fecha de fin" runat="server" Display="Dynamic">
                             </asp:CompareValidator>
                         </div>
@@ -72,7 +72,19 @@
                     <div class="col s12">
                         <div class="listado-reservas">
                             <div class="row">
-                                <h3>Se encontraron x cocheras disponibles</h3>
+                                <% if (CantidadCocherasDisponibles > 0)
+                                   { 
+                                %>
+                                <h3>Se encontraron <%= CantidadCocherasDisponibles %> cocheras disponibles</h3>
+                                <%    
+                                   }
+                                   else
+                                   {
+                                %>
+                                <h3>No se encontraron cocheras disponibles para esta búsqueda</h3>
+                                <%
+                                   }
+                                %>
                                 <asp:Repeater runat="server" ID="rResultadoReservasFiltradas">
                                     <ItemTemplate>
                                         <div class="col s12 m6 l4">
@@ -84,7 +96,7 @@
                                                     <span class="card-title activator grey-text text-darken-4">Disponible<i class="material-icons right">more_vert</i></span>
                                                     <p>
                                                         <%--<asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl="/clientes/confirmar-reserva.aspx?idcochera=123" Click="ConfirmarReserva">Reservar</asp:HyperLink>--%>
-                                                        <asp:LinkButton runat="server" id="LinkButton1" OnClick="ConfirmarReserva">Reservar</asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="HyperLink1" OnClick="ConfirmarReserva">Reservar</asp:LinkButton>
                                                     </p>
                                                 </div>
                                                 <div class="card-reveal">
