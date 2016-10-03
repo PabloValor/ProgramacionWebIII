@@ -95,7 +95,8 @@ namespace AlquilaCocheras.Data.Repositorios
                 Email = "cliente@gmail.com",
                 Password = "Password1",
                 Id = 1,
-                Perfil = TipoPerfilUsuario.Cliente
+                Perfil = TipoPerfilUsuario.Cliente,
+                Reservas = new List<Reserva>()
             };
 
             return new List<Cliente>
@@ -114,7 +115,8 @@ namespace AlquilaCocheras.Data.Repositorios
                 Email = "propietario@gmail.com",
                 Password = "Password1",
                 Id = 2,
-                Perfil = TipoPerfilUsuario.Propietario
+                Perfil = TipoPerfilUsuario.Propietario,
+                Cocheras = new List<Cochera>()
             };
 
             return new List<Propietario>

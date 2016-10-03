@@ -10,7 +10,8 @@ namespace AlquilaCocheras.Negocio.Servicios
     {
         #region Miembros
 
-        ReservasRepositorio _reservasRepositorio;
+        private readonly ReservasRepositorio _reservasRepositorio;
+        private readonly ClientesServicio _clientesServicio;
 
         #endregion
 
@@ -19,6 +20,7 @@ namespace AlquilaCocheras.Negocio.Servicios
         public ReservasServicio()
         {
             _reservasRepositorio = new ReservasRepositorio();
+            _clientesServicio = new ClientesServicio();
         }
 
         #endregion
@@ -48,6 +50,8 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         public void GenerarReserva(Cliente cliente, Cochera cochera, DateTime fechaInicio, DateTime fechaFin)
         {
+            cochera.Disponible = false;
+
             var reserva = new Reserva
             {
                 Cliente = cliente,
@@ -56,7 +60,8 @@ namespace AlquilaCocheras.Negocio.Servicios
                 FechaFin = fechaFin
             };
 
-            _reservasRepositorio.Guardar(reserva);
+                _reservasRepositorio.Guardar(reserva);
+                _clientesServicio.AgregarReserva(cliente, reserva);
         }
 
         #endregion

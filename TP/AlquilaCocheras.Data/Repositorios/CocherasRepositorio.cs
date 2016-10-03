@@ -65,7 +65,7 @@ namespace AlquilaCocheras.Data.Repositorios
                     CantidadVotos = 41,
                     PuntajeTotal = 300
                 },
-                Propietario = new Propietario()
+                Propietario = new Propietario
                 {
                     Nombre = "Carlos",
                     Apellido = "Lopez",

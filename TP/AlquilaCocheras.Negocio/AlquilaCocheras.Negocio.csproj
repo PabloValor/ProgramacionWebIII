@@ -45,6 +45,7 @@
     <Compile Include="Mapeos\CocherasMap.cs" />
     <Compile Include="Mapeos\ReservaMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\ClientesServicio.cs" />
     <Compile Include="Servicios\CocherasServicio.cs" />
     <Compile Include="Servicios\ReservasServicio.cs" />
     <Compile Include="Servicios\UsuarioService.cs" />
