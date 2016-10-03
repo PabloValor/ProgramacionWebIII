@@ -1,9 +1,27 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/Base/Base.Master" AutoEventWireup="true" CodeBehind="Clientes.master.cs" Inherits="AlquilaCocheras.Web.MasterPages.Clientes" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head_Base" runat="server">
     <asp:ContentPlaceHolder ID="ContentPlaceHolder_Head" runat="server">
-    </asp:ContentPlaceHolder>    
+    </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal_Base" runat="server">
-     <asp:ContentPlaceHolder ID="ContentPlaceHolder_Principal" runat="server">
-    </asp:ContentPlaceHolder>    
+    
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Estacionalo</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li>Bienvenido <%= Cliente.Nombre %></li>
+                    <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <<li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_Principal" runat="server">
+    </asp:ContentPlaceHolder>
 </asp:Content>

@@ -11,11 +11,11 @@ namespace AlquilaCocheras.Web.clientes
     {
         #region Propiedades
 
-        public string MensajeExito { get; set; }
-        public string MensajeError { get; set; }
+        public string MensajeExito { get; private set; }
+        public string MensajeError { get; private set; }
         public Cochera Cochera { get; set; }
 
-        #endregion 
+        #endregion
 
         #region Miembros
 
