@@ -60,6 +60,7 @@ namespace AlquilaCocheras.Data.Repositorios
                 Longitud = "-58.563390",
                 Imagen = "http://www.el1digital.com.ar/multimedia/imagen/56860_falcodesa2.jpg",
                 Disponible = true,
+                PrecioPorHora = 14,
                 Puntaje = new Puntaje
                 {
                     CantidadVotos = 41,
