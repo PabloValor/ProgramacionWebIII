@@ -9,7 +9,7 @@ namespace AlquilaCocheras.Negocio.Managers
 
         public static void LoguearUsuario(string mailUsuario, string contrasena)
         {
-            
+
             var existeUsuario = (mailUsuario == "cliente@gmail.com" && contrasena == "Password1") ||
                                 (mailUsuario == "propietario@gmail.com" && contrasena == "Password1");
 
@@ -28,7 +28,9 @@ namespace AlquilaCocheras.Negocio.Managers
 
         public static bool EsUsuarioLogueado()
         {
-            return !string.IsNullOrEmpty(VariblesSesionManager.Obtener<string>(Constantes.USUARIO_LOGUEADO_ID));
+            var idUsuario = VariblesSesionManager.Obtener<int?>(Constantes.USUARIO_LOGUEADO_ID);
+
+            return idUsuario != null && idUsuario.GetType() == typeof(int);
         }
     }
 }
