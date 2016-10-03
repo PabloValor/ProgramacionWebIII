@@ -22,43 +22,69 @@
         <![endif]-->
     <form id="form1" runat="server">
 
-        <% if (Usuario != null) {%>
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
                     <a href="/default.aspx" class="brand-logo">Estacionalo</a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li>Bienvenido <%= Usuario.Nombre %></li>
+                        <% if (!string.IsNullOrEmpty(Usuario.Nombre)) { %>
+                        <li>Bienvenido <%= Usuario.Nombre %></li>       
+                        <%} %>
 
                         <% if (Usuario.Perfil == TipoPerfilUsuario.Cliente) { %>
                         <li><a href="/clientes/reservas.aspx"><i class="material-icons left">list</i>Mis Reservas</a></li>
                         <% } %>
-
-                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
-                        <li><a href="/propietarios/cocheras.aspx"><i class="material-icons left">list</i>Mis Cocheras</a></li>
+                        
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Cliente) { %>
+                        <li><a href="/clientes/reservar.aspx"><i class="material-icons left">list</i>Reservar Cochera</a></li>
                         <% } %>
 
-                        <li><a href="/clientes/perfil.aspx"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                        <li><a href="/propietarios/reservas.aspx"><i class="material-icons left">list</i>Reservas</a></li>
+                        <% } %>
+                        
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                        <li><a href="/propietarios/cocheras.aspx"><i class="material-icons left">list</i>Crear Cochera</a></li>
+                        <% } %>
+                        
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                        <li><a href="/propietarios/perfil.aspx"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
+                        <% } %>
+                        
+                        <% if (!string.IsNullOrEmpty(Usuario.Nombre)) { %>
                         <li><a href="/logout.aspx"><i class="material-icons left">close</i>Salir</a></li>
+                        <% } %>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
 
                         <% if (Usuario.Perfil == TipoPerfilUsuario.Cliente) { %>
                         <li><a href="/clientes/reservas.aspx"><i class="material-icons left">list</i>Mis Reservas</a></li>
                         <% } %>
-
-                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
-                        <li><a href="/propietarios/cocheras.aspx"><i class="material-icons left">list</i>Mis Cocheras</a></li>
+                        
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Cliente) { %>
+                        <li><a href="/clientes/reservar.aspx"><i class="material-icons left">list</i>Reservar Cochera</a></li>
                         <% } %>
 
-                        <li><a href="/clientes/perfil.aspx"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                        <li><a href="/propietarios/reservas.aspx"><i class="material-icons left">list</i>Reservas</a></li>
+                        <% } %>
+                        
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                        <li><a href="/propietarios/cocheras.aspx"><i class="material-icons left">list</i>Crear Cochera</a></li>
+                        <% } %>
+                        
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                        <li><a href="/propietarios/perfil.aspx"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
+                        <% } %>
+                        
+                        <% if (!string.IsNullOrEmpty(Usuario.Nombre)) { %>
                         <li><a href="/logout.aspx"><i class="material-icons left">close</i>Salir</a></li>
+                        <% } %>
                     </ul>
                 </div>
             </nav>
         </div>
-        <% } %>
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder_Principal_Base" runat="server">
         </asp:ContentPlaceHolder>

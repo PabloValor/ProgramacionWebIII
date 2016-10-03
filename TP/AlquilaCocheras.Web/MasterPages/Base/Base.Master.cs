@@ -22,9 +22,11 @@ namespace AlquilaCocheras.Web.MasterPages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario = new Usuario();
+
             if (SesionesManager.EsUsuarioLogueado())
             {
-                Usuario = _usuarioService.ObtenerClientePorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
+                Usuario = _usuarioService.ObtenerUsuarioPorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
             }
         }
     }
