@@ -14,6 +14,6 @@ namespace AlquilaCocheras.Data.Entidades
         public string Imagen { get; set; }
         public double PrecioPorHora { get; set; }
         public Puntaje Puntaje { get; set; }
-        public TipoCochera TipoCochera { get; set; }
+        public TipoVehiculo TipoVehiculo { get; set; }
     }
 }
