@@ -75,6 +75,7 @@
     <None Include="assets\css\03-componentes\listado-reservas.scss" />
     <Content Include="assets\css\dist\estacionalo.min.css" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\usuarios\usuario-avatar-default.jpg" />
     <Content Include="assets\js\dist\componentes.js" />
     <Content Include="assets\js\dist\estacionalo.js" />
     <Content Include="assets\js\dist\estacionalo.min.js" />

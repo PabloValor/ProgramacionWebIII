@@ -5,8 +5,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
     <div class="container">
+        <h2 class="titulo-pagina">Confirmación de reserva</h2>
+
         <asp:Label ID="label2" runat="server" Text="Fecha Inicio: "></asp:Label>
         <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
+
         <asp:Label ID="label4" runat="server" Text="Fecha Fin: "></asp:Label>
         <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static"></asp:TextBox>
 
