@@ -13,12 +13,11 @@ namespace AlquilaCocheras.Negocio.Mapeos
                 new CocheraDisponibleMap
                 {
                     Id = r.Id,
-                    NombrePropietario = r.Propietario.Nombre,
-                    ApellidoPropietario = r.Propietario.Apellido,
+                    NombrePropietario = r.Cochera.Propietario.Nombre,
+                    ApellidoPropietario = r.Cochera.Propietario.Apellido,
                     Imagen = r.Cochera.Imagen,
                     Latitud = r.Cochera.Latitud,
-                    Longitud = r.Cochera.Longitud,
-                    PrecioPorHora = r.PrecioPorHora
+                    Longitud = r.Cochera.Longitud
                 }
             ).ToList();
         }

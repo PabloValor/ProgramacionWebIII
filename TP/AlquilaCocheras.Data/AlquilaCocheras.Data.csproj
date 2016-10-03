@@ -50,7 +50,9 @@
     <Compile Include="Enums\TipoCochera.cs" />
     <Compile Include="Mapeos\CocheraDisponibleMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\CocherasRepositorio.cs" />
     <Compile Include="Repositorios\ReservasRepositorio.cs" />
+    <Compile Include="Repositorios\UsuariosRepositorio.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

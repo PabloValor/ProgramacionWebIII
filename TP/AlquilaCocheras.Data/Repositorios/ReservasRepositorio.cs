@@ -7,6 +7,21 @@ namespace AlquilaCocheras.Data.Repositorios
 {
     public class ReservasRepositorio
     {
+        #region Miembros
+
+        private List<Reserva> _reservas;
+
+        #endregion
+
+        #region Constructores
+
+        public ReservasRepositorio()
+        {
+            _reservas = new List<Reserva>();
+        }
+
+        #endregion
+
         #region Métodos Publicos
 
         public List<Reserva> Obtener()
@@ -21,18 +36,20 @@ namespace AlquilaCocheras.Data.Repositorios
             return reservas;
         }
 
+        public void Guardar(Reserva reserva)
+        {
+            _reservas.Add(reserva);
+        }
+
         #endregion
 
         #region Métodos Privados
 
         private List<Reserva> ObtenerListadoReservasMock()
         {
-            var reservas = new List<Reserva>();
 
             var reserva = new Reserva
             {
-                PrecioPorHora = 5.5,
-                CantidadHoras = 4,
                 Cochera = new Cochera
                 {
                     Id = 123,
@@ -44,21 +61,22 @@ namespace AlquilaCocheras.Data.Repositorios
                     {
                         CantidadVotos = 41,
                         PuntajeTotal = 300
+                    },
+                    PrecioPorHora = 5.5,
+                    Propietario = new Propietario
+                    {
+                        Nombre = "José",
+                        Apellido = "Perez"
                     }
                 },
-                Propietario = new Propietario
-                {
-                    Nombre = "José",
-                    Apellido = "Perez"
-                }
             };
 
             for (var i = 0; i < 10; i++)
             {
-                reservas.Add(reserva);
+                _reservas.Add(reserva);
             }
 
-            return reservas;
+            return _reservas;
         }
         #endregion
     }
