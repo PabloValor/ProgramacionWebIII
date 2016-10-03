@@ -31,6 +31,24 @@ namespace AlquilaCocheras.Web.clientes {
         protected global::System.Web.UI.WebControls.TextBox txtFechaInicio;
         
         /// <summary>
+        /// RequiredFieldValidatorFechaInicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorFechaInicio;
+        
+        /// <summary>
+        /// CompareValidatorFechaInicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorFechaInicio;
+        
+        /// <summary>
         /// label4 control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,33 @@ namespace AlquilaCocheras.Web.clientes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaFin;
+        
+        /// <summary>
+        /// RequiredFieldValidatorFechaFin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorFechaFin;
+        
+        /// <summary>
+        /// CompareValidatorFechaFin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorFechaFin;
+        
+        /// <summary>
+        /// CompareValidatorFecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorFecha;
         
         /// <summary>
         /// label3 control.
@@ -67,6 +112,24 @@ namespace AlquilaCocheras.Web.clientes {
         protected global::System.Web.UI.WebControls.TextBox txtHorarioInicio;
         
         /// <summary>
+        /// RequiredFieldValidatorHorarioInicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorHorarioInicio;
+        
+        /// <summary>
+        /// RegularExpressionValidatorHorarioInicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorHorarioInicio;
+        
+        /// <summary>
         /// label1 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +146,33 @@ namespace AlquilaCocheras.Web.clientes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHorarioFin;
+        
+        /// <summary>
+        /// RequiredFieldValidatorHorarioFin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorHorarioFin;
+        
+        /// <summary>
+        /// RegularExpressionValidatorHorarioFin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorHorarioFin;
+        
+        /// <summary>
+        /// CompareValidatorHorario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorHorario;
         
         /// <summary>
         /// lblUbicacion control.
