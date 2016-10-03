@@ -1,5 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="AlquilaCocheras.Web.MasterPages.Base" %>
 
+<%@ Import Namespace="AlquilaCocheras.Data.Entidades" %>
+<%@ Import Namespace="AlquilaCocheras.Data.Enums" %>
+
 <!doctype html>
 <html class="no-js" lang="es">
 <head id="Head1" runat="server">
@@ -18,26 +21,44 @@
             <p>Estas usando un browser desactualizado. Por favor, <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia en el sitio y seguridad.</p>
         <![endif]-->
     <form id="form1" runat="server">
-        <%--<div class="navbar-fixed">
+
+        <% if (Usuario != null) {%>
+        <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">Logo</a>
+                    <a href="/default.aspx" class="brand-logo">Estacionalo</a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
-                        <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
-                        <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
-                        <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
+                        <li>Bienvenido <%= Usuario.Nombre %></li>
+
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Cliente) { %>
+                        <li><a href="/clientes/reservas.aspx"><i class="material-icons left">list</i>Mis Reservas</a></li>
+                        <% } %>
+
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                        <li><a href="/propietarios/cocheras.aspx"><i class="material-icons left">list</i>Mis Cocheras</a></li>
+                        <% } %>
+
+                        <li><a href="/clientes/perfil.aspx"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
+                        <li><a href="/logout.aspx"><i class="material-icons left">close</i>Salir</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
-                        <<li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
-                        <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
-                        <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
-                        <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
+
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Cliente) { %>
+                        <li><a href="/clientes/reservas.aspx"><i class="material-icons left">list</i>Mis Reservas</a></li>
+                        <% } %>
+
+                        <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                        <li><a href="/propietarios/cocheras.aspx"><i class="material-icons left">list</i>Mis Cocheras</a></li>
+                        <% } %>
+
+                        <li><a href="/clientes/perfil.aspx"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
+                        <li><a href="/logout.aspx"><i class="material-icons left">close</i>Salir</a></li>
                     </ul>
                 </div>
             </nav>
-        </div>--%>
+        </div>
+        <% } %>
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder_Principal_Base" runat="server">
         </asp:ContentPlaceHolder>
