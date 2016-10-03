@@ -1,12 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Propietarios.Master" AutoEventWireup="true" CodeBehind="cocheras.aspx.cs" Inherits="AlquilaCocheras.Web.propietarios.cocheras" %>
 
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
    
-
     <asp:Label ID="label1" runat="server" Text="Ubicación: "></asp:Label>
     <asp:TextBox ID="txtUbicacion" runat="server" ClientIDMode="Static"></asp:TextBox>
    
@@ -17,7 +14,7 @@
     </div>
     
     <asp:Label ID="label2" runat="server" Text="Período Disponible: "></asp:Label>
-    <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static" CssClass="forDatePicker"></asp:TextBox>
+    <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
    
      <div class="cocheras-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaInicio" runat="server" ErrorMessage="Ingrese una Fecha de Inicio"
