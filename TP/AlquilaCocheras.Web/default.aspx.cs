@@ -12,7 +12,7 @@ namespace AlquilaCocheras.Web
     {
         public int CantidadCocherasDisponibles { get; set; }
 
-        List<Reserva> _listadoReservas;
+        List<Cochera> _listadoCocherasDisponibles;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,18 +20,19 @@ namespace AlquilaCocheras.Web
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            var reservasServicio = new ReservasServicio();
-            _listadoReservas = reservasServicio.ObtenerReservas(txtUbicacion.Text, new DateTime(), new DateTime());
+            var cocherasServicio = new CocherasServicio();
 
-            CantidadCocherasDisponibles = _listadoReservas.Count;
+            _listadoCocherasDisponibles = cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text, txtFechaInicio.Text, txtFechaFin.Text);
 
-            CargarListaFiltradaReservasDisponibles();
+            CantidadCocherasDisponibles = _listadoCocherasDisponibles.Count;
+
+            CargarListaFiltradaCocherasDisponibles();
         }
 
-        private void CargarListaFiltradaReservasDisponibles()
+        private void CargarListaFiltradaCocherasDisponibles()
         {
-            rResultadoReservasFiltradas.DataSource = ReservaMap.Mapear(_listadoReservas);
-            rResultadoReservasFiltradas.DataBind();
+            rResultadoCocherasDisponiblesFiltradas.DataSource = CocherasMap.Mapear(_listadoCocherasDisponibles);
+            rResultadoCocherasDisponiblesFiltradas.DataBind();
         }
 
         public void ConfirmarReserva(object sender, EventArgs e)

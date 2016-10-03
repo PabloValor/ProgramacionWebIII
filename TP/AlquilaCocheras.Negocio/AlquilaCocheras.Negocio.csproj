@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Managers\VariblesSesionManager.cs" />
     <Compile Include="Managers\SesionesManager.cs" />
+    <Compile Include="Mapeos\CocherasMap.cs" />
     <Compile Include="Mapeos\ReservaMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\CocherasServicio.cs" />

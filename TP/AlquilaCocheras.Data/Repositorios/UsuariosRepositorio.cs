@@ -20,8 +20,8 @@ namespace AlquilaCocheras.Data.Repositorios
         public UsuariosRepositorio()
         {
             _usuarios = GenerarUsuariosMock();
-            _clientes = new List<Cliente>();
-            _propietarios = new List<Propietario>();
+            _clientes = GenerarClientesMock();
+            _propietarios = GenerarPropietariosMock();
         }
         #endregion
 
@@ -84,6 +84,44 @@ namespace AlquilaCocheras.Data.Repositorios
                 cliente, propietario
             };
         }
+
+        private List<Cliente> GenerarClientesMock()
+        {
+            var cliente = new Cliente()
+            {
+                Nombre = "José",
+                Apellido = "Perez",
+                Avatar = "https://image.freepik.com/iconos-gratis/user-avatar-fotografia-principal_318-85015.jpg",
+                Email = "cliente@gmail.com",
+                Password = "Password1",
+                Id = 1,
+                Perfil = TipoPerfilUsuario.Cliente
+            };
+
+            return new List<Cliente>
+            {
+                cliente
+            };
+        }
+
+        private List<Propietario> GenerarPropietariosMock()
+        {
+            var propietario = new Propietario()
+            {
+                Nombre = "Carlos",
+                Apellido = "Lopez",
+                Avatar = "https://image.freepik.com/iconos-gratis/user-avatar-fotografia-principal_318-85015.jpg",
+                Email = "propietario@gmail.com",
+                Password = "Password1",
+                Id = 2,
+                Perfil = TipoPerfilUsuario.Propietario
+            };
+
+            return new List<Propietario>
+            {
+               propietario
+            };            
+        } 
         #endregion
     }
 }

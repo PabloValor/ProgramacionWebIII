@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data.Enums;
 
 namespace AlquilaCocheras.Data.Repositorios
 {
@@ -8,7 +9,7 @@ namespace AlquilaCocheras.Data.Repositorios
     {
         #region Miembros
 
-        private readonly List<Cochera> _cocheras;
+        private readonly List<Cochera> _cocheras = new List<Cochera>();
 
         #endregion
 
@@ -16,7 +17,7 @@ namespace AlquilaCocheras.Data.Repositorios
 
         public CocherasRepositorio()
         {
-            _cocheras = new List<Cochera>();
+            _cocheras = ObtenerListadoCocherasMock();
         }
 
         #endregion
@@ -25,13 +26,12 @@ namespace AlquilaCocheras.Data.Repositorios
 
         public List<Cochera> Obtener()
         {
-            var cocheras = ObtenerListadoCocherasMock();
-            return cocheras;
+            return _cocheras;
         }
 
         public Cochera ObtenerCocheraPorId(int id)
         {
-            var cochera = ObtenerListadoCocherasMock().FirstOrDefault(c => c.Id == id);
+            var cochera = _cocheras.FirstOrDefault(c => c.Id == id);
             return cochera;
         }
 
@@ -59,10 +59,21 @@ namespace AlquilaCocheras.Data.Repositorios
                 Latitud = "-34.670370",
                 Longitud = "-58.563390",
                 Imagen = "http://www.el1digital.com.ar/multimedia/imagen/56860_falcodesa2.jpg",
+                Disponible = true,
                 Puntaje = new Puntaje
                 {
                     CantidadVotos = 41,
                     PuntajeTotal = 300
+                },
+                Propietario = new Propietario()
+                {
+                    Nombre = "Carlos",
+                    Apellido = "Lopez",
+                    Avatar = "https://image.freepik.com/iconos-gratis/user-avatar-fotografia-principal_318-85015.jpg",
+                    Email = "propietario@gmail.com",
+                    Password = "Password1",
+                    Id = 2,
+                    Perfil = TipoPerfilUsuario.Propietario
                 }
             };
 

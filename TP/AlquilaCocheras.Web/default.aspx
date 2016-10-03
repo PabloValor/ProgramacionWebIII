@@ -85,7 +85,7 @@
                                 <%
                                    }
                                 %>
-                                <asp:Repeater runat="server" ID="rResultadoReservasFiltradas">
+                                <asp:Repeater runat="server" ID="rResultadoCocherasDisponiblesFiltradas">
                                     <ItemTemplate>
                                         <div class="col s12 m6 l4">
                                             <div class="card">

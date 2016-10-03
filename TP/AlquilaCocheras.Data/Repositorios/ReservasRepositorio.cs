@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data.Enums;
 
 namespace AlquilaCocheras.Data.Repositorios
 {
     public class ReservasRepositorio
     {
+
         #region Miembros
 
-        private List<Reserva> _reservas;
+        private readonly List<Reserva> _reservas;
 
         #endregion
 
@@ -17,6 +19,7 @@ namespace AlquilaCocheras.Data.Repositorios
         public ReservasRepositorio()
         {
             _reservas = new List<Reserva>();
+            _reservas = ObtenerListadoReservasMock();
         }
 
         #endregion
@@ -25,14 +28,14 @@ namespace AlquilaCocheras.Data.Repositorios
 
         public List<Reserva> Obtener()
         {
-            var reservas = ObtenerListadoReservasMock();
-            return reservas;
+            return _reservas;
         }
 
         public List<Reserva> Obtener(string ubicacion, DateTime fechaInicio, DateTime fechaFin)
         {
-            var reservas = ObtenerListadoReservasMock();
-            return reservas;
+            //var reservas =_reservas.Where(r => r.Cochera.Ubicacion == ubicacion && r.FechaInicio == fechaInicio && r.FechaFin == fechaInicio).ToList();
+            //return reservas;
+            return _reservas;
         }
 
         public void Guardar(Reserva reserva)
@@ -61,10 +64,15 @@ namespace AlquilaCocheras.Data.Repositorios
                         PuntajeTotal = 300
                     },
                     PrecioPorHora = 5.5,
-                    Propietario = new Propietario
+                    Propietario = new Propietario()
                     {
-                        Nombre = "José",
-                        Apellido = "Perez"
+                        Nombre = "Carlos",
+                        Apellido = "Lopez",
+                        Avatar = "https://image.freepik.com/iconos-gratis/user-avatar-fotografia-principal_318-85015.jpg",
+                        Email = "propietario@gmail.com",
+                        Password = "Password1",
+                        Id = 2,
+                        Perfil = TipoPerfilUsuario.Propietario
                     }
                 },
             };
