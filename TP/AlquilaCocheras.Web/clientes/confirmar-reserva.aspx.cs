@@ -11,8 +11,7 @@ namespace AlquilaCocheras.Web.clientes
     {
         #region Propiedades
 
-        public string MensajeExito { get; private set; }
-        public string MensajeError { get; private set; }
+        public string MensajeResultadoOperacion { get; private set; }
         public Cochera Cochera { get; set; }
 
         #endregion
@@ -49,10 +48,10 @@ namespace AlquilaCocheras.Web.clientes
             }
             catch (Exception ex)
             {
-                MensajeError = ex.Message;
+                MensajeResultadoOperacion = ex.Message;
             }
 
-            MensajeExito = "La cochera se ha reservado con éxito";
+            MensajeResultadoOperacion = "La cochera se ha reservado con éxito";
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

@@ -4,8 +4,8 @@
     <title>Estacionalo | Confirmación de Reserva</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
-    <div class="container">
-        <h2 class="titulo-pagina">Confirmación de reserva</h2>
+    <div class="container container-padding-top">
+        <h2 class="titulo-pagina center-align">Confirmación de reserva</h2>
 
         <asp:Label ID="label2" runat="server" Text="Fecha Inicio"></asp:Label>
         <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static" Text="05/10/2016"></asp:TextBox>
@@ -74,10 +74,13 @@
         <asp:Label ID="lblPrecioTotal" ClientIDMode="Static" runat="server"></asp:Label>
 
         <asp:Label ID="lblResultado" runat="server">
-            <%= MensajeError %>
-            <%= MensajeExito %>
+            <div class="card">
+                <div class="card-content blue accent-2 white-text">
+                    <%= MensajeResultadoOperacion %>
+                </div>
+            </div>
         </asp:Label>
         <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar Reserva" ClientIDMode="Static" OnClick="btnConfirmar_Click" />
-        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" OnClick="btnCancelar_Click"/>
+        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" OnClick="btnCancelar_Click" />
     </div>
 </asp:Content>
