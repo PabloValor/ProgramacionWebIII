@@ -9,7 +9,7 @@
 
         <div class="card resumen-cochera">
             <div class="card-content center-align">
-                <h4 class="center-align">Resumen de cochera</h4>
+                <h4 class="center-align linea-titulo">Resumen de cochera</h4>
                 <div class="row">
                     <div class="col s12 m6">
                         <p>
@@ -24,7 +24,7 @@
 
                     </div>
                     <div class="col s12 m6">
-                        <img src="<%= Cochera.Imagen %>" alt="foto de cochera" />
+                        <img src="<%= Cochera.Imagen %>" alt="foto de cochera" class="responsive-img"/>
                     </div>
                 </div>
             </div>

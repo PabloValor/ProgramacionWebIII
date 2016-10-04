@@ -27,6 +27,7 @@ namespace AlquilaCocheras.Web
 
                     if (!string.IsNullOrEmpty(urlRetorno))
                     {
+                        VariblesSesionManager.Eliminar(Constantes.URL_RETORNO);
                         Response.Redirect(urlRetorno);
                     }
                     else

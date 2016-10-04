@@ -14,5 +14,10 @@ namespace AlquilaCocheras.Negocio.Managers
             var valor = HttpContext.Current.Session[clave];
             return (T) valor; 
         }
+
+        public static void Eliminar(string clave)
+        {
+            HttpContext.Current.Session.Remove(clave);
+        }
     }
 }
