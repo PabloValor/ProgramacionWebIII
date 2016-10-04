@@ -2,6 +2,7 @@
 using System.Web;
 using AlquilaCocheras.Data.Constantes;
 using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data.Enums;
 using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
 
@@ -21,6 +22,7 @@ namespace AlquilaCocheras.Web.clientes
         private ReservasServicio _reservasServicio = new ReservasServicio();
         private CocherasServicio _cocherasServicio = new CocherasServicio();
         private UsuarioService _usuarioService = new UsuarioService();
+        private Usuario _usuario;
 
         #endregion
 
@@ -29,6 +31,13 @@ namespace AlquilaCocheras.Web.clientes
             if (!SesionesManager.EsUsuarioLogueado())
             {
                 Response.RedirectPermanent("/login.aspx");
+            }
+
+            _usuario = _usuarioService.ObtenerUsuarioPorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
+
+            if (_usuario.Perfil != TipoPerfilUsuario.Cliente)
+            {
+                Response.RedirectPermanent("/default.aspx");
             }
 
             var idCochera = int.Parse(HttpContext.Current.Request.QueryString.Get("idcochera")); // TODO: Validar que no metan cualquier cosa
