@@ -36,7 +36,7 @@ namespace AlquilaCocheras.Web.clientes
             var idUsuario = VariblesSesionManager.Obtener<int?>(Constantes.USUARIO_LOGUEADO_ID) ?? -1;
             _usuario = _usuarioService.ObtenerUsuarioPorId(idUsuario);
 
-            if (_usuario != null ||  _usuario.Perfil != TipoPerfilUsuario.Cliente)
+            if (_usuario != null &&  _usuario.Perfil != TipoPerfilUsuario.Cliente)
             {
                 Response.RedirectPermanent("/default.aspx");
             }
