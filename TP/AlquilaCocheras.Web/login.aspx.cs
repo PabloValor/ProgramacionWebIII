@@ -1,12 +1,16 @@
 ﻿using System;
 using AlquilaCocheras.Data.Constantes;
+using AlquilaCocheras.Data.Enums;
 using AlquilaCocheras.Negocio.Managers;
+using AlquilaCocheras.Negocio.Servicios;
 
 namespace AlquilaCocheras.Web
 {
     public partial class login : System.Web.UI.Page
     {
         public string MensajeError { get; set; }
+
+        private UsuarioService _usuarioService = new UsuarioService();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +27,8 @@ namespace AlquilaCocheras.Web
                 {
                     SesionesManager.LoguearUsuario(txtEmail.Text, txtContrasenia.Text);
 
+                    var usuario = _usuarioService.ObtenerUsuarioPorEmailYContrasena(txtEmail.Text, txtContrasenia.Text);
+
                     urlRetorno = VariblesSesionManager.Obtener<string>(Constantes.URL_RETORNO);
 
                     if (!string.IsNullOrEmpty(urlRetorno))
@@ -32,7 +38,8 @@ namespace AlquilaCocheras.Web
                     }
                     else
                     {
-                        Response.Redirect("default.aspx");
+                        var urlRedirect = usuario.Perfil == TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx";
+                        Response.Redirect(urlRedirect);
                     }
                 }
                 catch (Exception ex)
@@ -42,7 +49,7 @@ namespace AlquilaCocheras.Web
             }
             else
             {
-                Response.Redirect("default.aspx");
+                Response.Redirect("/default.aspx");
             }
         }
     }
