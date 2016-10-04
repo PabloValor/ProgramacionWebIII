@@ -18,12 +18,12 @@ namespace AlquilaCocheras.Web.clientes
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            _usuario = _usuarioService.ObtenerUsuarioPorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
+            //_usuario = _usuarioService.ObtenerUsuarioPorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
 
-            if (_usuario.Perfil != TipoPerfilUsuario.Cliente)
-            {
-                Response.RedirectPermanent("/default.aspx");
-            }
+            //if (_usuario.Perfil != TipoPerfilUsuario.Cliente)
+            //{
+            //    Response.RedirectPermanent("/default.aspx");
+            //}
         }
     }
 }

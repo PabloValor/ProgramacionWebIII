@@ -21,22 +21,18 @@ namespace AlquilaCocheras.Web
         #endregion
 
         public int CantidadCocherasDisponibles { get; set; }
-        
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                _usuario = _usuarioService.ObtenerUsuarioPorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
-            }
-            catch (Exception)
-            {
-            }
+            //var idUsuario = VariblesSesionManager.Obtener<int?>(Constantes.USUARIO_LOGUEADO_ID) ?? -1;
 
-            if (_usuario != null)
-            {
-                Response.RedirectPermanent(_usuario.Perfil == TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
-            }
+            //_usuario = _usuarioService.ObtenerUsuarioPorId(idUsuario);
+
+            //if (_usuario != null)
+            //{
+            //    Response.RedirectPermanent(_usuario.Perfil == TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
+            //}
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
