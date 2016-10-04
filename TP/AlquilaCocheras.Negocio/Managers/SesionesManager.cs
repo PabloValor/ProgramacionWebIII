@@ -6,16 +6,14 @@ namespace AlquilaCocheras.Negocio.Managers
 {
     public static class SesionesManager
     {
-
         public static void LoguearUsuario(string mailUsuario, string contrasena)
         {
+            var _usuarioService = new UsuarioService();
 
-            var existeUsuario = (mailUsuario == "cliente@gmail.com" && contrasena == "Password1") ||
-                                (mailUsuario == "propietario@gmail.com" && contrasena == "Password1");
+            var existeUsuario = _usuarioService.ObtenerClientePorEmailYContrasena(mailUsuario, contrasena) != null;
 
             if (existeUsuario)
             {
-                var _usuarioService = new UsuarioService();
                 var usuario = _usuarioService.ObtenerUsuarioPorEmail(mailUsuario);
 
                 VariblesSesionManager.Guardar(Constantes.USUARIO_LOGUEADO_ID, usuario.Id);

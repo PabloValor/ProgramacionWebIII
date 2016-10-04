@@ -39,6 +39,12 @@ namespace AlquilaCocheras.Data.Repositorios
             return usuario;
         }
 
+        public Usuario ObtenerUsuarioPorEmailYContrasena(string email, string contrasena)
+        {
+            var usuario = _usuarios.FirstOrDefault(u => u.Email == email && u.Password == contrasena);
+            return usuario;
+        }
+
         public Cliente ObtenerClientePorId(int id)
         {
             var cliente = _clientes.FirstOrDefault(u => u.Id == id && u.Perfil == TipoPerfilUsuario.Cliente);
@@ -49,6 +55,11 @@ namespace AlquilaCocheras.Data.Repositorios
         {
             var propietarios = _propietarios.FirstOrDefault(u => u.Id == id && u.Perfil == TipoPerfilUsuario.Propietario);
             return propietarios;
+        }
+
+        public void GuardarUsuario(Usuario usuario)
+        {
+            _usuarios.Add(usuario);
         }
 
         #endregion

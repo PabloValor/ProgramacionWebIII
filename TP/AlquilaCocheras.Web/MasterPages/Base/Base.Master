@@ -60,7 +60,7 @@
                                 <% } %>
                         
                                 <% if (!string.IsNullOrEmpty(Usuario.Nombre)) { %>
-                                <li><asp:LinkButton runat="server" ID="btnLinkSalir" OnClick="Salir"><i class="material-icons left">close</i>Salir</asp:LinkButton></li>
+                                <li><asp:LinkButton runat="server" ID="btnLinkSalir" OnClick="btnSalir"><i class="material-icons left">close</i>Salir</asp:LinkButton></li>
                                 <% } %>
                             <%} %> 
                         <% }%>

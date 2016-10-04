@@ -40,6 +40,17 @@ namespace AlquilaCocheras.Negocio.Servicios
             return cliente;
         }
 
+        public Usuario ObtenerClientePorEmailYContrasena(string email, string contrasena)
+        {
+            var usuario = _usuariosRepositorio.ObtenerUsuarioPorEmailYContrasena(email, contrasena);
+            return usuario;
+        }
+
+        public void GuardarUsuario(Usuario usuario)
+        {
+            _usuariosRepositorio.GuardarUsuario(usuario);
+        }
+
         #endregion
     }
 }

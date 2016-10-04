@@ -30,10 +30,11 @@ namespace AlquilaCocheras.Web.MasterPages
             }
         }
         
-        public void Salir(object sender, EventArgs e)
+        public void btnSalir(object sender, EventArgs e)
         {
             VariblesSesionManager.Eliminar(Constantes.USUARIO_LOGUEADO_ID);
             Usuario = null;
+            Response.Redirect("default.aspx", false);
         }
     }
 }
