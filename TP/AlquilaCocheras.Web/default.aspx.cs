@@ -25,7 +25,13 @@ namespace AlquilaCocheras.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            _usuario = _usuarioService.ObtenerUsuarioPorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
+            try
+            {
+                _usuario = _usuarioService.ObtenerUsuarioPorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
+            }
+            catch (Exception)
+            {
+            }
 
             if (_usuario != null)
             {
