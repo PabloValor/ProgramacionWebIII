@@ -10,7 +10,8 @@
             <h5 class="center-align" style=" margin-bottom:2em; font-weight:bold;">La pagina no fue encontrada :(</h5>
             
             <div class="center-align">
-                <button type="button" class="btn btn-success">Volver al home</button>
+
+                <asp:Button ID="btnRedireccionarHome" runat="server" CssClass="btn btn-success" Text="Volver al home" ClientIDMode="Static" OnClick="btnRedireccionarHome_Click" />
             </div>
         </div>
     </div>

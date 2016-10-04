@@ -13,5 +13,11 @@ namespace AlquilaCocheras.Web.error
         {
 
         }
+
+        protected void btnRedireccionarHome_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("../default.aspx", true);
+
+        }
     }
 }
