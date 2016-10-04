@@ -8,12 +8,12 @@
     <div class="perfil-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" 
             ErrorMessage="Ingrese un nombre" ControlToValidate="txtNombre"
-             Display="Dynamic">
+             Display="Dynamic" ValidationGroup="3">
         </asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidatorNombre" runat="server" 
             ErrorMessage="Ingrese en nombre solo letras" ControlToValidate="txtNombre" 
             ValidationExpression="^[a-zA-Z ]*$"
-             Display="Dynamic">
+             Display="Dynamic" ValidationGroup="3">
         </asp:RegularExpressionValidator>
     </div>
 
@@ -23,12 +23,12 @@
     <div class="perfil-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorApellido" runat="server"
              ErrorMessage="Ingrese un apellido" ControlToValidate="txtApellido"
-             Display="Dynamic">
+             Display="Dynamic" ValidationGroup="3">
         </asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidatorApellido" runat="server" 
             ErrorMessage="Ingrese en apellido solo letras"
              ControlToValidate="txtApellido" ValidationExpression="^[a-zA-Z ]*$" 
-            Display="Dynamic">
+            Display="Dynamic" ValidationGroup="3">
         </asp:RegularExpressionValidator>
     </div>
 
@@ -38,11 +38,11 @@
     <div class="perfil-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server"
              ErrorMessage="Ingrese un email" ControlToValidate="txtEmail"
-             Display="Dynamic">
+             Display="Dynamic" ValidationGroup="3">
         </asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidatorEmail" runat="server" 
             ErrorMessage="Ingrese un email valido" ControlToValidate="txtEmail" 
-            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic">
+            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic" ValidationGroup="3">
         </asp:RegularExpressionValidator>
     </div>
 
@@ -52,13 +52,13 @@
     <div class="perfil-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorContrasenia" runat="server"
              ErrorMessage="Ingrese una contraseña" 
-            ControlToValidate="txtContrasenia" Display="Dynamic">
+            ControlToValidate="txtContrasenia" Display="Dynamic" ValidationGroup="3">
         </asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator Display = "Dynamic" ControlToValidate = "txtContrasenia"
              ID="RegularExpressionValidatorContrasenia"
              ValidationExpression = "^[A-Z].*(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,20}$" 
              runat="server" 
-             ErrorMessage="Contraseña - Caracteres : 8 Minimo, 20 Maximo. Debe comenzar con una mayuscula y contener un numero ">
+             ErrorMessage="Contraseña - Caracteres : 8 Minimo, 20 Maximo. Debe comenzar con una mayuscula y contener un numero " ValidationGroup="3">
         </asp:RegularExpressionValidator>
     </div>
 
@@ -68,11 +68,11 @@
     <div class="perfil-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorConfContrasenia" runat="server" 
             ErrorMessage="Ingrese una contraseña" ControlToValidate="txtConfContrasenia"
-             Display="Dynamic">
+             Display="Dynamic" ValidationGroup="3">
         </asp:RequiredFieldValidator>
         <asp:CompareValidator ID="CompareValidatorConfContrasenia" runat="server"
              ErrorMessage="Ingrese Contrasenias iguales" ControlToCompare="txtContrasenia"
-             ControlToValidate="txtConfContrasenia" Display="Dynamic">
+             ControlToValidate="txtConfContrasenia" Display="Dynamic" ValidationGroup="3">
         </asp:CompareValidator>
     </div>
 
@@ -84,12 +84,12 @@
     <div class="perfil-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorPerfil" runat="server" 
             ErrorMessage="Ingrese una opcion" ControlToValidate="rblPerfil" 
-            Display="Dynamic">
+            Display="Dynamic" ValidationGroup="3">
         </asp:RequiredFieldValidator>
     </div>
 
     <asp:Label ID="lblResultado" runat="server"></asp:Label>
-    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar perfil" ClientIDMode="Static" OnClick="btnActualizar_Click" />
+    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar perfil" ClientIDMode="Static" OnClick="btnActualizar_Click" ValidationGroup="3" />
     <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
 </asp:Content>
