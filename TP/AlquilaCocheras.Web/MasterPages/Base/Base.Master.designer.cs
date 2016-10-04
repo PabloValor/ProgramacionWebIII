@@ -40,6 +40,15 @@ namespace AlquilaCocheras.Web.MasterPages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// btnLinkSalir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnLinkSalir;
+        
+        /// <summary>
         /// ContentPlaceHolder_Principal_Base control.
         /// </summary>
         /// <remarks>
