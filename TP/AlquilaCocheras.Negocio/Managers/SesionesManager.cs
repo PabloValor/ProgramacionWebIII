@@ -10,12 +10,10 @@ namespace AlquilaCocheras.Negocio.Managers
         {
             var _usuarioService = new UsuarioService();
 
-            var existeUsuario = _usuarioService.ObtenerClientePorEmailYContrasena(mailUsuario, contrasena) != null;
+            var usuario = _usuarioService.ObtenerUsuarioPorEmailYContrasena(mailUsuario, contrasena);
 
-            if (existeUsuario)
+            if (usuario != null)
             {
-                var usuario = _usuarioService.ObtenerUsuarioPorEmail(mailUsuario);
-
                 VariblesSesionManager.Guardar(Constantes.USUARIO_LOGUEADO_ID, usuario.Id);
             }
             else

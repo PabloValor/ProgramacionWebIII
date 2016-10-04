@@ -1,6 +1,7 @@
 ﻿using System;
 using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Data.Enums;
+using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
 
 
@@ -40,28 +41,13 @@ namespace AlquilaCocheras.Web
                 try
                 {
                     _usuarioService.GuardarUsuario(usuario);
-
-                    switch (usuario.Perfil)
-                    {
-                        case TipoPerfilUsuario.Cliente:
-                            Response.Redirect("clientes/reservas.aspx");
-                            break;
-
-                        case TipoPerfilUsuario.Propietario:
-                            Response.Redirect("propietarios/reservas.aspx");
-                            break;
-
-                        default:
-                            Response.Redirect("default.aspx");
-                            break;
-                    }
                 }
                 catch (Exception ex)
                 {
                     lblResultado.Text = "Algo salió mal en la registración de usuario";
                 }
 
-                lblResultado.Text = "Registración exitosa, diríjase al <a href='#'>Login</a>";
+                lblResultado.Text = "Registración exitosa, diríjase al <a href='login.aspx'>Login</a>";
             }
         }
     }
