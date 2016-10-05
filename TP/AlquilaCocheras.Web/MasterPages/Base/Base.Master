@@ -125,5 +125,7 @@
         });
     </script>
     <script type="text/javascript" src="../../assets/js/dist/estacionalo.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQPxNBktoPayX_kX9a-VxtqkDEPgT9bR0&callback=initMap" async defer></script>
 </body>
 </html>

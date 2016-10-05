@@ -1,6 +1,17 @@
 .listado-reservas {
     margin-top: 50px;
-    .reserva {
-
+    .cochera {
+        color: gray;
+        font-size: 18px;
+        .card-content {
+            text-align: center;
+            .link-reservar {
+                font-size: 20px;
+            }
+        }
     }
+}
+
+#modal-mapa-contenedor {
+    height: 400px;
 }

@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="input-field col s12 center-align">
-                    <asp:Button ID="btnFiltrar" runat="server" Text="Buscar" ClientIDMode="Static" ValidationGroup="1" CssClass="btn" OnClick="btnFiltrar_Click" />
+                    <asp:Button ID="btnFiltrar" runat="server" Text="Buscar" ClientIDMode="Static" ValidationGroup="1" CssClass="waves-effect waves-light btn-large " OnClick="btnFiltrar_Click" />
                     <asp:Label ID="lblResultado" runat="server"></asp:Label>
                 </div>
 
@@ -88,24 +88,28 @@
                                 <asp:Repeater runat="server" ID="rResultadoCocherasDisponiblesFiltradas">
                                     <ItemTemplate>
                                         <div class="col s12 m6 l4">
-                                            <div class="card">
+                                            <div class="card cochera">
                                                 <div class="card-image waves-effect waves-block waves-light">
                                                     <img class="activator" src="<%# Eval("Imagen") %>">
                                                 </div>
                                                 <div class="card-content">
-                                                    <span class="card-title activator grey-text text-darken-4">Disponible<i class="material-icons right">more_vert</i></span>
-                                                    <p>
+                                                    <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+                                                    <p>Disponible!</p>
+                                                    <p class="center-align">
                                                         <%--<asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl="/clientes/confirmar-reserva.aspx?idcochera=123" Click="ConfirmarReserva">Reservar</asp:HyperLink>--%>
-                                                        <asp:LinkButton runat="server" ID="HyperLink1" OnClick="ConfirmarReserva">Reservar</asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="HyperLink1" OnClick="ConfirmarReserva" CssClass="link-reservar">Reservar</asp:LinkButton>
                                                     </p>
                                                 </div>
                                                 <div class="card-reveal">
-                                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                                    <%# Eval("NombrePropietario") %>
-                                                    <%# Eval("ApellidoPropietario") %>
-                                                    <%# Eval("PrecioPorHora") %>
-                                                    <%# Eval("Latitud") %>
-                                                    <%# Eval("Longitud") %>
+                                                    <span class="card-title grey-text text-darken-4">Datos de cochera<i class="material-icons right">close</i></span>
+                                                    <p>Propietario: <%# Eval("NombrePropietario") %> <%# Eval("ApellidoPropietario") %></p>
+                                                    <p>Precio por hora: <%# Eval("PrecioPorHora") %></p>
+
+                                                    <p class="center-align">
+                                                        <a class="waves-effect waves-light btn modal-trigger btn-modal-mapa" href="#modal1"
+                                                            data-latitud="<%# Eval("Latitud") %>"
+                                                            data-longitud="<%# Eval("Longitud") %>">Mapa</a>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -142,6 +146,12 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </section>--%>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div id="modal-mapa-contenedor"></div>
+        </div>
+    </div>
 
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
