@@ -3,6 +3,7 @@ using AlquilaCocheras.Data.Constantes;
 using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
+using System.Web;
 
 namespace AlquilaCocheras.Web.MasterPages
 {
@@ -29,12 +30,27 @@ namespace AlquilaCocheras.Web.MasterPages
                         VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
             }
         }
-        
+
+        //Cambiar de lugar despues
+        public String getPageName()
+        {
+            string[] arrResult = HttpContext.Current.Request.RawUrl.Split('/');
+            String result = arrResult[arrResult.GetUpperBound(0)];
+            arrResult = result.Split('?');
+            return arrResult[arrResult.GetLowerBound(0)];
+        }
+
         public void btnSalir(object sender, EventArgs e)
         {
             VariblesSesionManager.Eliminar(Constantes.USUARIO_LOGUEADO_ID);
             Usuario = null;
-            Response.Redirect("default.aspx", false);
+
+
+            if (getPageName() == "default.aspx") {
+                Response.Redirect("default.aspx");
+            } else {
+                Response.Redirect("../default.aspx");
+            }
         }
     }
 }
