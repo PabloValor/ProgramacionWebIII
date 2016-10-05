@@ -4,7 +4,32 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
     <asp:Label ID="label1" runat="server" Text="Período Disponible: "></asp:Label>
     <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
+
+     <div class="cocheras-validacion">
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaInicio" runat="server" ErrorMessage="Ingrese una Fecha de Inicio"
+             ControlToValidate="txtFechaInicio" Display="Dynamic" ValidationGroup="3">
+        </asp:RequiredFieldValidator>
+        <asp:CompareValidator ID="CompareValidatorFechaInicio" runat="server" ControlToValidate="txtFechaInicio" 
+            ErrorMessage="Entre una fecha de inicio valida - dd/mm/aaaa" Operator="DataTypeCheck" 
+            Type="Date" Display="Dynamic" ValidationGroup="3">
+        </asp:CompareValidator>
+    </div>
+
     <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static"></asp:TextBox>
 
-    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ClientIDMode="Static"/>   
+    <div class="cocheras-validacion">
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaFin" runat="server" ErrorMessage="Ingrese una Fecha de Fin"
+             ControlToValidate="txtFechaFin" Display="Dynamic" ValidationGroup="3">
+        </asp:RequiredFieldValidator>
+        <asp:CompareValidator ID="CompareValidatorFechaFin" runat="server" ControlToValidate="txtFechaFin" 
+            ErrorMessage="Entre una fecha de fin valida - dd/mm/aaaa" Operator="DataTypeCheck" Type="Date" 
+            Display="Dynamic" ValidationGroup="3">
+        </asp:CompareValidator>
+        <asp:CompareValidator ID="CompareValidatorFecha" ControlToCompare="txtFechaInicio"  ControlToValidate="txtFechaFin"
+             Type="Date" Operator="GreaterThanEqual" ErrorMessage="La fecha de inicio tiene que ser anterior a la fecha de fin"
+             runat="server" Display="Dynamic" ValidationGroup="3">
+        </asp:CompareValidator>
+    </div>
+
+    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ClientIDMode="Static" ValidationGroup="3"/>   
 </asp:Content>
