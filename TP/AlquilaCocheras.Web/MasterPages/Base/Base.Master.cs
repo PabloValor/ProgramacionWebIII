@@ -26,8 +26,7 @@ namespace AlquilaCocheras.Web.MasterPages
             if (SesionesManager.EsUsuarioLogueado())
             {
                 Usuario =
-                    _usuarioService.ObtenerUsuarioPorId(
-                        VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
+                    _usuarioService.ObtenerUsuarioPorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
             }
         }
 

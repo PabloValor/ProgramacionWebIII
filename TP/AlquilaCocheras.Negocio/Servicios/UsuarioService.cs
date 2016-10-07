@@ -1,4 +1,5 @@
-﻿using AlquilaCocheras.Data.Entidades;
+﻿using System;
+using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Data.Repositorios;
 
 namespace AlquilaCocheras.Negocio.Servicios
@@ -31,6 +32,7 @@ namespace AlquilaCocheras.Negocio.Servicios
         public Usuario ObtenerUsuarioPorId(int id)
         {
             var usuario = _usuariosRepositorio.ObtenerUsuarioPorId(id);
+
             return usuario;
         }
 

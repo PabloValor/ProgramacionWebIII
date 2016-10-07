@@ -24,9 +24,9 @@ namespace AlquilaCocheras.Negocio.Managers
 
         public static bool EsUsuarioLogueado()
         {
-            var idUsuario = VariblesSesionManager.Obtener<int?>(Constantes.USUARIO_LOGUEADO_ID);
+            var idUsuario = VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID);
 
-            return idUsuario != null && idUsuario.GetType() == typeof(int);
+            return idUsuario != 0;
         }
     }
 }

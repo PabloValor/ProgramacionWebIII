@@ -53,8 +53,8 @@ namespace AlquilaCocheras.Data.Repositorios
 
         public Propietario ObtenerPropietarioPorId(int id)
         {
-            var propietarios = _propietarios.FirstOrDefault(u => u.Id == id && u.Perfil == TipoPerfilUsuario.Propietario);
-            return propietarios;
+            var propietario = _propietarios.FirstOrDefault(u => u.Id == id && u.Perfil == TipoPerfilUsuario.Propietario);
+            return propietario;
         }
 
         public void GuardarUsuario(Usuario usuario)

@@ -12,7 +12,10 @@ namespace AlquilaCocheras.Negocio.Managers
         public static T Obtener<T>(string clave)
         {
             var valor = HttpContext.Current.Session[clave];
-            return (T) valor; 
+
+            if (valor is T) return (T) valor;
+
+            return default(T);
         }
 
         public static void Eliminar(string clave)
