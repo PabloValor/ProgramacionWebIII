@@ -4,7 +4,7 @@ namespace AlquilaCocheras.Negocio.Managers
 {
     public static class VariblesSesionManager
     {
-        public static void Guardar<T>(string clave, T valor)
+        public static void Guardar(string clave, object valor)
         {
             HttpContext.Current.Session[clave] = valor;
         }
