@@ -129,7 +129,7 @@
     </div>
 
     <asp:Label ID="label8" runat="server" Text="Tipo Vehículo: "></asp:Label>
-    <asp:ListBox ID="lbTipoVehiculo" SelectionMode="Multiple" runat="server" ClientIDMode="Static">
+    <asp:ListBox ID="lbTipoVehiculo" SelectionMode="Multiple" CssClass="lbTipoVehiculo" runat="server" ClientIDMode="Static">
         <asp:ListItem Value="0">Seleccione:</asp:ListItem>
         <asp:ListItem Value="1">Auto</asp:ListItem>
         <asp:ListItem Value="2">Pickup</asp:ListItem>
