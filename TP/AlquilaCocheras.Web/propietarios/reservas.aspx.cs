@@ -18,12 +18,17 @@ namespace AlquilaCocheras.Web.propietarios
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //_usuario = _usuarioService.ObtenerUsuarioPorId(VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID));
+            var idUsuario = VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID);
+            var _usuarioService = new UsuarioService();
 
-            //if (_usuario.Perfil != TipoPerfilUsuario.Propietario)
-            //{
-            //    Response.RedirectPermanent("/default.aspx");
-            //}
+            if (idUsuario != 0)
+            {
+                _usuario = _usuarioService.ObtenerUsuarioPorId(idUsuario);
+                if (_usuario == null || _usuario.Perfil != TipoPerfilUsuario.Propietario)
+                {
+                    Response.Redirect("../default.aspx");
+                }
+            }
         }
     }
 }
