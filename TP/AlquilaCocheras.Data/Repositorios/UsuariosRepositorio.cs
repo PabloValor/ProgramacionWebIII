@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Data.Enums;
@@ -67,6 +68,16 @@ namespace AlquilaCocheras.Data.Repositorios
             var usuario = ObtenerUsuarioPorId(idUsuario);
             return usuario;
 
+        }
+
+        public void ActualizarUsuario(Usuario usuarioActualizado)
+        {
+            var usuario = _usuarios.FirstOrDefault(u => u.Id == usuarioActualizado.Id);
+            
+            if (usuario == null) throw new Exception("Error: Usuario inexistente");
+
+            _usuarios.Remove(usuario);
+            _usuarios.Add(usuarioActualizado);
         }
 
         #endregion

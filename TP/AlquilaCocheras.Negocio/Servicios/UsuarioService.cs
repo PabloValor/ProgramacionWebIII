@@ -61,6 +61,11 @@ namespace AlquilaCocheras.Negocio.Servicios
             return usuario;
         }
 
+        public void ActualizarUsuario(Usuario usuario)
+        {
+            _usuariosRepositorio.ActualizarUsuario(usuario);
+        }
+
         #endregion
     }
 }

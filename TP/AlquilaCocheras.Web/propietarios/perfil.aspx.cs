@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using System.Web.UI.WebControls;
 using AlquilaCocheras.Data.Constantes;
 using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Data.Enums;
@@ -31,16 +32,47 @@ namespace AlquilaCocheras.Web.propietarios
             {
                 Response.Redirect("~/default.aspx");
             }
+
+            CargarFormulioPerfil();
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
+                MapearUsuario();
 
-                lblResultado.Text = "Operación exitosa";
+                try
+                {
+                    _usuarioService.ActualizarUsuario(_usuario);
+                    lblResultado.Text = "Operación exitosa";
+                }
+                catch (Exception ex)
+                {
 
+                    lblResultado.Text = ex.Message;
+                }
             }
         }
+
+        #region Métodos Privados
+
+        private void CargarFormulioPerfil()
+        {
+            txtNombre.Text = _usuario.Nombre;
+            txtApellido.Text = _usuario.Apellido;
+            txtEmail.Text = _usuario.Email;
+            rblPerfil.SelectedValue = ((int)_usuario.Perfil).ToString();
+        }
+
+        private void MapearUsuario()
+        {
+            _usuario.Nombre = txtNombre.Text;
+            _usuario.Apellido = txtApellido.Text;
+            _usuario.Password = txtContrasenia.Text;
+            _usuario.Perfil = rblPerfil.SelectedItem.Text.Contains("cliente") ? TipoPerfilUsuario.Cliente : TipoPerfilUsuario.Propietario;
+        }
+
+        #endregion
     }
 }
