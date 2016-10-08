@@ -7,7 +7,7 @@
     <asp:Label ID="label1" runat="server" Text="Ubicación: "></asp:Label>
     <asp:TextBox ID="txtUbicacion" runat="server" ClientIDMode="Static"></asp:TextBox>
    
-    <div class="cocheras-validacion">
+    <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorUbicacion" runat="server" ErrorMessage="Ingrese una Ubicacion" 
             ControlToValidate="txtUbicacion" Display="Dynamic" ValidationGroup="2">
         </asp:RequiredFieldValidator>
@@ -16,7 +16,7 @@
     <asp:Label ID="label2" runat="server" Text="Período Disponible: "></asp:Label>
     <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
    
-     <div class="cocheras-validacion">
+     <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaInicio" runat="server" ErrorMessage="Ingrese una Fecha de Inicio"
              ControlToValidate="txtFechaInicio" Display="Dynamic" ValidationGroup="2">
         </asp:RequiredFieldValidator>
@@ -28,7 +28,7 @@
           
     <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static"></asp:TextBox>
    
-    <div class="cocheras-validacion">
+    <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaFin" runat="server" ErrorMessage="Ingrese una Fecha de Fin"
              ControlToValidate="txtFechaFin" Display="Dynamic" ValidationGroup="2">
         </asp:RequiredFieldValidator>
@@ -45,7 +45,7 @@
     <asp:Label ID="label3" runat="server" Text="Horario Diario Disponible: "></asp:Label>
     <asp:TextBox ID="txtHorarioInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
    
-     <div class="cocheras-validacion">
+     <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorHorarioInicio" runat="server" ErrorMessage="Ingrese un Horario de Inicio" 
             ControlToValidate="txtHorarioInicio" Display="Dynamic" ValidationGroup="2">
         </asp:RequiredFieldValidator>
@@ -57,7 +57,7 @@
 
     <asp:TextBox ID="txtHorarioFin" runat="server" ClientIDMode="Static"></asp:TextBox>
     
-    <div class="cocheras-validacion">
+    <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorHorarioFin" runat="server" 
             ErrorMessage="Ingrese un Horario de Fin" ControlToValidate="txtHorarioFin" 
             Display="Dynamic" ValidationGroup="2">
@@ -75,7 +75,7 @@
     <asp:Label ID="label4" runat="server" Text="Descripción: "></asp:Label>
     <asp:TextBox ID="txtDescripcion" runat="server" ClientIDMode="Static"></asp:TextBox>
     
-    <div class="cocheras-validacion">
+    <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server"
              ErrorMessage="Ingrese una Descripcion" ControlToValidate="txtDescripcion"
              Display="Dynamic" ValidationGroup="2">
@@ -85,7 +85,7 @@
     <asp:Label ID="label5" runat="server" Text="Latitud: "></asp:Label>
     <asp:TextBox ID="txtLatitud" runat="server" ClientIDMode="Static"></asp:TextBox>
    
-     <div class="cocheras-validacion">
+     <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorLatitud" runat="server"
              ErrorMessage="Ingrese una Latitud" ControlToValidate="txtLatitud"
              Display="Dynamic" ValidationGroup="2">
@@ -100,7 +100,7 @@
     <asp:Label ID="label6" runat="server" Text="Longitud: "></asp:Label>
     <asp:TextBox ID="txtLongitud" runat="server" ClientIDMode="Static"></asp:TextBox>
     
-    <div class="cocheras-validacion">
+    <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorLongitud" runat="server" ErrorMessage="Ingrese una Longitud"
              ControlToValidate="txtLongitud" Display="Dynamic" ValidationGroup="2">
         </asp:RequiredFieldValidator>
@@ -113,7 +113,7 @@
     <asp:Label ID="label7" runat="server" Text="Metros Cuadrados: "></asp:Label>
     <asp:TextBox ID="txtMetrosCuadrados" runat="server" ClientIDMode="Static"></asp:TextBox>
    
-    <div class="cocheras-validacion">
+    <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMetrosCuadrados" runat="server"
              ErrorMessage="Ingrese Metros Cuadrados" ControlToValidate="txtMetrosCuadrados"
              Display="Dynamic" ValidationGroup="2">
@@ -137,7 +137,7 @@
         <asp:ListItem Value="4">Moto</asp:ListItem>
     </asp:ListBox>
     
-    <div class="cocheras-validacion">
+    <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorTipoVehiculo" runat="server"
              ErrorMessage="Ingrese un Tipo de Vehiculo" ControlToValidate="lbTipoVehiculo"
              Display="Dynamic" ValidationGroup="2">
@@ -147,7 +147,7 @@
     <asp:Label ID="label9" runat="server" Text="Precio por Hora: "></asp:Label>
     <asp:TextBox ID="txtPrecioHora" runat="server" ClientIDMode="Static"></asp:TextBox>
    
-    <div class="cocheras-validacion">
+    <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrecioHora" runat="server" ErrorMessage="Ingrese un Precio" 
             ControlToValidate="txtPrecioHora" Display="Dynamic" ValidationGroup="2">
         </asp:RequiredFieldValidator>
@@ -164,7 +164,7 @@
     <asp:Label ID="label10" runat="server" Text="Foto: "></asp:Label>
     <asp:FileUpload ID="fuFoto" runat="server" ClientIDMode="Static" />
     
-    <div class="cocheras-validacion">
+    <div class="mensaje-error-validacion">
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorFoto" runat="server" ErrorMessage="Ingrese una Foto"
              ControlToValidate="fuFoto" Display="Dynamic" ValidationGroup="2">
         </asp:RequiredFieldValidator>
