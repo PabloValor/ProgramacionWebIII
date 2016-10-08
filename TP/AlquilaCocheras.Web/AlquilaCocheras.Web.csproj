@@ -84,6 +84,7 @@
     <Content Include="assets\js\shared\base-master.js" />
     <Content Include="assets\js\shared\layout-base.js" />
     <Content Include="assets\js\vendor\googleMaps.js" />
+    <Content Include="clientes\puntuacion.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="clientes\confirmar-reserva.aspx.designer.cs">
       <DependentUpon>confirmar-reserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="clientes\puntuacion.aspx.cs">
+      <DependentUpon>puntuacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clientes\puntuacion.aspx.designer.cs">
+      <DependentUpon>puntuacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="clientes\reservar.aspx.cs">
       <DependentUpon>reservar.aspx</DependentUpon>

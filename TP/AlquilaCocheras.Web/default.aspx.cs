@@ -11,7 +11,7 @@ namespace AlquilaCocheras.Web
 {
     public partial class _default : System.Web.UI.Page
     {
-            
+
         #region Miembros
 
         private UsuarioService _usuarioService = new UsuarioService();
@@ -20,17 +20,15 @@ namespace AlquilaCocheras.Web
 
         #endregion
 
-        public int CantidadCocherasDisponibles { get; set; }
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
             _usuario = _usuarioService.ObtenerUsuarioLogueado();
 
-                if (_usuario != null)
-                {
-                    Response.Redirect(_usuario.Perfil == TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
-                }
+            if (_usuario != null)
+            {
+                Response.Redirect(_usuario.Perfil == TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
+            }
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
@@ -39,7 +37,7 @@ namespace AlquilaCocheras.Web
 
             _listadoCocherasDisponibles = cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text, txtFechaInicio.Text, txtFechaFin.Text);
 
-            CantidadCocherasDisponibles = _listadoCocherasDisponibles.Count;
+            CantidadCocherasDisponibles.Text = _listadoCocherasDisponibles.Count > 0 ? string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocherasDisponibles.Count) : "No se han encontrado cocheras";
 
             CargarListaFiltradaCocherasDisponibles();
         }

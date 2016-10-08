@@ -72,19 +72,8 @@
                     <div class="col s12">
                         <div class="listado-reservas">
                             <div class="row">
-                                <% if (CantidadCocherasDisponibles > 0)
-                                   { 
-                                %>
-                                <h3>Se encontraron <%= CantidadCocherasDisponibles %> cocheras disponibles</h3>
-                                <%    
-                                   }
-                                   else
-                                   {
-                                %>
-                                <h3>No se encontraron cocheras disponibles para esta búsqueda</h3>
-                                <%
-                                   }
-                                %>
+                                <h3><asp:Label runat="server" ID="CantidadCocherasDisponibles"></asp:Label></h3>
+
                                 <asp:Repeater runat="server" ID="rResultadoCocherasDisponiblesFiltradas">
                                     <ItemTemplate>
                                         <div class="col s12 m6 l4">
@@ -146,12 +135,14 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </section>--%>
-    <!-- Modal Structure -->
+
+    <!-- Modal -->
     <div id="modal1" class="modal">
         <div class="modal-content">
             <div id="modal-mapa-contenedor"></div>
         </div>
     </div>
+    <!-- Fin Modal -->
 
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
