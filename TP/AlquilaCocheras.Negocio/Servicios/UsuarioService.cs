@@ -1,6 +1,6 @@
-﻿using System;
-using AlquilaCocheras.Data.Entidades;
+﻿using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Data.Repositorios;
+using AlquilaCocheras.Negocio.Managers;
 
 namespace AlquilaCocheras.Negocio.Servicios
 {
@@ -51,6 +51,14 @@ namespace AlquilaCocheras.Negocio.Servicios
         public void GuardarUsuario(Usuario usuario)
         {
             _usuariosRepositorio.GuardarUsuario(usuario);
+        }
+
+        public Usuario ObtenerUsuarioLogueado()
+        {
+            var idUsuario = VariblesSesionManager.Obtener<int>(Data.Constantes.Constantes.USUARIO_LOGUEADO_ID);
+            var usuario = _usuariosRepositorio.ObtenerUsuarioLogueado(idUsuario);
+
+            return usuario;
         }
 
         #endregion

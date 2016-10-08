@@ -33,8 +33,7 @@ namespace AlquilaCocheras.Web.clientes
                 Response.RedirectPermanent("/login.aspx");
             }
 
-            var idUsuario = VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID);
-            _usuario = _usuarioService.ObtenerUsuarioPorId(idUsuario);
+            _usuario = _usuarioService.ObtenerUsuarioLogueado();
 
             if (_usuario != null &&  _usuario.Perfil != TipoPerfilUsuario.Cliente)
             {

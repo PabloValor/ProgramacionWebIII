@@ -14,7 +14,7 @@ namespace AlquilaCocheras.Web
             
         #region Miembros
 
-        private UsuarioService _usuarioService;
+        private UsuarioService _usuarioService = new UsuarioService();
         private Usuario _usuario;
         private List<Cochera> _listadoCocherasDisponibles;
 
@@ -25,17 +25,12 @@ namespace AlquilaCocheras.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var idUsuario = VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID);
-            var _usuarioService = new UsuarioService();
+            _usuario = _usuarioService.ObtenerUsuarioLogueado();
 
-            if (idUsuario != 0)
-            {
-                _usuario = _usuarioService.ObtenerUsuarioPorId(idUsuario);
                 if (_usuario != null)
                 {
                     Response.Redirect(_usuario.Perfil == TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
                 }
-            }
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)

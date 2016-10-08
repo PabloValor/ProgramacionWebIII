@@ -62,6 +62,13 @@ namespace AlquilaCocheras.Data.Repositorios
             _usuarios.Add(usuario);
         }
 
+        public Usuario ObtenerUsuarioLogueado(int idUsuario)
+        {
+            var usuario = ObtenerUsuarioPorId(idUsuario);
+            return usuario;
+
+        }
+
         #endregion
 
         #region Métodos Privados
