@@ -1,8 +1,6 @@
 ﻿using System;
-using AlquilaCocheras.Data.Constantes;
 using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Data.Enums;
-using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
 
 namespace AlquilaCocheras.Web.propietarios
@@ -11,23 +9,17 @@ namespace AlquilaCocheras.Web.propietarios
     {
         #region Miembros
 
-        private UsuarioService _usuarioService;
+        private UsuarioService _usuarioService = new UsuarioService();
         private Usuario _usuario;
 
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var idUsuario = VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID);
-            var _usuarioService = new UsuarioService();
-
-            if (idUsuario != 0)
+            _usuario = _usuarioService.ObtenerUsuarioLogueado();
+            if (_usuario == null || _usuario.Perfil != TipoPerfilUsuario.Propietario)
             {
-                _usuario = _usuarioService.ObtenerUsuarioPorId(idUsuario);
-                if (_usuario == null || _usuario.Perfil != TipoPerfilUsuario.Propietario)
-                {
-                    Response.Redirect("../default.aspx");
-                }
+                Response.Redirect("~/default.aspx");
             }
         }
 

@@ -8,9 +8,18 @@ namespace AlquilaCocheras.Web
 {
     public partial class login : System.Web.UI.Page
     {
-        public string MensajeError { get; set; }
+        #region Propiedades
+
+        public string MensajeError { get; private set; }
+
+        #endregion
+
+        #region Miembros
 
         private UsuarioService _usuarioService = new UsuarioService();
+
+        #endregion
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,9 +37,9 @@ namespace AlquilaCocheras.Web
 
                 try
                 {
-                    SesionesManager.LoguearUsuario(txtEmail.Text, txtContrasenia.Text);
-
                     var usuario = _usuarioService.ObtenerUsuarioPorEmailYContrasena(txtEmail.Text, txtContrasenia.Text);
+
+                    SesionesManager.LoguearUsuario(usuario);
 
                     urlRetorno = VariblesSesionManager.Obtener<string>(Constantes.URL_RETORNO);
 
@@ -41,7 +50,7 @@ namespace AlquilaCocheras.Web
                     }
                     else
                     {
-                        var urlRedirect = usuario.Perfil == TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx";
+                        var urlRedirect = usuario.Perfil == TipoPerfilUsuario.Cliente ? "~/clientes/reservas.aspx" : "~/propietarios/reservas.aspx";
                         Response.Redirect(urlRedirect);
                     }
                 }
@@ -52,7 +61,7 @@ namespace AlquilaCocheras.Web
             }
             else
             {
-                Response.Redirect("/default.aspx");
+                Response.Redirect("~/default.aspx");
             }
         }
     }
