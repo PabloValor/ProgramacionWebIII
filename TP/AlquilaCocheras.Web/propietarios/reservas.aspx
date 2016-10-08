@@ -29,7 +29,11 @@
              Type="Date" Operator="GreaterThanEqual" ErrorMessage="La fecha de inicio tiene que ser anterior a la fecha de fin"
              runat="server" Display="Dynamic" ValidationGroup="3">
         </asp:CompareValidator>
+        <asp:CustomValidator ID="CustomValidatorFecha" runat="server" 
+            ErrorMessage="La diferencia entre la fecha de inicio y fin no debe ser mayor a 90 dias" OnServerValidate="CustomValidatorFecha_ServerValidate" ValidationGroup="3">
+        </asp:CustomValidator>
     </div>
 
-    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ClientIDMode="Static" ValidationGroup="3"/>   
+    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ClientIDMode="Static" ValidationGroup="3" OnClick="btnFiltrar_Click"/> 
+    
 </asp:Content>

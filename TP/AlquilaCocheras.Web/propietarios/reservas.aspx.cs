@@ -32,5 +32,23 @@ namespace AlquilaCocheras.Web.propietarios
                 Response.Redirect("~/default.aspx");
             }
         }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+
+            if (Page.IsValid) {
+
+
+            }
+        }
+
+        protected void CustomValidatorFecha_ServerValidate(object source, System.Web.UI.WebControls.ServerValidateEventArgs args)
+        {
+            DateTime txtMyDateInicio = DateTime.Parse(txtFechaInicio.Text);
+            DateTime txtMyDateFin = DateTime.Parse(txtFechaFin.Text);
+
+            args.IsValid = (txtMyDateFin - txtMyDateInicio).TotalDays < 90;
+
+        }
     }
 }
