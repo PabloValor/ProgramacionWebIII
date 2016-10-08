@@ -173,5 +173,12 @@
     <asp:Label ID="lblResultado" runat="server"></asp:Label>
     <asp:Button ID="btnCrearCochera" runat="server" Text="Crear Cochera" ClientIDMode="Static" OnClick="btnCrearCochera_Click" ValidationGroup="2"/>   
 
-    
+
+    <!-- despues cambialo de lugar pablo -->
+    <style>
+        #lbTipoVehiculo {
+            display:inline-block;
+        }
+
+    </style>
 </asp:Content>
