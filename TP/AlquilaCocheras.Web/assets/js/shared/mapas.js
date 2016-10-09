@@ -1,4 +1,4 @@
-﻿var LayoutBase = function () {
+﻿var Mapas = function () {
     'use strict';
 
     this.cargar = function () {

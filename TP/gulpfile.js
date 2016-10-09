@@ -25,7 +25,7 @@ var paths = {
 		},
 		componentes: {
 			baseMaster: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\shared\\base-master.js',
-			baseLayout: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\shared\\layout-base.js'
+			mapas: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\shared\\mapas.js'
 		},
 		dist: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\dist'
 	},
@@ -59,7 +59,7 @@ gulp.task('js.vendor', function(){
 gulp.task('js.componentes', function(){
 	return gulp.src([
 		paths.js.componentes.baseMaster,
-		paths.js.componentes.baseLayout
+		paths.js.componentes.mapas
 		])
 		.pipe(concat('componentes.js'))
 		//.pipe(jslint({this: true}))

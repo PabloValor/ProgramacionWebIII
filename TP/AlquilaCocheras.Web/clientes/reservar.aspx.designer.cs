@@ -13,48 +13,12 @@ namespace AlquilaCocheras.Web.clientes {
     public partial class reservar {
         
         /// <summary>
-        /// label1 control.
+        /// UCFormularioBusqueda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label1;
-        
-        /// <summary>
-        /// txtUbicacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUbicacion;
-        
-        /// <summary>
-        /// btnFiltrar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFiltrar;
-        
-        /// <summary>
-        /// lblResultado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultado;
-        
-        /// <summary>
-        /// aConfirmar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink aConfirmar;
+        protected global::AlquilaCocheras.Web.userControls.UCFormularioBusqueda UCFormularioBusqueda;
     }
 }

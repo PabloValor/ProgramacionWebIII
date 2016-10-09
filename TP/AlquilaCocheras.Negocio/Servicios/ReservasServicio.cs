@@ -54,7 +54,7 @@ namespace AlquilaCocheras.Negocio.Servicios
 
             var reserva = new Reserva
             {
-                Cliente = cliente,
+                IdCliente = cliente.Id,
                 Cochera = cochera,
                 FechaInicio = fechaInicio,
                 FechaFin = fechaFin

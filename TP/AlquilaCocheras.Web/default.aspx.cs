@@ -30,24 +30,5 @@ namespace AlquilaCocheras.Web
                 Response.Redirect(_usuario.Perfil == TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
             }
         }
-
-        protected void btnFiltrar_Click(object sender, EventArgs e)
-        {
-            var cocherasServicio = new CocherasServicio();
-
-            _listadoCocherasDisponibles = cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text, txtFechaInicio.Text, txtFechaFin.Text);
-
-            CantidadCocherasDisponibles.Text = _listadoCocherasDisponibles.Count > 0 ? 
-                string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocherasDisponibles.Count)
-                : "No se encontraron resultados";
-
-            CargarListaFiltradaCocherasDisponibles();
-        }
-
-        private void CargarListaFiltradaCocherasDisponibles()
-        {
-            rResultadoCocherasDisponiblesFiltradas.DataSource = CocherasMap.Mapear(_listadoCocherasDisponibles);
-            rResultadoCocherasDisponiblesFiltradas.DataBind();
-        }
     }
 }
