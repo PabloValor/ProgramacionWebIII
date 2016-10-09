@@ -91,7 +91,7 @@
                                                 <div class="card-reveal">
                                                     <span class="card-title grey-text text-darken-4">Datos de cochera<i class="material-icons right">close</i></span>
                                                     <p>Propietario: <%# Eval("NombrePropietario") %> <%# Eval("ApellidoPropietario") %></p>
-                                                    <p>Precio por hora: <%# Eval("PrecioPorHora") %></p>
+                                                    <p>Precio por hora: <%# Eval("PrecioPorHora", "${0}.-") %></p>
                                                     <p>Puntaje Promedio <%# Eval("PuntajePromedioCochera") %></p>
 
                                                     <p class="center-align">

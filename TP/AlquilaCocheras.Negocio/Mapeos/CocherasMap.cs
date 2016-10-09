@@ -16,6 +16,7 @@ namespace AlquilaCocheras.Negocio.Mapeos
                     Id = r.Id,
                     NombrePropietario = r.Propietario.Nombre,
                     ApellidoPropietario = r.Propietario.Apellido,
+                    PrecioPorHora = r.PrecioPorHora,
                     Imagen = r.Imagen,
                     Latitud = r.Latitud,
                     Longitud = r.Longitud,
