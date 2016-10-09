@@ -37,7 +37,9 @@ namespace AlquilaCocheras.Web
 
             _listadoCocherasDisponibles = cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text, txtFechaInicio.Text, txtFechaFin.Text);
 
-            CantidadCocherasDisponibles.Text = _listadoCocherasDisponibles.Count > 0 ? string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocherasDisponibles.Count) : "No se han encontrado cocheras";
+            CantidadCocherasDisponibles.Text = _listadoCocherasDisponibles.Count > 0 ? 
+                string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocherasDisponibles.Count)
+                : "No se encontraron resultados";
 
             CargarListaFiltradaCocherasDisponibles();
         }
@@ -46,19 +48,6 @@ namespace AlquilaCocheras.Web
         {
             rResultadoCocherasDisponiblesFiltradas.DataSource = CocherasMap.Mapear(_listadoCocherasDisponibles);
             rResultadoCocherasDisponiblesFiltradas.DataBind();
-        }
-
-        public void ConfirmarReserva(object sender, EventArgs e)
-        {
-            if (!SesionesManager.EsUsuarioLogueado())
-            {
-                VariblesSesionManager.Guardar(Constantes.URL_RETORNO, "/clientes/confirmar-reserva.aspx?idcochera=123");
-                Response.Redirect("login.aspx");
-            }
-            else
-            {
-                Response.Redirect("/clientes/confirmar-reserva.aspx?idcochera=123");
-            }
         }
     }
 }

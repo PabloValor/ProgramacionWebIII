@@ -11,7 +11,7 @@
             
             <div class="center-align">
 
-                <asp:Button ID="btnRedireccionarHome" runat="server" CssClass="btn btn-success" Text="Volver al home" ClientIDMode="Static" OnClick="btnRedireccionarHome_Click" />
+                <asp:Button ID="btnRedireccionarHome" runat="server" CssClass="btn btn-success" Text="Volver" ClientIDMode="Static" OnClick="btnRedireccionarHome_Click" />
             </div>
         </div>
     </div>
