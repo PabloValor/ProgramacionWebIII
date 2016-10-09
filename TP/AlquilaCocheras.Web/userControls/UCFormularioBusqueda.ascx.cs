@@ -22,6 +22,7 @@ namespace AlquilaCocheras.Web.userControls
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
             if (Page.IsValid) { 
+            _listadoCocherasDisponibles = new List<Cochera>();
             var cocherasServicio = new CocherasServicio();
 
             if (txtUbicacion.Text.ToLower() == "haedo")
@@ -37,6 +38,9 @@ namespace AlquilaCocheras.Web.userControls
             else {
 
                 CantidadCocherasDisponibles.Text = "No se encontraron resultados";
+
+                rResultadoCocherasDisponiblesFiltradas.DataSource = CocherasMap.Mapear(_listadoCocherasDisponibles);
+                rResultadoCocherasDisponiblesFiltradas.DataBind();
                 
             }
 
