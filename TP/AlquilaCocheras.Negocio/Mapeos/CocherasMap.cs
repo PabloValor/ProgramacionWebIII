@@ -20,7 +20,7 @@ namespace AlquilaCocheras.Negocio.Mapeos
                     Imagen = r.Imagen,
                     Latitud = r.Latitud,
                     Longitud = r.Longitud,
-                    PuntajePromedioCochera = Math.Round((r.Puntaje.PuntajeTotal / r.Puntaje.CantidadVotos), 2)
+                    PuntajePromedioCochera = Math.Round((r.Puntaje.PuntajeTotal / r.Puntaje.CantidadVotos), 2),
                 }
                 ).ToList();
         }

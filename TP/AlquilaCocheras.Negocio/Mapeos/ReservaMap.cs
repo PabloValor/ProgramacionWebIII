@@ -32,7 +32,8 @@ namespace AlquilaCocheras.Negocio.Mapeos
                 PrecioFinal = r.Cochera.PrecioPorHora * r.CantidadHoras,
                 Puntuacion = 1,
                 FechaInicio = DateTime.Now.ToString("dd/MM/yyyy"),
-                FechaFin = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy")
+                FechaFin = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy"),
+                EsReservaYaUtilizada = DateTime.Today.AddDays(1) > DateTime.Today ? "" : "gray"  // (!) Validación de fechas hardcodeada
             }
             ).ToList();
         }

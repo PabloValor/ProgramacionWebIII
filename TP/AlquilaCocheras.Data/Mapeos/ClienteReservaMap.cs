@@ -9,5 +9,6 @@ namespace AlquilaCocheras.Data.Mapeos
         public string Horario { get; set; }
         public double PrecioFinal { get; set; }
         public double Puntuacion { get; set; }
+        public string EsReservaYaUtilizada { get; set; }
     }
 }

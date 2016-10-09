@@ -11,7 +11,7 @@
             <asp:Repeater runat="server" ID="rpReservas">
                 <ItemTemplate>
                     <div class="col s12 m6 l4">
-                        <div class="card">
+                        <div class="card <%# Eval("EsReservaYaUtilizada") %>">
                             <div class="card-content">
                                 <p>Fecha Inicio: <%# Eval("FechaInicio") %></p>
                                 <p>Fecha Fin: <%# Eval("FechaFin") %></p>
