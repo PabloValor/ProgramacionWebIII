@@ -54,6 +54,10 @@ namespace AlquilaCocheras.Web.propietarios
                 }
             }
         }
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/default.aspx");
+        }
 
         #region Métodos Privados
 

@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
 <div class="contenido container-padding-top cliente-reservar">
-    <h2 class="titulo-pagina center-align">Mis reservas</h2>
+    <h2 class="titulo-pagina center-align">Reservas</h2>
     <div class="container" id="form-buscador-servicio">
         <div class="row">
 

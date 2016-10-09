@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
     <div class="container container-padding-top">
-        <h2 class="titulo-pagina center-align">Reservas</h2>
+        <h2 class="titulo-pagina center-align">Mis Reservas</h2>
 
         <div class="row">
             <asp:Repeater runat="server" ID="rpReservas">

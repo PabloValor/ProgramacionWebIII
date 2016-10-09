@@ -9,7 +9,7 @@
         <div class="formulario">
             <div class="row">
                 <div class="input-field col s12 m6">
-                    <i class="material-icons prefix">pin_drop</i>
+                    <i class="material-icons prefix">account_circle</i>
                     <asp:TextBox ID="txtNombre" runat="server" ClientIDMode="Static"></asp:TextBox>
                     <label for="txtNombre">Nombre</label>
 
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="input-field col s12 m6">
-                    <i class="material-icons prefix">pin_drop</i>
+                    <i class="material-icons prefix">account_circle</i>
                     <asp:TextBox ID="txtApellido" runat="server" ClientIDMode="Static"></asp:TextBox>
                     <label for="txtApellido">Apellido</label>
 
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">pin_drop</i>
+                    <i class="material-icons prefix">markunread</i>
                     <asp:TextBox ID="txtEmail" runat="server" ClientIDMode="Static" ReadOnly="true"></asp:TextBox>
                     <label for="txtEmail">E-mail</label>
 
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="input-field col s12 m6">
-                    <i class="material-icons prefix">pin_drop</i>
+                    <i class="material-icons prefix">fingerprint</i>
                     <asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
                     <label for="txtContrasenia"></label>
 
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="input-field col s12 m6">
-                    <i class="material-icons prefix">pin_drop</i>
+                    <i class="material-icons prefix">fingerprint</i>
                     <asp:TextBox ID="txtConfContrasenia" runat="server" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
                     <label for="txtConfContrasenia"></label>
 
@@ -121,7 +121,7 @@
             <div class="row">
                 <div class="col s12">
                     <div class="center-align">
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" CssClass="btn" />
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" CssClass="btn" OnClick="btnCancelar_Click" />
                         <asp:Button ID="btnActualizar" runat="server" Text="Actualizar perfil" ClientIDMode="Static" OnClick="btnActualizar_Click" ValidationGroup="3" CssClass="btn" />
                     </div>
                 </div>
