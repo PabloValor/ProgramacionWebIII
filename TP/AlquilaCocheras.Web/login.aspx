@@ -35,10 +35,11 @@
                     <asp:Label ID="lblResultado" runat="server"><%= MensajeError %></asp:Label>
                 </div>
                 <div class="center-align">
-                    <div class="col s12">
-                        <asp:Button ID="btnLogin" runat="server" Text="Ingresar" ClientIDMode="Static" OnClick="btnLogin_Click" />
-                        <br />
-                        <a href="/registracion.aspx">Registrarse</a>
+                    <div class="row">
+                        <div class="col s12">
+                            <a href="/registracion.aspx" class="btn">Registrarse</a>
+                            <asp:Button ID="btnLogin" runat="server" Text="Ingresar" ClientIDMode="Static" OnClick="btnLogin_Click" CssClass="btn" />
+                        </div>
                     </div>
                 </div>
             </div>
