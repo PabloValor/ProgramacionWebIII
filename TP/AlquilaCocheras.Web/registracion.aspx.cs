@@ -42,7 +42,7 @@ namespace AlquilaCocheras.Web
                 {
                     _usuarioService.GuardarUsuario(usuario);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     lblResultado.Text = "Algo salió mal en la registración de usuario";
                 }

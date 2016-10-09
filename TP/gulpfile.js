@@ -21,7 +21,8 @@ var paths = {
 		src: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js',
 		vendor: {
 			jquery: BASE_PATH + 'bower_components\\jquery\\dist\\jquery.js',
-			materialize: BASE_PATH + 'bower_components\\materialize\\dist\\js\\materialize.js'
+			materialize: BASE_PATH + 'bower_components\\materialize\\dist\\js\\materialize.js',
+			jqueryMask: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\vendor\\jquery.mask.js'
 		},
 		componentes: {
 			baseMaster: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\shared\\base-master.js',
@@ -50,7 +51,8 @@ gulp.task('css', function () {
 gulp.task('js.vendor', function(){
 	return gulp.src([
 		paths.js.vendor.jquery,
-		paths.js.vendor.materialize
+		paths.js.vendor.materialize,
+		paths.js.vendor.jqueryMask
 		])
 		.pipe(concat('vendors.js'))
 		.pipe(gulp.dest(paths.js.dist))

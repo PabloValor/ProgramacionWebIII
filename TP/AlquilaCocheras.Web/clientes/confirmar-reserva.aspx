@@ -31,7 +31,7 @@
         </div>
 
         <asp:Label ID="label2" runat="server" Text="Fecha Inicio"></asp:Label>
-        <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static" Text="05/10/2016"></asp:TextBox>
+        <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static" Text="05/10/2016" CssClass="fecha"></asp:TextBox>
 
         <div class="cocheras-validacion">
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaInicio" runat="server" ErrorMessage="Ingrese una Fecha de Inicio"
@@ -44,7 +44,7 @@
         </div>
 
         <asp:Label ID="label4" runat="server" Text="Fecha Fin"></asp:Label>
-        <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static" Text="07/10/2016"></asp:TextBox>
+        <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static" Text="07/10/2016" CssClass="fecha"></asp:TextBox>
 
         <div class="cocheras-validacion">
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaFin" runat="server" ErrorMessage="Ingrese una Fecha de Fin"
@@ -61,7 +61,7 @@
         </div>
 
         <asp:Label ID="label3" runat="server" Text="Hora de Entrada"></asp:Label>
-        <asp:TextBox ID="txtHorarioInicio" runat="server" ClientIDMode="Static" Text="10:00"></asp:TextBox>
+        <asp:TextBox ID="txtHorarioInicio" runat="server" ClientIDMode="Static" Text="10:00" CssClass="hora"></asp:TextBox>
 
         <div class="cocheras-validacion">
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorHorarioInicio" runat="server" ErrorMessage="Ingrese un Horario de Inicio"
@@ -74,7 +74,7 @@
         </div>
 
         <asp:Label ID="label1" runat="server" Text="Hora de Salida"></asp:Label>
-        <asp:TextBox ID="txtHorarioFin" runat="server" ClientIDMode="Static" Text="15:00"></asp:TextBox>
+        <asp:TextBox ID="txtHorarioFin" runat="server" ClientIDMode="Static" Text="15:00" CssClass="hora"></asp:TextBox>
 
         <div class="cocheras-validacion">
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorHorarioFin" runat="server"
@@ -98,7 +98,7 @@
                 </div>
             </div>
         </asp:Label>
-        <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar Reserva" ClientIDMode="Static" OnClick="btnConfirmar_Click" />
-        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" OnClick="btnCancelar_Click" />
+        <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar Reserva" ClientIDMode="Static" OnClick="btnConfirmar_Click" CssClass="btn" />
+        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" ClientIDMode="Static" OnClick="btnCancelar_Click" CssClass="btn"/>
     </div>
 </asp:Content>

@@ -25,7 +25,7 @@ namespace AlquilaCocheras.Web
         {
             if (SesionesManager.EsUsuarioLogueado())
             {
-                Response.Redirect("default.aspx");
+                Response.Redirect("~/default.aspx");
             }
         }
 

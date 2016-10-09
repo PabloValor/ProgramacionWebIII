@@ -8,7 +8,7 @@
             var map = new google.maps.Map(document.getElementById('modal-mapa-contenedor'), {
                 center: { lat: lat, lng: lon },
                 scrollwheel: false,
-                zoom: 11
+                zoom: 14
             });
         };
 

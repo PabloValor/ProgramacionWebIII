@@ -82,8 +82,9 @@
     <Content Include="assets\js\dist\estacionalo.min.js" />
     <Content Include="assets\js\dist\vendors.js" />
     <Content Include="assets\js\shared\base-master.js" />
-    <Content Include="assets\js\shared\layout-base.js" />
+    <Content Include="assets\js\shared\mapas.js" />
     <Content Include="assets\js\vendor\googleMaps.js" />
+    <Content Include="assets\js\vendor\jquery.mask.js" />
     <Content Include="clientes\puntuacion.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
