@@ -4,7 +4,27 @@
     <title>Estacionalo | Mis Reservas</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
+    <div class="container container-padding-top">
+        <h2 class="titulo-pagina center-align">Reservas</h2>
 
+        <div class="row">
+            <asp:Repeater runat="server" ID="rpReservas">
+                <ItemTemplate>
+                    <div class="col s12 m6 l4">
+                        <div class="card">
+                            <div class="card-content">
+                                <p>Fecha Inicio: <%# Eval("FechaInicio") %></p>
+                                <p>Fecha Fin: <%# Eval("FechaFin") %></p>
+                                <p>Horario: <%# Eval("Horario") %></p>
+                                <p>Precio Final: <%# Eval("PrecioFinal") %></p>
+                                <p>Puntuación: <%# Eval("Puntuacion") %></p>
+                            </div>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+    </div>
     <%--    LISTADO DE RESERVAS (gridview, repeater o datalist)
         
             fecha inicio.
@@ -13,7 +33,7 @@
             precio total.
             puntuación 
         
-        --%>
+    --%>
     <asp:HyperLink ID="aConfirmar" runat="server" ClientIDMode="Static" NavigateUrl="/clientes/confirmar-reserva.aspx?idcochera=123">Reservar</asp:HyperLink>
 
 

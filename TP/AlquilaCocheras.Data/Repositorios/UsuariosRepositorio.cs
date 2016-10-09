@@ -116,6 +116,8 @@ namespace AlquilaCocheras.Data.Repositorios
 
         private List<Cliente> GenerarClientesMock()
         {
+            var clientes = new List<Cliente>();
+
             var cliente = new Cliente()
             {
                 Nombre = "José",
@@ -125,13 +127,57 @@ namespace AlquilaCocheras.Data.Repositorios
                 Password = "Password1",
                 Id = 1,
                 Perfil = TipoPerfilUsuario.Cliente,
-                Reservas = new List<Reserva>()
+                Reservas = new List<Reserva>
+                {
+                    new Reserva
+                    {
+                        CantidadHoras = 155,
+                        FechaInicio = new DateTime(),
+                        FechaFin = new DateTime().AddDays(1),
+                        Cochera = new Cochera
+                        {
+                            PrecioPorHora = 10
+                        }
+                    },
+                    new Reserva
+                    {
+                        CantidadHoras = 155,
+                        FechaInicio = new DateTime(),
+                        FechaFin = new DateTime().AddDays(1),
+                        Cochera = new Cochera
+                        {
+                            PrecioPorHora = 10
+                        }
+                    },
+                    new Reserva
+                    {
+                        CantidadHoras = 155,
+                        FechaInicio = new DateTime(),
+                        FechaFin = new DateTime().AddDays(1),
+                        Cochera = new Cochera
+                        {
+                            PrecioPorHora = 10
+                        }
+                    },
+                    new Reserva
+                    {
+                        CantidadHoras = 155,
+                        FechaInicio = new DateTime(),
+                        FechaFin = new DateTime().AddDays(1),
+                        Cochera = new Cochera
+                        {
+                            PrecioPorHora = 10
+                        }
+                    }
+                }
             };
 
-            return new List<Cliente>
+            for (int i = 0; i < 5; i++)
             {
-                cliente
-            };
+                clientes.Add(cliente);    
+            }
+
+            return clientes;
         }
 
         private List<Propietario> GenerarPropietariosMock()

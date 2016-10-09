@@ -4,6 +4,7 @@ using AlquilaCocheras.Data.Constantes;
 using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Data.Enums;
 using AlquilaCocheras.Negocio.Managers;
+using AlquilaCocheras.Negocio.Mapeos;
 using AlquilaCocheras.Negocio.Servicios;
 
 namespace AlquilaCocheras.Web.clientes
@@ -12,8 +13,8 @@ namespace AlquilaCocheras.Web.clientes
     {
         #region Miembros
 
-        private UsuarioService _usuarioService = new UsuarioService();
-        private Usuario _usuario;
+        private ClientesServicio _clientesServicio = new ClientesServicio();
+        private Cliente _cliente;
 
         #endregion
 
@@ -25,12 +26,15 @@ namespace AlquilaCocheras.Web.clientes
                 Response.Redirect("~/login.aspx");
             }
 
-            _usuario = _usuarioService.ObtenerUsuarioLogueado();
+            _cliente = _clientesServicio.ObtenerClienteLogueado();
 
-            if (_usuario == null || _usuario.Perfil != TipoPerfilUsuario.Cliente)
+            if (_cliente == null || _cliente.Perfil != TipoPerfilUsuario.Cliente)
             {
                 Response.Redirect("~/default.aspx");
             }
+
+            rpReservas.DataSource = ReservaMap.ClienteReservasMap(_cliente.Reservas);
+            rpReservas.DataBind();
         }
     }
 }

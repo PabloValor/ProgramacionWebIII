@@ -1,5 +1,6 @@
 ﻿using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Data.Repositorios;
+using AlquilaCocheras.Negocio.Managers;
 
 namespace AlquilaCocheras.Negocio.Servicios
 {
@@ -31,6 +32,13 @@ namespace AlquilaCocheras.Negocio.Servicios
         public void AgregarReserva(Cliente cliente, Reserva reserva)
         {
             cliente.Reservas.Add(reserva);
+        }
+
+        public Cliente ObtenerClienteLogueado()
+        {
+            var idUsuario = VariblesSesionManager.Obtener<int>(Data.Constantes.Constantes.USUARIO_LOGUEADO_ID);
+            var cliente = _usuariosRepositorio.ObtenerClientePorId(idUsuario);
+            return cliente;
         }
 
         #endregion
