@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AlquilaCocheras.Data.Entidades;
 using AlquilaCocheras.Data.Mapeos;
@@ -17,7 +18,8 @@ namespace AlquilaCocheras.Negocio.Mapeos
                     ApellidoPropietario = r.Propietario.Apellido,
                     Imagen = r.Imagen,
                     Latitud = r.Latitud,
-                    Longitud = r.Longitud
+                    Longitud = r.Longitud,
+                    PuntajePromedioCochera = Math.Round((r.Puntaje.PuntajeTotal / r.Puntaje.CantidadVotos), 2)
                 }
                 ).ToList();
         }

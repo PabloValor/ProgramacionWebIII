@@ -93,11 +93,12 @@
                                                     <span class="card-title grey-text text-darken-4">Datos de cochera<i class="material-icons right">close</i></span>
                                                     <p>Propietario: <%# Eval("NombrePropietario") %> <%# Eval("ApellidoPropietario") %></p>
                                                     <p>Precio por hora: <%# Eval("PrecioPorHora") %></p>
+                                                    <p>Puntaje Promedio <%# Eval("PuntajePromedioCochera") %></p>
 
                                                     <p class="center-align">
                                                         <a class="waves-effect waves-light btn modal-trigger btn-modal-mapa" href="#modal1"
                                                             data-latitud="<%# Eval("Latitud") %>"
-                                                            data-longitud="<%# Eval("Longitud") %>">Mapa</a>
+                                                            data-longitud="<%# Eval("Longitud") %>">Ver mapa</a>
                                                     </p>
                                                 </div>
                                             </div>

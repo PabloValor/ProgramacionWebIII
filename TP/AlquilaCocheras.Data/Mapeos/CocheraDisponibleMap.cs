@@ -9,5 +9,6 @@
         public string Imagen { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }
+        public double PuntajePromedioCochera { get; set; }
     }
 }
