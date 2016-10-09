@@ -23,13 +23,21 @@ namespace AlquilaCocheras.Web.userControls
         {
             var cocherasServicio = new CocherasServicio();
 
-            _listadoCocherasDisponibles = cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text, txtFechaInicio.Text, txtFechaFin.Text);
+            if (txtUbicacion.Text == "haedo")
+            {
+                _listadoCocherasDisponibles = cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text, txtFechaInicio.Text, txtFechaFin.Text);
 
-            CantidadCocherasDisponibles.Text = _listadoCocherasDisponibles.Count > 0 ?
-                string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocherasDisponibles.Count)
-                : "No se encontraron resultados";
+                CantidadCocherasDisponibles.Text = _listadoCocherasDisponibles.Count > 0 ?
+                    string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocherasDisponibles.Count)
+                    : "No se encontraron resultados";
 
-            CargarListaFiltradaCocherasDisponibles();
+                CargarListaFiltradaCocherasDisponibles();
+            }
+            else {
+
+                CantidadCocherasDisponibles.Text = "No se encontraron resultados";
+                
+            }
         }
 
         #region Métodos Privados
