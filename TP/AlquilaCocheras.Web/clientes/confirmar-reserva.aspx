@@ -61,7 +61,7 @@
         </div>
 
         <asp:Label ID="label3" runat="server" Text="Hora de Entrada"></asp:Label>
-        <asp:TextBox ID="txtHorarioInicio" runat="server" ClientIDMode="Static" Text="13:40"></asp:TextBox>
+        <asp:TextBox ID="txtHorarioInicio" runat="server" ClientIDMode="Static" Text="10:00"></asp:TextBox>
 
         <div class="cocheras-validacion">
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorHorarioInicio" runat="server" ErrorMessage="Ingrese un Horario de Inicio"
@@ -74,7 +74,7 @@
         </div>
 
         <asp:Label ID="label1" runat="server" Text="Hora de Salida"></asp:Label>
-        <asp:TextBox ID="txtHorarioFin" runat="server" ClientIDMode="Static" Text="10:00"></asp:TextBox>
+        <asp:TextBox ID="txtHorarioFin" runat="server" ClientIDMode="Static" Text="15:00"></asp:TextBox>
 
         <div class="cocheras-validacion">
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorHorarioFin" runat="server"
