@@ -23,7 +23,7 @@ namespace AlquilaCocheras.Web.userControls
         {
             var cocherasServicio = new CocherasServicio();
 
-            if (txtUbicacion.Text == "haedo")
+            if (txtUbicacion.Text.ToLower() == "haedo")
             {
                 _listadoCocherasDisponibles = cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text, txtFechaInicio.Text, txtFechaFin.Text);
 
