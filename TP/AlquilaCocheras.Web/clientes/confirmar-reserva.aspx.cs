@@ -28,18 +28,6 @@ namespace AlquilaCocheras.Web.clientes
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!SesionesManager.EsUsuarioLogueado())
-            {
-                VariblesSesionManager.Guardar(Constantes.URL_RETORNO, HttpContext.Current.Request.Url.PathAndQuery);
-                Response.Redirect("~/login.aspx");
-            }
-
-            _usuario = _usuarioService.ObtenerUsuarioLogueado();
-
-            if (_usuario != null && _usuario.Perfil != TipoPerfilUsuario.Cliente)
-            {
-                Response.Redirect("~/default.aspx");
-            }
 
             var idCochera = int.Parse(HttpContext.Current.Request.QueryString.Get("idcochera")); // TODO: Validar que no metan cualquier cosa
 

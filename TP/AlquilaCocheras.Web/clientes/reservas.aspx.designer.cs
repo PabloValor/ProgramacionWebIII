@@ -47,5 +47,17 @@ namespace AlquilaCocheras.Web.clientes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnConfirmar;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new AlquilaCocheras.Web.MasterPages.Clientes Master {
+            get {
+                return ((AlquilaCocheras.Web.MasterPages.Clientes)(base.Master));
+            }
+        }
     }
 }
