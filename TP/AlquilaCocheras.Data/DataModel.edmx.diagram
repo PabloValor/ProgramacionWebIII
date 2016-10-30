@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="02d9a2d08025497fbe273302046f86bb" Name="Diagram1">
+        <EntityTypeShape EntityType="EstacionaloModel.Cliente" Width="1.5" PointX="5.625" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstacionaloModel.Cochera" Width="1.5" PointX="8" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstacionaloModel.Propietario" Width="1.5" PointX="0.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstacionaloModel.Puntaje" Width="1.5" PointX="10.375" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstacionaloModel.TipoPerfilUsuario" Width="2.125" PointX="0.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstacionaloModel.Usuario" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstacionaloModel.Vehiculo" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="EstacionaloModel.FK__Cliente__IdUsuar__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="EstacionaloModel.FK__Cochera__IdPropi__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="EstacionaloModel.FK__Puntaje__IdCoche__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="EstacionaloModel.FK__Propietar__IdUsu__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="EstacionaloModel.FK__Usuario__IdTipoP__300424B4" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EstacionaloModel.Reserva" Width="1.5" PointX="6" PointY="7.25" />
+        <AssociationConnector Association="EstacionaloModel.FK__Reserva__IdClien__2B3F6F97" />
+        <AssociationConnector Association="EstacionaloModel.FK__Reserva__IdCoche__3D5E1FD2" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

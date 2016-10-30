@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data;
 using AlquilaCocheras.Data.Repositorios;
 
 namespace AlquilaCocheras.Negocio.Servicios

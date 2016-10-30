@@ -1,6 +1,6 @@
 ﻿using System;
 using AlquilaCocheras.Data.Constantes;
-using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data;
 using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
 using System.Web;

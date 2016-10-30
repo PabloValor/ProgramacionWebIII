@@ -38,24 +38,24 @@
                                 <li>Bienvenido <%= Usuario.Nombre %></li>       
                                 <%} %>
 
-                                <% if (Usuario != null && Usuario.Perfil == TipoPerfilUsuario.Cliente)
+                                <% if (Usuario != null && Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Cliente)
                                    { %>
                                 <li><a href="/clientes/reservas.aspx"><i class="material-icons left">list</i>Mis Reservas</a></li>
                                 <% } %>
                         
-                                <% if (Usuario.Perfil == TipoPerfilUsuario.Cliente) { %>
+                                <% if (Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Cliente) { %>
                                 <li><a href="/clientes/reservar.aspx"><i class="material-icons left">list</i>Reservar Cochera</a></li>
                                 <% } %>
 
-                                <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                                <% if (Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Propietario) { %>
                                 <li><a href="/propietarios/reservas.aspx"><i class="material-icons left">list</i>Reservas</a></li>
                                 <% } %>
                         
-                                <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                                <% if (Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Propietario) { %>
                                 <li><a href="/propietarios/cocheras.aspx"><i class="material-icons left">list</i>Crear Cochera</a></li>
                                 <% } %>
                         
-                                <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                                <% if (Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Propietario) { %>
                                 <li><a href="/propietarios/perfil.aspx"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
                                 <% } %>
                         
@@ -78,24 +78,24 @@
                                 <li>Bienvenido <%= Usuario.Nombre %></li>       
                                 <%} %>
 
-                                <% if (Usuario != null && Usuario.Perfil == TipoPerfilUsuario.Cliente)
+                                <% if (Usuario != null && Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Cliente)
                                    { %>
                                 <li><a href="/clientes/reservas.aspx"><i class="material-icons left">list</i>Mis Reservas</a></li>
                                 <% } %>
                         
-                                <% if (Usuario.Perfil == TipoPerfilUsuario.Cliente) { %>
+                                <% if (Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Cliente) { %>
                                 <li><a href="/clientes/reservar.aspx"><i class="material-icons left">list</i>Reservar Cochera</a></li>
                                 <% } %>
 
-                                <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                                <% if (Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Propietario) { %>
                                 <li><a href="/propietarios/reservas.aspx"><i class="material-icons left">list</i>Reservas</a></li>
                                 <% } %>
                         
-                                <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                                <% if (Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Propietario) { %>
                                 <li><a href="/propietarios/cocheras.aspx"><i class="material-icons left">list</i>Crear Cochera</a></li>
                                 <% } %>
                         
-                                <% if (Usuario.Perfil == TipoPerfilUsuario.Propietario) { %>
+                                <% if (Usuario.IdTipoPerfilUsuario == (int)TipoPerfilUsuario.Propietario) { %>
                                 <li><a href="/propietarios/perfil.aspx"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
                                 <% } %>
                         

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using AlquilaCocheras.Negocio.Mapeos;
 
 namespace AlquilaCocheras.Web.clientes
@@ -7,7 +8,7 @@ namespace AlquilaCocheras.Web.clientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            rpReservas.DataSource = ReservaMap.ClienteReservasMap(Master.Cliente.Reservas);
+            rpReservas.DataSource = ReservaMap.ClienteReservasMap(Master.Cliente.Reserva.ToList());
             rpReservas.DataBind();
         }
     }

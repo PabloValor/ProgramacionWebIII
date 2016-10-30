@@ -50,7 +50,7 @@ namespace AlquilaCocheras.Web
                     }
                     else
                     {
-                        var urlRedirect = usuario.Perfil == TipoPerfilUsuario.Cliente ? "~/clientes/reservas.aspx" : "~/propietarios/reservas.aspx";
+                        var urlRedirect = usuario.IdTipoPerfilUsuario.Value == (int)TipoPerfilUsuario.Cliente ? "~/clientes/reservas.aspx" : "~/propietarios/reservas.aspx";
                         Response.Redirect(urlRedirect);
                     }
                 }

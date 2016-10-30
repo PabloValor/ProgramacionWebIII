@@ -1,4 +1,4 @@
-﻿using AlquilaCocheras.Data.Entidades;
+﻿using AlquilaCocheras.Data;
 using AlquilaCocheras.Data.Repositorios;
 using AlquilaCocheras.Negocio.Managers;
 
@@ -9,6 +9,7 @@ namespace AlquilaCocheras.Negocio.Servicios
         #region Miembros
 
         private readonly UsuariosRepositorio _usuariosRepositorio;
+        private readonly ClientesRepositorio _clientesRepositorio;
 
         #endregion
 
@@ -17,6 +18,7 @@ namespace AlquilaCocheras.Negocio.Servicios
         public UsuarioService()
         {
             _usuariosRepositorio = new UsuariosRepositorio();
+            _clientesRepositorio = new ClientesRepositorio();
         }
 
         #endregion
@@ -38,7 +40,7 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         public Cliente ObtenerClientePorId(int id)
         {
-            var cliente = _usuariosRepositorio.ObtenerClientePorId(id);
+            var cliente = _clientesRepositorio.ObtenerClientePorId(id);
             return cliente;
         }
 

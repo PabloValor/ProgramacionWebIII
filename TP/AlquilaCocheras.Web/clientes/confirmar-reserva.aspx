@@ -16,10 +16,10 @@
                             <asp:Label ID="lblUbicacion" ClientIDMode="Static" runat="server">Ubicación: <%= Cochera.Ubicacion %></asp:Label>
                         </p>
                         <p>
-                            <asp:Label ID="lblPrecioHora" ClientIDMode="Static" runat="server">Precio por hora: $<%= Cochera.PrecioPorHora %>.-</asp:Label>
+                            <asp:Label ID="lblPrecioHora" ClientIDMode="Static" runat="server">Precio por hora: $<%= Cochera.PrecioHora %>.-</asp:Label>
                         </p>
                         <p>
-                            <asp:Label ID="lblPrecioTotal" ClientIDMode="Static" runat="server">Precio total: $<%= Cochera.PrecioPorHora * (DateTime.Now.AddHours(4) - DateTime.Now).Hours %>.-</asp:Label>
+                            <asp:Label ID="lblPrecioTotal" ClientIDMode="Static" runat="server">Precio total: $<%= Cochera.PrecioHora * (DateTime.Now.AddHours(4) - DateTime.Now).Hours %>.-</asp:Label>
                         </p>
 
                     </div>

@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EstacionaloModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="EstacionaloModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="EstacionaloModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cochera" EntityType="EstacionaloModel.Store.Cochera" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Propietario" EntityType="EstacionaloModel.Store.Propietario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Puntaje" EntityType="EstacionaloModel.Store.Puntaje" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reserva" EntityType="EstacionaloModel.Store.Reserva" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoPerfilUsuario" EntityType="EstacionaloModel.Store.TipoPerfilUsuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="EstacionaloModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vehiculo" EntityType="EstacionaloModel.Store.Vehiculo" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Cliente__IdUsuar__35BCFE0A" Association="EstacionaloModel.Store.FK__Cliente__IdUsuar__35BCFE0A">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cochera__IdPropi__239E4DCF" Association="EstacionaloModel.Store.FK__Cochera__IdPropi__239E4DCF">
+            <End Role="Propietario" EntitySet="Propietario" />
+            <End Role="Cochera" EntitySet="Cochera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Propietar__IdUsu__37A5467C" Association="EstacionaloModel.Store.FK__Propietar__IdUsu__37A5467C">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Propietario" EntitySet="Propietario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Puntaje__IdCoche__38996AB5" Association="EstacionaloModel.Store.FK__Puntaje__IdCoche__38996AB5">
+            <End Role="Cochera" EntitySet="Cochera" />
+            <End Role="Puntaje" EntitySet="Puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reserva__IdClien__2B3F6F97" Association="EstacionaloModel.Store.FK__Reserva__IdClien__2B3F6F97">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reserva__IdCoche__3D5E1FD2" Association="EstacionaloModel.Store.FK__Reserva__IdCoche__3D5E1FD2">
+            <End Role="Cochera" EntitySet="Cochera" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__IdTipoP__300424B4" Association="EstacionaloModel.Store.FK__Usuario__IdTipoP__300424B4">
+            <End Role="TipoPerfilUsuario" EntitySet="TipoPerfilUsuario" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="int" />
+        </EntityType>
+        <EntityType Name="Cochera">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdPropietario" Type="int" />
+          <Property Name="Ubicacion" Type="varchar" MaxLength="100" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="Latitud" Type="varchar" MaxLength="100" />
+          <Property Name="Longitud" Type="varchar" MaxLength="100" />
+          <Property Name="SuperficieM2" Type="int" />
+          <Property Name="Imagen" Type="varchar" MaxLength="200" />
+          <Property Name="PrecioHora" Type="int" />
+          <Property Name="Disponible" Type="bit" />
+        </EntityType>
+        <EntityType Name="Propietario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="int" />
+        </EntityType>
+        <EntityType Name="Puntaje">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Total" Type="int" />
+          <Property Name="CantidadVotos" Type="int" />
+          <Property Name="IdCochera" Type="int" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="int" />
+          <Property Name="FechaInicio" Type="datetime" />
+          <Property Name="FechaFin" Type="datetime" />
+          <Property Name="CantidadHoras" Type="int" />
+          <Property Name="IdCochera" Type="int" />
+        </EntityType>
+        <EntityType Name="TipoPerfilUsuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="IdTipoPerfilUsuario" Type="int" />
+          <Property Name="Avatar" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK__Cliente__IdUsuar__35BCFE0A">
+          <End Role="Usuario" Type="EstacionaloModel.Store.Usuario" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EstacionaloModel.Store.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cochera__IdPropi__239E4DCF">
+          <End Role="Propietario" Type="EstacionaloModel.Store.Propietario" Multiplicity="0..1" />
+          <End Role="Cochera" Type="EstacionaloModel.Store.Cochera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Propietario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cochera">
+              <PropertyRef Name="IdPropietario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Propietar__IdUsu__37A5467C">
+          <End Role="Usuario" Type="EstacionaloModel.Store.Usuario" Multiplicity="0..1" />
+          <End Role="Propietario" Type="EstacionaloModel.Store.Propietario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Propietario">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Puntaje__IdCoche__38996AB5">
+          <End Role="Cochera" Type="EstacionaloModel.Store.Cochera" Multiplicity="0..1" />
+          <End Role="Puntaje" Type="EstacionaloModel.Store.Puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cochera">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Puntaje">
+              <PropertyRef Name="IdCochera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reserva__IdClien__2B3F6F97">
+          <End Role="Cliente" Type="EstacionaloModel.Store.Cliente" Multiplicity="0..1" />
+          <End Role="Reserva" Type="EstacionaloModel.Store.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reserva__IdCoche__3D5E1FD2">
+          <End Role="Cochera" Type="EstacionaloModel.Store.Cochera" Multiplicity="0..1" />
+          <End Role="Reserva" Type="EstacionaloModel.Store.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cochera">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="IdCochera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__IdTipoP__300424B4">
+          <End Role="TipoPerfilUsuario" Type="EstacionaloModel.Store.TipoPerfilUsuario" Multiplicity="0..1" />
+          <End Role="Usuario" Type="EstacionaloModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPerfilUsuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdTipoPerfilUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'Estacionalo.dbo.TipoVehiculo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TipoVehiculo">
+        <Property Name="IdCochera" Type="int" />
+        <Property Name="IdVehiculo" Type="int" />
+      </EntityType>-->
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EstacionaloModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EstacionaloEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Cliente" EntityType="EstacionaloModel.Cliente" />
+          <EntitySet Name="Cochera" EntityType="EstacionaloModel.Cochera" />
+          <EntitySet Name="Propietario" EntityType="EstacionaloModel.Propietario" />
+          <EntitySet Name="Puntaje" EntityType="EstacionaloModel.Puntaje" />
+          <EntitySet Name="TipoPerfilUsuario" EntityType="EstacionaloModel.TipoPerfilUsuario" />
+          <EntitySet Name="Usuario" EntityType="EstacionaloModel.Usuario" />
+          <EntitySet Name="Vehiculo" EntityType="EstacionaloModel.Vehiculo" />
+          <AssociationSet Name="FK__Cliente__IdUsuar__35BCFE0A" Association="EstacionaloModel.FK__Cliente__IdUsuar__35BCFE0A">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Cochera__IdPropi__239E4DCF" Association="EstacionaloModel.FK__Cochera__IdPropi__239E4DCF">
+            <End Role="Propietario" EntitySet="Propietario" />
+            <End Role="Cochera" EntitySet="Cochera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Puntaje__IdCoche__38996AB5" Association="EstacionaloModel.FK__Puntaje__IdCoche__38996AB5">
+            <End Role="Cochera" EntitySet="Cochera" />
+            <End Role="Puntaje" EntitySet="Puntaje" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Propietar__IdUsu__37A5467C" Association="EstacionaloModel.FK__Propietar__IdUsu__37A5467C">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Propietario" EntitySet="Propietario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__IdTipoP__300424B4" Association="EstacionaloModel.FK__Usuario__IdTipoP__300424B4">
+            <End Role="TipoPerfilUsuario" EntitySet="TipoPerfilUsuario" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <EntitySet Name="Reserva" EntityType="EstacionaloModel.Reserva" />
+          <AssociationSet Name="FK__Reserva__IdClien__2B3F6F97" Association="EstacionaloModel.FK__Reserva__IdClien__2B3F6F97">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reserva__IdCoche__3D5E1FD2" Association="EstacionaloModel.FK__Reserva__IdCoche__3D5E1FD2">
+            <End Role="Cochera" EntitySet="Cochera" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <NavigationProperty Name="Usuario" Relationship="EstacionaloModel.FK__Cliente__IdUsuar__35BCFE0A" FromRole="Cliente" ToRole="Usuario" />
+          <NavigationProperty Name="Reserva" Relationship="EstacionaloModel.FK__Reserva__IdClien__2B3F6F97" FromRole="Cliente" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="Cochera">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPropietario" Type="Int32" />
+          <Property Name="Ubicacion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Latitud" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Longitud" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SuperficieM2" Type="Int32" />
+          <Property Name="Imagen" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PrecioHora" Type="Int32" />
+          <Property Name="Disponible" Type="Boolean" />
+          <NavigationProperty Name="Propietario" Relationship="EstacionaloModel.FK__Cochera__IdPropi__239E4DCF" FromRole="Cochera" ToRole="Propietario" />
+          <NavigationProperty Name="Puntaje" Relationship="EstacionaloModel.FK__Puntaje__IdCoche__38996AB5" FromRole="Cochera" ToRole="Puntaje" />
+          <NavigationProperty Name="Reserva" Relationship="EstacionaloModel.FK__Reserva__IdCoche__3D5E1FD2" FromRole="Cochera" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="Propietario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <NavigationProperty Name="Cochera" Relationship="EstacionaloModel.FK__Cochera__IdPropi__239E4DCF" FromRole="Propietario" ToRole="Cochera" />
+          <NavigationProperty Name="Usuario" Relationship="EstacionaloModel.FK__Propietar__IdUsu__37A5467C" FromRole="Propietario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Puntaje">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Total" Type="Int32" />
+          <Property Name="CantidadVotos" Type="Int32" />
+          <Property Name="IdCochera" Type="Int32" />
+          <NavigationProperty Name="Cochera" Relationship="EstacionaloModel.FK__Puntaje__IdCoche__38996AB5" FromRole="Puntaje" ToRole="Cochera" />
+        </EntityType>
+        <EntityType Name="TipoPerfilUsuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Usuario" Relationship="EstacionaloModel.FK__Usuario__IdTipoP__300424B4" FromRole="TipoPerfilUsuario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IdTipoPerfilUsuario" Type="Int32" />
+          <Property Name="Avatar" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="EstacionaloModel.FK__Cliente__IdUsuar__35BCFE0A" FromRole="Usuario" ToRole="Cliente" />
+          <NavigationProperty Name="Propietario" Relationship="EstacionaloModel.FK__Propietar__IdUsu__37A5467C" FromRole="Usuario" ToRole="Propietario" />
+          <NavigationProperty Name="TipoPerfilUsuario" Relationship="EstacionaloModel.FK__Usuario__IdTipoP__300424B4" FromRole="Usuario" ToRole="TipoPerfilUsuario" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK__Cliente__IdUsuar__35BCFE0A">
+          <End Role="Usuario" Type="EstacionaloModel.Usuario" Multiplicity="0..1" />
+          <End Role="Cliente" Type="EstacionaloModel.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cochera__IdPropi__239E4DCF">
+          <End Role="Propietario" Type="EstacionaloModel.Propietario" Multiplicity="0..1" />
+          <End Role="Cochera" Type="EstacionaloModel.Cochera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Propietario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cochera">
+              <PropertyRef Name="IdPropietario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Puntaje__IdCoche__38996AB5">
+          <End Role="Cochera" Type="EstacionaloModel.Cochera" Multiplicity="0..1" />
+          <End Role="Puntaje" Type="EstacionaloModel.Puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cochera">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Puntaje">
+              <PropertyRef Name="IdCochera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Propietar__IdUsu__37A5467C">
+          <End Role="Usuario" Type="EstacionaloModel.Usuario" Multiplicity="0..1" />
+          <End Role="Propietario" Type="EstacionaloModel.Propietario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Propietario">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__IdTipoP__300424B4">
+          <End Role="TipoPerfilUsuario" Type="EstacionaloModel.TipoPerfilUsuario" Multiplicity="0..1" />
+          <End Role="Usuario" Type="EstacionaloModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPerfilUsuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdTipoPerfilUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdCliente" />
+          <Property Type="DateTime" Name="FechaInicio" Precision="3" />
+          <Property Type="DateTime" Name="FechaFin" Precision="3" />
+          <Property Type="Int32" Name="CantidadHoras" />
+          <Property Type="Int32" Name="IdCochera" />
+          <NavigationProperty Name="Cliente" Relationship="EstacionaloModel.FK__Reserva__IdClien__2B3F6F97" FromRole="Reserva" ToRole="Cliente" />
+          <NavigationProperty Name="Cochera" Relationship="EstacionaloModel.FK__Reserva__IdCoche__3D5E1FD2" FromRole="Reserva" ToRole="Cochera" />
+        </EntityType>
+        <Association Name="FK__Reserva__IdClien__2B3F6F97">
+          <End Type="EstacionaloModel.Cliente" Role="Cliente" Multiplicity="0..1" />
+          <End Type="EstacionaloModel.Reserva" Role="Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reserva__IdCoche__3D5E1FD2">
+          <End Type="EstacionaloModel.Cochera" Role="Cochera" Multiplicity="0..1" />
+          <End Type="EstacionaloModel.Reserva" Role="Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cochera">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="IdCochera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EstacionaloModelStoreContainer" CdmEntityContainer="EstacionaloEntities">
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="EstacionaloModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cochera">
+            <EntityTypeMapping TypeName="EstacionaloModel.Cochera">
+              <MappingFragment StoreEntitySet="Cochera">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdPropietario" ColumnName="IdPropietario" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="SuperficieM2" ColumnName="SuperficieM2" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="PrecioHora" ColumnName="PrecioHora" />
+                <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Propietario">
+            <EntityTypeMapping TypeName="EstacionaloModel.Propietario">
+              <MappingFragment StoreEntitySet="Propietario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puntaje">
+            <EntityTypeMapping TypeName="EstacionaloModel.Puntaje">
+              <MappingFragment StoreEntitySet="Puntaje">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="CantidadVotos" ColumnName="CantidadVotos" />
+                <ScalarProperty Name="IdCochera" ColumnName="IdCochera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoPerfilUsuario">
+            <EntityTypeMapping TypeName="EstacionaloModel.TipoPerfilUsuario">
+              <MappingFragment StoreEntitySet="TipoPerfilUsuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="EstacionaloModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IdTipoPerfilUsuario" ColumnName="IdTipoPerfilUsuario" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehiculo">
+            <EntityTypeMapping TypeName="EstacionaloModel.Vehiculo">
+              <MappingFragment StoreEntitySet="Vehiculo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reserva">
+            <EntityTypeMapping TypeName="EstacionaloModel.Reserva">
+              <MappingFragment StoreEntitySet="Reserva">
+                <ScalarProperty Name="IdCochera" ColumnName="IdCochera" />
+                <ScalarProperty Name="CantidadHoras" ColumnName="CantidadHoras" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

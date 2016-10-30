@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data;
 using AlquilaCocheras.Negocio.Mapeos;
 using AlquilaCocheras.Negocio.Servicios;
 

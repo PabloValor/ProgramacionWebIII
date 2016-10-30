@@ -1,5 +1,5 @@
 ﻿using System;
-using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data;
 using AlquilaCocheras.Data.Enums;
 using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
@@ -32,10 +32,10 @@ namespace AlquilaCocheras.Web
                     Apellido = txtApellido.Text,
                     Email = txtEmail.Text,
                     Password = txtContrasenia.Text,
-                    Perfil =
-                        rblPerfil.Text == TipoPerfilUsuario.Cliente.ToString()
-                            ? TipoPerfilUsuario.Cliente
-                            : TipoPerfilUsuario.Propietario
+                    IdTipoPerfilUsuario =
+                        rblPerfil.Text == Data.Enums.TipoPerfilUsuario.Cliente.ToString()
+                            ? (int)Data.Enums.TipoPerfilUsuario.Cliente
+                            : (int)Data.Enums.TipoPerfilUsuario.Propietario
                 };
 
                 try

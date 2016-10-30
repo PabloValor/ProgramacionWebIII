@@ -1,6 +1,6 @@
 ﻿using System;
 using AlquilaCocheras.Data.Constantes;
-using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data;
 
 namespace AlquilaCocheras.Negocio.Managers
 {

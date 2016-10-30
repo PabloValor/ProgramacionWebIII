@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using AlquilaCocheras.Data.Constantes;
-using AlquilaCocheras.Data.Entidades;
-using AlquilaCocheras.Data.Enums;
-using AlquilaCocheras.Negocio.Managers;
-using AlquilaCocheras.Negocio.Mapeos;
+using AlquilaCocheras.Data;
 using AlquilaCocheras.Negocio.Servicios;
 
 namespace AlquilaCocheras.Web
@@ -27,7 +23,7 @@ namespace AlquilaCocheras.Web
 
             if (_usuario != null)
             {
-                Response.Redirect(_usuario.Perfil == TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
+                Response.Redirect(_usuario.IdTipoPerfilUsuario == (int)Data.Enums.TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
             }
         }
     }

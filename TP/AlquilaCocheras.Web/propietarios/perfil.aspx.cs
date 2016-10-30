@@ -43,18 +43,18 @@ namespace AlquilaCocheras.Web.propietarios
 
         private void CargarFormulioPerfil()
         {
-            txtNombre.Text = Master.Propietario.Nombre;
-            txtApellido.Text = Master.Propietario.Apellido;
-            txtEmail.Text = Master.Propietario.Email;
-            rblPerfil.SelectedValue = ((int)Master.Propietario.Perfil).ToString();
+            txtNombre.Text = Master.Propietario.Usuario.Nombre;
+            txtApellido.Text = Master.Propietario.Usuario.Apellido;
+            txtEmail.Text = Master.Propietario.Usuario.Email;
+            rblPerfil.SelectedValue = ((int)Master.Propietario.Usuario.IdTipoPerfilUsuario).ToString();
         }
 
         private void MapearUsuario()
         {
-            Master.Propietario.Nombre = txtNombre.Text;
-            Master.Propietario.Apellido = txtApellido.Text;
-            Master.Propietario.Password = txtContrasenia.Text;
-            Master.Propietario.Perfil = rblPerfil.SelectedItem.Text.Contains("cliente") ? TipoPerfilUsuario.Cliente : TipoPerfilUsuario.Propietario;
+            Master.Propietario.Usuario.Nombre = txtNombre.Text;
+            Master.Propietario.Usuario.Apellido = txtApellido.Text;
+            Master.Propietario.Usuario.Password = txtContrasenia.Text;
+            Master.Propietario.Usuario.IdTipoPerfilUsuario = rblPerfil.SelectedItem.Text.Contains("cliente") ? (int)Data.Enums.TipoPerfilUsuario.Cliente : (int)Data.Enums.TipoPerfilUsuario.Propietario;
         }
 
         #endregion

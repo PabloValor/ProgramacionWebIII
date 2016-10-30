@@ -1,4 +1,4 @@
-﻿using AlquilaCocheras.Data.Entidades;
+﻿using AlquilaCocheras.Data;
 using AlquilaCocheras.Data.Repositorios;
 using AlquilaCocheras.Negocio.Managers;
 
@@ -8,7 +8,7 @@ namespace AlquilaCocheras.Negocio.Servicios
     {
         #region Miembros
 
-        private readonly UsuariosRepositorio _usuariosRepositorio;
+        private readonly PropietariosRepositorio _propietariosRepositorio;
 
         #endregion
 
@@ -16,7 +16,7 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         public PropietariosServicio()
         {
-            _usuariosRepositorio = new UsuariosRepositorio();
+            _propietariosRepositorio = new PropietariosRepositorio();
         }
 
         #endregion
@@ -26,13 +26,13 @@ namespace AlquilaCocheras.Negocio.Servicios
         public Propietario ObtenerPropietarioLogueado()
         {
             var idUsuario = VariblesSesionManager.Obtener<int>(Data.Constantes.Constantes.USUARIO_LOGUEADO_ID);
-            var propietario = _usuariosRepositorio.ObtenerPropietarioPorId(idUsuario);
+            var propietario = _propietariosRepositorio.ObtenerPropietarioPorIdUsuario(idUsuario);
             return propietario;
         }
 
         public void ActualizarPropietario(Propietario propietario)
         {
-            _usuariosRepositorio.ActualizarUsuario(propietario);
+            _propietariosRepositorio.ActualizarPropietario(propietario);
         }
 
         #endregion

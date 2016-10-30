@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data;
 using AlquilaCocheras.Data.Repositorios;
 
 namespace AlquilaCocheras.Negocio.Servicios
@@ -33,7 +33,7 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         public List<Cochera> ObtenerTodasDisponibles(string txtUbicacion, string txtFechaInicio, string txtFechaFin)
         {
-            var cocherasDisponibles = _cocherasRepositorio.Obtener().Where(c => c.Disponible).ToList(); // (!) Hacer la validación correspondiente por ubicación y fechas
+            var cocherasDisponibles = _cocherasRepositorio.Obtener().Where(c => c.Disponible.Value).ToList(); // (!) Hacer la validación correspondiente por ubicación y fechas
             return cocherasDisponibles;
         }
 

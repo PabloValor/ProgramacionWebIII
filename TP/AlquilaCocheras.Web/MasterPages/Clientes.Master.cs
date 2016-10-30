@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Web;
 using AlquilaCocheras.Data.Constantes;
-using AlquilaCocheras.Data.Entidades;
-using AlquilaCocheras.Data.Enums;
+using AlquilaCocheras.Data;
 using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
 
@@ -28,7 +27,7 @@ namespace AlquilaCocheras.Web.MasterPages
             ClientesServicio = new ClientesServicio();
             Cliente = ClientesServicio.ObtenerClienteLogueado();
 
-            if (Cliente == null || Cliente.Perfil != TipoPerfilUsuario.Cliente)
+            if (Cliente == null || Cliente.Usuario.IdTipoPerfilUsuario != (int)Data.Enums.TipoPerfilUsuario.Cliente)
             {
                 Response.Redirect("~/default.aspx");
             }

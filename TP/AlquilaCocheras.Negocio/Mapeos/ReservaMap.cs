@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AlquilaCocheras.Data.Entidades;
+using AlquilaCocheras.Data;
 using AlquilaCocheras.Data.Mapeos;
 
 namespace AlquilaCocheras.Negocio.Mapeos
@@ -14,8 +14,8 @@ namespace AlquilaCocheras.Negocio.Mapeos
                 new CocheraDisponibleMap
                 {
                     Id = r.Id,
-                    NombrePropietario = r.Cochera.Propietario.Nombre,
-                    ApellidoPropietario = r.Cochera.Propietario.Apellido,
+                    NombrePropietario = r.Cochera.Propietario.Usuario.Nombre,
+                    ApellidoPropietario = r.Cochera.Propietario.Usuario.Apellido,
                     Imagen = r.Cochera.Imagen,
                     Latitud = r.Cochera.Latitud,
                     Longitud = r.Cochera.Longitud
@@ -29,7 +29,7 @@ namespace AlquilaCocheras.Negocio.Mapeos
             new ClienteReservaMap
             {
                 Horario = DateTime.Now.ToString("hh:mm"),
-                PrecioFinal = r.Cochera.PrecioPorHora * r.CantidadHoras,
+                PrecioFinal = ((double)r.Cochera.PrecioHora) * r.CantidadHoras,
                 Puntuacion = 1,
                 FechaInicio = DateTime.Now.ToString("dd/MM/yyyy"),
                 FechaFin = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy"),
