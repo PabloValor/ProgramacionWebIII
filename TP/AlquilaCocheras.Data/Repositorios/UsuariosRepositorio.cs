@@ -40,8 +40,15 @@ namespace AlquilaCocheras.Data.Repositorios
 
         public void GuardarUsuario(Usuario usuario)
         {
-            _db.Usuario.Add(usuario);
-            _db.SaveChanges();
+            try
+            {
+                _db.Usuario.Add(usuario);
+                _db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error: ocurrió un error al guardar el usuario");
+            }
         }
 
         public Usuario ObtenerUsuarioLogueado(int idUsuario)

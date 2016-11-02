@@ -1,7 +1,5 @@
 ﻿using System;
 using AlquilaCocheras.Data;
-using AlquilaCocheras.Data.Enums;
-using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
 
 
@@ -24,27 +22,23 @@ namespace AlquilaCocheras.Web
         {
             if (Page.IsValid)
             {
-
                 var usuario = new Usuario
                 {
-                    Id = 99,
                     Nombre = txtNombre.Text,
                     Apellido = txtApellido.Text,
                     Email = txtEmail.Text,
                     Password = txtContrasenia.Text,
-                    IdTipoPerfilUsuario =
-                        rblPerfil.Text == Data.Enums.TipoPerfilUsuario.Cliente.ToString()
-                            ? (int)Data.Enums.TipoPerfilUsuario.Cliente
-                            : (int)Data.Enums.TipoPerfilUsuario.Propietario
+                    IdTipoPerfilUsuario = int.Parse(rblPerfil.SelectedItem.Value),
+                    // Avatar = 
                 };
 
                 try
                 {
                     _usuarioService.GuardarUsuario(usuario);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    lblResultado.Text = "Algo salió mal en la registración de usuario";
+                    lblResultado.Text = ex.Message;
                 }
 
                 lblResultado.Text = "Registración exitosa, diríjase al <a href='login.aspx'>Login</a>";
