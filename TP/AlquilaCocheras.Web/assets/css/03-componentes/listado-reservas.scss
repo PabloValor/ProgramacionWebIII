@@ -15,8 +15,13 @@
                 font-size: 20px;
             }
         }
-        .card-reveal p {
-            margin: 4px 0;
+        .card-reveal {
+            p {
+                margin: 4px 0;
+            }
+            .botones {
+                margin-top: 20px;
+            }
         }
     }
 }

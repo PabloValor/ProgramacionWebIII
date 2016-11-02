@@ -84,7 +84,7 @@
                                         <p>Precio por hora: <%# Eval("PrecioPorHora", "${0}") %></p>
                                         <p>Puntaje Promedio: <%# Eval("PuntajePromedioCochera") %></p>
 
-                                        <p class="center-align">
+                                        <p class="center-align botones">
                                             <a class="waves-effect waves-light btn modal-trigger btn-modal-mapa" href="#modal1"
                                                 data-latitud="<%# Eval("Latitud") %>"
                                                 data-longitud="<%# Eval("Longitud") %>">Ver mapa</a>
