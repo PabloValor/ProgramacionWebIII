@@ -71,24 +71,24 @@
                                 <div class="card cochera">
                                     <div class="card-image waves-effect waves-block waves-light">
                                         <img class="activator" src="<%# Eval("Imagen") ?? "/assets/img/cocheras/default.png" %>">
-
                                     </div>
                                     <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
                                         <p class="center-align">
-                                            <asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("Id","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
+                                            <a href="#!" class="activator">Más info</a>
                                         </p>
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4">Datos de cochera<i class="material-icons right">close</i></span>
+                                        <span class="card-title grey-text text-darken-4"><span class="hide-on-small-and-down">Datos de cochera</span> <i class="material-icons right">close</i></span>
+                                        <p>Ubicación: <%# Eval("Ubicacion") %></p>
                                         <p>Propietario: <%# Eval("NombrePropietario") %> <%# Eval("ApellidoPropietario") %></p>
-                                        <p>Precio por hora: <%# Eval("PrecioPorHora", "${0}.-") %></p>
+                                        <p>Precio por hora: <%# Eval("PrecioPorHora", "${0}") %></p>
                                         <p>Puntaje Promedio: <%# Eval("PuntajePromedioCochera") %></p>
 
                                         <p class="center-align">
                                             <a class="waves-effect waves-light btn modal-trigger btn-modal-mapa" href="#modal1"
                                                 data-latitud="<%# Eval("Latitud") %>"
                                                 data-longitud="<%# Eval("Longitud") %>">Ver mapa</a>
+                                            <asp:HyperLink CssClass="btn blue white-text" ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("Id","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
                                         </p>
                                     </div>
                                 </div>

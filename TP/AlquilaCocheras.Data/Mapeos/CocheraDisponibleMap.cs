@@ -10,5 +10,6 @@
         public string Latitud { get; set; }
         public string Longitud { get; set; }
         public double PuntajePromedioCochera { get; set; }
+        public string Ubicacion { get; set; }
     }
 }

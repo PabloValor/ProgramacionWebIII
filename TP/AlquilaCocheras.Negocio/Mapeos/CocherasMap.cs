@@ -15,11 +15,12 @@ namespace AlquilaCocheras.Negocio.Mapeos
                 {
                     Id = r.Id,
                     NombrePropietario = r.Propietario.Usuario.Nombre,
-                    ApellidoPropietario = r.Propietario.Usuario.Nombre,
+                    ApellidoPropietario = r.Propietario.Usuario.Apellido,
                     PrecioPorHora = (double)r.PrecioHora,
                     Imagen = r.Imagen,
                     Latitud = r.Latitud,
                     Longitud = r.Longitud,
+                    Ubicacion = r.Ubicacion
                     //PuntajePromedioCochera = Math.Round((r.Puntaje.PuntajeTotal / r.Puntaje.CantidadVotos), 2)
                 }
                 ).ToList();
