@@ -38,12 +38,6 @@ namespace AlquilaCocheras.Negocio.Servicios
             return usuario;
         }
 
-        public Cliente ObtenerClientePorId(int id)
-        {
-            var cliente = _clientesRepositorio.ObtenerClientePorId(id);
-            return cliente;
-        }
-
         public Usuario ObtenerUsuarioPorEmailYContrasena(string email, string contrasena)
         {
             var usuario = _usuariosRepositorio.ObtenerUsuarioPorEmailYContrasena(email, contrasena);

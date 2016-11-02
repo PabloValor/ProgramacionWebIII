@@ -20,7 +20,7 @@ namespace AlquilaCocheras.Web.clientes
 
         private ReservasServicio _reservasServicio = new ReservasServicio();
         private CocherasServicio _cocherasServicio = new CocherasServicio();
-        private UsuarioService _usuarioService = new UsuarioService();
+        private ClientesServicio _clienteService = new ClientesServicio();
         private Usuario _usuario;
 
         #endregion
@@ -37,7 +37,7 @@ namespace AlquilaCocheras.Web.clientes
         {
             var idCliente = VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID);
 
-            var cliente = _usuarioService.ObtenerClientePorId(idCliente);
+            var cliente = _clienteService.ObtenerClientePorId(idCliente);
 
             try
             {

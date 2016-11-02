@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AlquilaCocheras.Data.Repositorios
@@ -34,16 +35,17 @@ namespace AlquilaCocheras.Data.Repositorios
             return cochera;
         }
 
-        //public List<Cochera> Obtener(string ubicacion, DateTime fechaInicio, DateTime fechaFin)
-        //{
-        //    var cocheras = ObtenerListadoCocherasMock();
-        //    return cocheras;
-        //}
-
         public void Guardar(Cochera cochera)
         {
-            _db.Cochera.Add(cochera);
-            _db.SaveChanges();
+            try
+            {
+                _db.Cochera.Add(cochera);
+                _db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error: no se ha podido guardar la cochera");
+            }
         }
 
         #endregion

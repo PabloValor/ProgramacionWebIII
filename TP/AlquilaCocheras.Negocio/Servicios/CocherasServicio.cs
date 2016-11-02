@@ -43,9 +43,9 @@ namespace AlquilaCocheras.Negocio.Servicios
             return cochera;
         }
 
-        public void Guardar(Cochera reserva)
+        public void Guardar(Cochera cochera)
         {
-            _cocherasRepositorio.Guardar(reserva);
+            _cocherasRepositorio.Guardar(cochera);
         }
 
         #endregion

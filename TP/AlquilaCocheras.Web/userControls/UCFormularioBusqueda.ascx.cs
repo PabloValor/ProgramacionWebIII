@@ -21,28 +21,28 @@ namespace AlquilaCocheras.Web.userControls
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid) { 
-            _listadoCocherasDisponibles = new List<Cochera>();
-            var cocherasServicio = new CocherasServicio();
-
-            if (txtUbicacion.Text.ToLower() == "haedo")
+            if (Page.IsValid)
             {
-                _listadoCocherasDisponibles = cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text, txtFechaInicio.Text, txtFechaFin.Text);
+                _listadoCocherasDisponibles = new List<Cochera>();
+                var cocherasServicio = new CocherasServicio();
 
-                CantidadCocherasDisponibles.Text = _listadoCocherasDisponibles.Count > 0 ?
-                    string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocherasDisponibles.Count)
-                    : "No se encontraron resultados";
+                if (txtUbicacion.Text.ToLower() == "haedo")
+                {
+                    _listadoCocherasDisponibles = cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text, txtFechaInicio.Text, txtFechaFin.Text);
 
-                CargarListaFiltradaCocherasDisponibles();
-            }
-            else {
+                    CantidadCocherasDisponibles.Text = _listadoCocherasDisponibles.Count > 0 ?
+                        string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocherasDisponibles.Count)
+                        : "No se encontraron resultados";
 
-                CantidadCocherasDisponibles.Text = "No se encontraron resultados";
+                    CargarListaFiltradaCocherasDisponibles();
+                }
+                else
+                {
+                    CantidadCocherasDisponibles.Text = "No se encontraron resultados";
+                    rResultadoCocherasDisponiblesFiltradas.DataSource = CocherasMap.Mapear(_listadoCocherasDisponibles);
+                    rResultadoCocherasDisponiblesFiltradas.DataBind();
 
-                rResultadoCocherasDisponiblesFiltradas.DataSource = CocherasMap.Mapear(_listadoCocherasDisponibles);
-                rResultadoCocherasDisponiblesFiltradas.DataBind();
-                
-            }
+                }
 
             }
         }

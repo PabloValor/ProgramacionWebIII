@@ -27,8 +27,7 @@ namespace AlquilaCocheras.Data.Repositorios
 
             var query = (from p in _db.Propietario
                          join u in _db.Usuario on p.IdUsuario equals u.Id
-                         join tp in _db.TipoPerfilUsuario on u.IdTipoPerfilUsuario equals tp.Id
-                         where u.Id == idUsuario && tp.Id == (int)Enums.TipoPerfilUsuario.Cliente
+                         where u.Id == idUsuario
                          select new { p }).First().p;
 
             return query;
