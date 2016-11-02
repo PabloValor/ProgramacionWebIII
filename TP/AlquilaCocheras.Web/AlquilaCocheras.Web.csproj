@@ -76,6 +76,7 @@
     <None Include="assets\css\03-componentes\listado-reservas.scss" />
     <Content Include="assets\css\dist\estacionalo.min.css" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\cocheras\default.png" />
     <Content Include="assets\img\usuarios\usuario-avatar-default.jpg" />
     <Content Include="assets\js\dist\componentes.js" />
     <Content Include="assets\js\dist\estacionalo.js" />
@@ -246,7 +247,6 @@
   <ItemGroup>
     <Folder Include="assets\css\04-responsive\" />
     <Folder Include="assets\css\05-keyframes\" />
-    <Folder Include="assets\img\cocheras\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlquilaCocheras.Data\AlquilaCocheras.Data.csproj">

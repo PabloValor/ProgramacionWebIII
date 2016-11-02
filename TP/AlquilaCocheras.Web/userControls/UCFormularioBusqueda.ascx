@@ -70,11 +70,11 @@
                             <div class="col s12 m6 l4">
                                 <div class="card cochera">
                                     <div class="card-image waves-effect waves-block waves-light">
-                                        <img class="activator" src="<%# Eval("Imagen") %>">
+                                        <img class="activator" src="<%# Eval("Imagen") ?? "/assets/img/cocheras/default.png" %>">
+
                                     </div>
                                     <div class="card-content">
                                         <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
-                                        <p>Disponible!</p>
                                         <p class="center-align">
                                             <asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("Id","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
                                         </p>
