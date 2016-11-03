@@ -60,12 +60,24 @@ namespace AlquilaCocheras.Data.Repositorios
         public void ActualizarUsuario(Usuario usuarioActualizado)
         {
             var usuario = _db.Usuario.FirstOrDefault(u => u.Id == usuarioActualizado.Id);
-            if (usuario == null) throw new Exception("Error: Usuario inexistente");
+            if (usuario == null) throw new Exception("Error: usuario inexistente");
 
-            _db.Usuario.AddOrUpdate(usuarioActualizado);
-            _db.SaveChanges();
+            try
+            {
+                _db.Usuario.AddOrUpdate(usuarioActualizado);
+                _db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error: no se pudo actualizar el usuario");
+            }
         }
 
+        public bool YaExisteEmail(string email)
+        {
+            var emails = _db.Usuario.Select(u => u.Email).ToList();
+            return emails.Contains(email);
+        }
         #endregion
 
         #region Métodos Privados

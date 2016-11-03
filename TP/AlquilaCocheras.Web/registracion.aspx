@@ -100,7 +100,9 @@
             </div>
             <div class="row center-align">
                 <div class="col s12">
-                    <asp:Label ID="lblResultado" runat="server"></asp:Label>
+                    <p class="center-align">
+                        <asp:Label ID="lblResultado" runat="server" ClientIDMode="Static"></asp:Label>
+                    </p>
                     <asp:Button ID="btnRegistrarUsuario" runat="server" Text="Registrar usuario" ClientIDMode="Static" OnClick="btnRegistrarUsuario_Click" />
                 </div>
             </div>

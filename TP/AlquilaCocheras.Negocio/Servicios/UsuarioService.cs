@@ -9,7 +9,6 @@ namespace AlquilaCocheras.Negocio.Servicios
         #region Miembros
 
         private readonly UsuariosRepositorio _usuariosRepositorio;
-        private readonly ClientesRepositorio _clientesRepositorio;
 
         #endregion
 
@@ -18,7 +17,6 @@ namespace AlquilaCocheras.Negocio.Servicios
         public UsuarioService()
         {
             _usuariosRepositorio = new UsuariosRepositorio();
-            _clientesRepositorio = new ClientesRepositorio();
         }
 
         #endregion
@@ -60,6 +58,12 @@ namespace AlquilaCocheras.Negocio.Servicios
         public void ActualizarUsuario(Usuario usuario)
         {
             _usuariosRepositorio.ActualizarUsuario(usuario);
+        }
+
+        public bool YaExisteEmail(string email)
+        {
+            var existeMail = _usuariosRepositorio.YaExisteEmail(email);
+            return existeMail;
         }
 
         #endregion

@@ -1,0 +1,10 @@
+.registro-usuario- {
+    &exito {
+        background: green;
+        color: white;
+    }
+    &error {
+        background: red;
+        color: white;
+    }
+}

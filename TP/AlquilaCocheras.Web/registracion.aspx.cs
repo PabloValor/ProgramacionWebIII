@@ -22,26 +22,34 @@ namespace AlquilaCocheras.Web
         {
             if (Page.IsValid)
             {
-                var usuario = new Usuario
-                {
-                    Nombre = txtNombre.Text,
-                    Apellido = txtApellido.Text,
-                    Email = txtEmail.Text,
-                    Password = txtContrasenia.Text,
-                    IdTipoPerfilUsuario = int.Parse(rblPerfil.SelectedItem.Value),
-                    // Avatar = 
-                };
-
                 try
                 {
+                    if (_usuarioService.YaExisteEmail(txtEmail.Text))
+                    {
+                        throw new Exception("Error: el email que ingresó ya se encuentra en uso. Por favor, elegí otro");
+                    }
+
+                    var usuario = new Usuario
+                    {
+                        Nombre = txtNombre.Text,
+                        Apellido = txtApellido.Text,
+                        Email = txtEmail.Text,
+                        Password = txtContrasenia.Text,
+                        IdTipoPerfilUsuario = int.Parse(rblPerfil.SelectedItem.Value),
+                        // Avatar = 
+                    };
+
                     _usuarioService.GuardarUsuario(usuario);
                 }
                 catch (Exception ex)
                 {
+                    lblResultado.CssClass = "registro-usuario-error";
                     lblResultado.Text = ex.Message;
+                    return;
                 }
 
-                lblResultado.Text = "Registración exitosa, diríjase al <a href='login.aspx'>Login</a>";
+                lblResultado.CssClass = "registro-usuario-exito";
+                lblResultado.Text = "Registración exitosa";
             }
         }
     }
