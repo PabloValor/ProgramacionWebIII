@@ -11,7 +11,7 @@ namespace AlquilaCocheras.Negocio.Servicios
         #region Miembros
 
         private readonly ReservasRepositorio _reservasRepositorio;
-        private readonly ClientesServicio _clientesServicio;
+        private readonly CocherasServicio _cocherasServicio;
 
         #endregion
 
@@ -20,7 +20,7 @@ namespace AlquilaCocheras.Negocio.Servicios
         public ReservasServicio()
         {
             _reservasRepositorio = new ReservasRepositorio();
-            _clientesServicio = new ClientesServicio();
+            _cocherasServicio = new CocherasServicio();
         }
 
         #endregion
@@ -48,20 +48,19 @@ namespace AlquilaCocheras.Negocio.Servicios
             return reserva;
         }
 
-        public void GenerarReserva(Cliente cliente, Cochera cochera, DateTime fechaInicio, DateTime fechaFin)
+        public void GenerarReserva(int idCliente, DateTime fechaInicio, DateTime fechaFin, int cantidadHoras, int idCochera)
         {
-            cochera.Disponible = false;
-
             var reserva = new Reserva
             {
-                IdCliente = cliente.Id,
-                Cochera = cochera,
+                IdCliente = idCliente,
                 FechaInicio = fechaInicio,
-                FechaFin = fechaFin
+                FechaFin = fechaFin,
+                CantidadHoras = cantidadHoras,
+                IdCochera = idCochera
             };
 
-                _reservasRepositorio.Guardar(reserva);
-                _clientesServicio.AgregarReserva(cliente, reserva);
+            _reservasRepositorio.Guardar(reserva);
+            _cocherasServicio.ActualizarDisponibilidad(idCochera, false);
         }
 
         #endregion

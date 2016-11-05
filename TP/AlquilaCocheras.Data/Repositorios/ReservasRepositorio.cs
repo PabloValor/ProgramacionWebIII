@@ -42,8 +42,15 @@ namespace AlquilaCocheras.Data.Repositorios
 
         public void Guardar(Reserva reserva)
         {
-            _db.Reserva.Add(reserva);
-            _db.SaveChanges();
+            try
+            {
+                _db.Reserva.Add(reserva);
+                _db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error: No se pudo generar la reserva. Intente de nuevo");
+            }
         }
 
         #endregion

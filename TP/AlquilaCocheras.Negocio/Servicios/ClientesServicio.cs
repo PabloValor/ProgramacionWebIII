@@ -29,11 +29,6 @@ namespace AlquilaCocheras.Negocio.Servicios
             return cliente;
         }
 
-        public void AgregarReserva(Cliente cliente, Reserva reserva)
-        {
-            //cliente.Reservas.Add(reserva);
-        }
-
         public Cliente ObtenerClienteLogueado()
         {
             var idUsuario = VariblesSesionManager.Obtener<int>(Data.Constantes.Constantes.USUARIO_LOGUEADO_ID);

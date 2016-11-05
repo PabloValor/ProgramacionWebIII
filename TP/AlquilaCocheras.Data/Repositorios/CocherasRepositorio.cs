@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace AlquilaCocheras.Data.Repositorios
@@ -45,6 +46,24 @@ namespace AlquilaCocheras.Data.Repositorios
             catch (Exception e)
             {
                 throw new Exception("Error: no se ha podido guardar la cochera");
+            }
+        }
+
+        public void ActualizarDisponibilidad(int idCochera, bool disponibilidad)
+        {
+            try
+            {
+                var cochera = _db.Cochera.FirstOrDefault(c => c.Id == idCochera);
+
+                if (cochera == null) throw new Exception("Error: No se pudo actualizar la disponibilidad, la cochera no existe");
+
+                cochera.Disponible = disponibilidad;
+
+                _db.Cochera.AddOrUpdate(cochera);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error: no se pudo actualizar la disponibilidad de la cochera");
             }
         }
 

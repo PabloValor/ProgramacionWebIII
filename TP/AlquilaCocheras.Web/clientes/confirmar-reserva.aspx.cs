@@ -41,7 +41,7 @@ namespace AlquilaCocheras.Web.clientes
 
             try
             {
-                _reservasServicio.GenerarReserva(cliente, Cochera, DateTime.Now, new DateTime().AddDays(1)); //  (!) Fechas hardcodeadas
+                _reservasServicio.GenerarReserva(cliente.Id, DateTime.Now, new DateTime().AddDays(1), 99, Cochera.Id); //  (!) Fechas hardcodeadas
             }
             catch (Exception ex)
             {
