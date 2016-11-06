@@ -7,7 +7,10 @@ namespace AlquilaCocheras.Web.propietarios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarFormulioPerfil();
+            if (!Page.IsPostBack)
+            {
+                CargarFormulioPerfil();
+            }
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
