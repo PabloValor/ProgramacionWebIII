@@ -5,8 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
     <div class="container container-padding-top confirmar-reserva">
+        <h2 class="titulo-pagina center-align">Registrarse</h2>
         <div class="formulario">
-            <h2 class="titulo-pagina center-align">Registrarse</h2>
             <div class="row">
                 <div class="col s12 m6">
                     <asp:Label ID="label1" runat="server" Text="Nombre: "></asp:Label>
@@ -103,7 +103,7 @@
                     <p class="center-align">
                         <asp:Label ID="lblResultado" runat="server" ClientIDMode="Static"></asp:Label>
                     </p>
-                    <asp:Button ID="btnRegistrarUsuario" runat="server" Text="Registrar usuario" ClientIDMode="Static" OnClick="btnRegistrarUsuario_Click" />
+                    <asp:Button ID="btnRegistrarUsuario" runat="server" Text="Registrar usuario" ClientIDMode="Static" OnClick="btnRegistrarUsuario_Click" CssClass="btn"/>
                 </div>
             </div>
         </div>

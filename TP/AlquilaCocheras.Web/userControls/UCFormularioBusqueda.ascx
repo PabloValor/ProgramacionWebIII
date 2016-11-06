@@ -79,10 +79,23 @@
                                     </div>
                                     <div class="card-reveal">
                                         <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-                                        <p>Ubicación: <%# Eval("Ubicacion") %></p>
-                                        <p>Propietario: <%# Eval("NombrePropietario") %> <%# Eval("ApellidoPropietario") %></p>
-                                        <p>Precio por hora: <%# Eval("PrecioPorHora", "${0}") %></p>
-                                        <p>Puntaje Promedio: <%# Eval("PuntajePromedioCochera") %></p>
+                                        <br />
+                                        <div class="fila-dato">
+                                            <div class="cabecera">Ubicación</div>
+                                            <div class="dato left-align"><%# Eval("Ubicacion") %></div>
+                                        </div>
+                                        <div class="fila-dato">
+                                            <div class="cabecera">Propietario</div>
+                                            <div class="dato center-align"><%# Eval("NombrePropietario") %> <%# Eval("ApellidoPropietario") %></div>
+                                        </div>
+                                        <div class="fila-dato">
+                                            <div class="cabecera">Precio por hora</div>
+                                            <div class="dato center-align"><%# Eval("PrecioPorHora", "${0}") %></div>
+                                        </div>
+                                        <div class="fila-dato">
+                                            <div class="cabecera">Puntaje de cochera</div>
+                                            <div class="dato center-align"><%# Eval("PuntajePromedioCochera") %></div>
+                                        </div>  
 
                                         <p class="center-align botones">
                                             <a class="waves-effect waves-light btn modal-trigger btn-modal-mapa" href="#modal1"

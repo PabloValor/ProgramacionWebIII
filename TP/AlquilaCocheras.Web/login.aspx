@@ -5,7 +5,7 @@
     <title>Estacionalo | Login</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Principal" runat="server">
-    <div class="container">
+    <div class="container container-padding-top login">
         <h2 class="titulo-pagina center-align">Ingresar</h2>
         <div class="formulario login">
             <div class="row">
@@ -38,7 +38,7 @@
                     <div class="row">
                         <div class="col s12">
                             <a href="/registracion.aspx" class="btn">Registrarse</a>
-                            <asp:Button ID="btnLogin" runat="server" Text="Ingresar" ClientIDMode="Static" OnClick="btnLogin_Click" CssClass="btn" />
+                            <asp:Button ID="btnLogin"  runat="server" Text="Ingresar" ClientIDMode="Static" OnClick="btnLogin_Click" CssClass="btn" />
                         </div>
                     </div>
                 </div>

@@ -16,8 +16,19 @@
             }
         }
         .card-reveal {
-            p {
-                margin: 4px 0;
+            .fila-dato {
+                border: 1px solid #DDD;
+                margin: 5px 0;
+                .cabecera {
+                    background: #2196f3;
+                    color: white;
+                    font-size: 12px;
+                    text-align: center;
+                }
+                .dato {
+                    font-size: 14px;
+                    padding: 5px;
+                }
             }
             .botones {
                 margin-top: 20px;
