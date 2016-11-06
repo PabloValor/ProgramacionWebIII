@@ -39,7 +39,7 @@ namespace AlquilaCocheras.Web.propietarios
                         Precio = int.Parse(txtPrecioHora.Text),
                         FechaInicio = txtFechaInicio.Text.ToDateTime(),
                         FechaFin = txtFechaFin.Text.ToDateTime(),
-                        Imagen = fuFoto.FileName,
+                        Imagen = fuFoto.Text,
                         HoraInicio = txtHorarioInicio.Text,
                         HoraFin = txtHorarioFin.Text
                     };

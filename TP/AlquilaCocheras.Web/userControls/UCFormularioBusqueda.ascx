@@ -74,11 +74,11 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="center-align">
-                                            <a href="#!" class="activator">Más info</a>
+                                            <a href="#!" class="activator">Ver info de cochera &raquo;</a>
                                         </p>
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4"><span class="hide-on-small-and-down">Datos de cochera</span> <i class="material-icons right">close</i></span>
+                                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
                                         <p>Ubicación: <%# Eval("Ubicacion") %></p>
                                         <p>Propietario: <%# Eval("NombrePropietario") %> <%# Eval("ApellidoPropietario") %></p>
                                         <p>Precio por hora: <%# Eval("PrecioPorHora", "${0}") %></p>
@@ -88,7 +88,7 @@
                                             <a class="waves-effect waves-light btn modal-trigger btn-modal-mapa" href="#modal1"
                                                 data-latitud="<%# Eval("Latitud") %>"
                                                 data-longitud="<%# Eval("Longitud") %>">Ver mapa</a>
-                                            <asp:HyperLink CssClass="btn blue white-text" ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("Id","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
+                                            <asp:HyperLink CssClass="btn blue white-text margin-top-5" ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("Id","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
                                         </p>
                                     </div>
                                 </div>

@@ -192,7 +192,7 @@
 
                 <div class="col s12">
                     <asp:Label ID="label10" runat="server" Text="Foto: "></asp:Label>
-                    <asp:FileUpload ID="fuFoto" runat="server" ClientIDMode="Static" />
+                    <asp:TextBox ID="fuFoto" runat="server" ClientIDMode="static"></asp:TextBox>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorFoto" runat="server" ErrorMessage="Ingrese una Foto"
