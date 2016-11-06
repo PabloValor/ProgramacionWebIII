@@ -168,10 +168,10 @@
     <Compile Include="error\desconocido.aspx.designer.cs">
       <DependentUpon>desconocido.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Extensiones\StringsExtension.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="helpers\EntornoHelper.cs" />
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -23,31 +23,31 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         #region Métodos Publicos
 
-        public Usuario ObtenerUsuarioPorEmail(string email)
+        public Usuarios ObtenerUsuarioPorEmail(string email)
         {
             var usuario = _usuariosRepositorio.ObtenerUsuarioPorEmail(email);
             return usuario;
         }
 
-        public Usuario ObtenerUsuarioPorId(int id)
+        public Usuarios ObtenerUsuarioPorId(int id)
         {
             var usuario = _usuariosRepositorio.ObtenerUsuarioPorId(id);
 
             return usuario;
         }
 
-        public Usuario ObtenerUsuarioPorEmailYContrasena(string email, string contrasena)
+        public Usuarios ObtenerUsuarioPorEmailYContrasena(string email, string contrasena)
         {
             var usuario = _usuariosRepositorio.ObtenerUsuarioPorEmailYContrasena(email, contrasena);
             return usuario;
         }
 
-        public void GuardarUsuario(Usuario usuario)
+        public void GuardarUsuario(Usuarios usuario)
         {
             _usuariosRepositorio.GuardarUsuario(usuario);
         }
 
-        public Usuario ObtenerUsuarioLogueado()
+        public Usuarios ObtenerUsuarioLogueado()
         {
             var idUsuario = VariblesSesionManager.Obtener<int>(Data.Constantes.Constantes.USUARIO_LOGUEADO_ID);
             var usuario = _usuariosRepositorio.ObtenerUsuarioLogueado(idUsuario);
@@ -55,7 +55,7 @@ namespace AlquilaCocheras.Negocio.Servicios
             return usuario;
         }
 
-        public void ActualizarUsuario(Usuario usuario)
+        public void ActualizarUsuario(Usuarios usuario)
         {
             _usuariosRepositorio.ActualizarUsuario(usuario);
         }

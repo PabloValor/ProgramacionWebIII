@@ -6,11 +6,11 @@ namespace AlquilaCocheras.Negocio.Managers
 {
     public static class SesionesManager
     {
-        public static void LoguearUsuario(Usuario usuario)
+        public static void LoguearUsuario(Usuarios usuario)
         {
             if (usuario != null)
             {
-                VariblesSesionManager.Guardar(Constantes.USUARIO_LOGUEADO_ID, usuario.Id);
+                VariblesSesionManager.Guardar(Constantes.USUARIO_LOGUEADO_ID, usuario.IdUsuario);
             }
             else
             {

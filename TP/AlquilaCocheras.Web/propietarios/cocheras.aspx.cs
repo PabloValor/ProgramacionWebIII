@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using AlquilaCocheras.Data;
 using AlquilaCocheras.Negocio.Servicios;
+using AlquilaCocheras.Web.Extensiones;
 
 namespace AlquilaCocheras.Web.propietarios
 {
@@ -11,7 +11,7 @@ namespace AlquilaCocheras.Web.propietarios
         #region Miembros
 
         private PropietariosServicio _propietariosServicio = new PropietariosServicio();
-        private Propietario _propietario;
+        private Usuarios _propietario;
         private CocherasServicio _cocherasServicio;
 
         #endregion
@@ -28,16 +28,20 @@ namespace AlquilaCocheras.Web.propietarios
             {
                 try
                 {
-                    var cochera = new Cochera
+                    var cochera = new Cocheras
                     {
-                        IdPropietario = _propietario.Id,
+                        IdPropietario = _propietario.IdUsuario,
                         Ubicacion = txtUbicacion.Text,
-                        Latitud = txtLatitud.Text,
-                        Longitud = txtLongitud.Text,
-                        SuperficieM2 = int.Parse(txtMetrosCuadrados.Text),
+                        Latitud = int.Parse(txtLatitud.Text),
+                        Longitud = int.Parse(txtLongitud.Text),
+                        MetrosCuadrados = int.Parse(txtMetrosCuadrados.Text),
                         Descripcion = txtDescripcion.Text,
-                        Disponible = true,
-                        PrecioHora = int.Parse(txtPrecioHora.Text)
+                        Precio = int.Parse(txtPrecioHora.Text),
+                        FechaInicio = txtFechaInicio.Text.ToDateTime(),
+                        FechaFin = txtFechaFin.Text.ToDateTime(),
+                        Imagen = fuFoto.FileName,
+                        HoraInicio = txtHorarioInicio.Text,
+                        HoraFin = txtHorarioFin.Text
                     };
 
                     _cocherasServicio.Guardar(cochera);

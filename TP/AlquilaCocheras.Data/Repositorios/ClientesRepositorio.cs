@@ -6,7 +6,7 @@ namespace AlquilaCocheras.Data.Repositorios
     {
         #region Miembros
 
-        private readonly EstacionaloEntities _db;
+        private readonly TP_20162CEntities _db;
 
         #endregion
 
@@ -14,20 +14,16 @@ namespace AlquilaCocheras.Data.Repositorios
 
         public ClientesRepositorio()
         {
-            _db = new EstacionaloEntities();
+            _db = new TP_20162CEntities();
         }
         #endregion
 
         #region Métodos Publicos
 
-        public Cliente ObtenerClientePorId(int id)
+        public Usuarios ObtenerClientePorId(int id)
         {
-
-            var cliente = (from c in _db.Cliente
-                         join u in _db.Usuario on c.IdUsuario equals u.Id
-                         join tp in _db.TipoPerfilUsuario on u.IdTipoPerfilUsuario equals tp.Id
-                         where u.Id == id && tp.Id == (int)Enums.TipoPerfilUsuario.Cliente
-                         select new { c }).First().c;
+            var cliente =
+                _db.Usuarios.FirstOrDefault(u => u.IdUsuario == id && u.Perfil == (int)Enums.TipoPerfilUsuario.Cliente);
 
             return cliente;
         }

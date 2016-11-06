@@ -23,14 +23,14 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         #region Métodos Publicos
 
-        public Propietario ObtenerPropietarioLogueado()
+        public Usuarios ObtenerPropietarioLogueado()
         {
             var idUsuario = VariblesSesionManager.Obtener<int>(Data.Constantes.Constantes.USUARIO_LOGUEADO_ID);
-            var propietario = _propietariosRepositorio.ObtenerPropietarioPorIdUsuario(idUsuario);
+            var propietario = _propietariosRepositorio.ObtenerPropietarioPorId(idUsuario);
             return propietario;
         }
 
-        public void ActualizarPropietario(Propietario propietario)
+        public void ActualizarPropietario(Usuarios propietario)
         {
             _propietariosRepositorio.ActualizarPropietario(propietario);
         }

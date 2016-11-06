@@ -12,7 +12,7 @@ namespace AlquilaCocheras.Web.clientes
         #region Propiedades
 
         public string MensajeResultadoOperacion { get; private set; }
-        public Cochera Cochera { get; set; }
+        public Cocheras Cochera { get; set; }
 
         #endregion
 
@@ -21,7 +21,7 @@ namespace AlquilaCocheras.Web.clientes
         private ReservasServicio _reservasServicio = new ReservasServicio();
         private CocherasServicio _cocherasServicio = new CocherasServicio();
         private ClientesServicio _clienteService = new ClientesServicio();
-        private Usuario _usuario;
+        private Usuarios _usuario;
 
         #endregion
 
@@ -41,7 +41,7 @@ namespace AlquilaCocheras.Web.clientes
 
             try
             {
-                _reservasServicio.GenerarReserva(cliente.Id, DateTime.Now, new DateTime().AddDays(1), 99, Cochera.Id); //  (!) Fechas hardcodeadas
+                _reservasServicio.GenerarReserva(cliente.IdUsuario, DateTime.Now, new DateTime().AddDays(1), 99, Cochera.IdCochera); //  (!) Fechas hardcodeadas
             }
             catch (Exception ex)
             {

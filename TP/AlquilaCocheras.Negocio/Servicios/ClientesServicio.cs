@@ -23,13 +23,13 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         #region Métodos Publicos
 
-        public Cliente ObtenerClientePorId(int id)
+        public  Usuarios ObtenerClientePorId(int id)
         {
             var cliente = _clientesRepositorio.ObtenerClientePorId(id);
             return cliente;
         }
 
-        public Cliente ObtenerClienteLogueado()
+        public Usuarios ObtenerClienteLogueado()
         {
             var idUsuario = VariblesSesionManager.Obtener<int>(Data.Constantes.Constantes.USUARIO_LOGUEADO_ID);
             var cliente = _clientesRepositorio.ObtenerClientePorId(idUsuario);

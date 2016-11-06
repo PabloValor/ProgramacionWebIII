@@ -8,15 +8,15 @@ namespace AlquilaCocheras.Negocio.Mapeos
 {
     public static class CocherasMap
     {
-        public static List<CocheraDisponibleMap> Mapear(List<Cochera> cocheras)
+        public static List<CocheraDisponibleMap> Mapear(List<Cocheras> cocheras)
         {
             return cocheras.Select(r =>
                 new CocheraDisponibleMap
                 {
-                    Id = r.Id,
-                    NombrePropietario = r.Propietario.Usuario.Nombre,
-                    ApellidoPropietario = r.Propietario.Usuario.Apellido,
-                    PrecioPorHora = (double)r.PrecioHora,
+                    Id = r.IdCochera,
+                    NombrePropietario = r.Usuarios.Nombre,
+                    ApellidoPropietario = r.Usuarios.Apellido,
+                    PrecioPorHora = r.Precio,
                     Imagen = r.Imagen,
                     Latitud = r.Latitud,
                     Longitud = r.Longitud,

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Web;
-using System.Web.UI.WebControls;
-using AlquilaCocheras.Data.Constantes;
-using AlquilaCocheras.Data.Entidades;
-using AlquilaCocheras.Data.Enums;
-using AlquilaCocheras.Negocio.Managers;
-using AlquilaCocheras.Negocio.Servicios;
+using AlquilaCocheras.Data;
 
 namespace AlquilaCocheras.Web.propietarios
 {
@@ -20,11 +14,13 @@ namespace AlquilaCocheras.Web.propietarios
         {
             if (Page.IsValid)
             {
-                MapearUsuario();
+                var propietario = Master.PropietariosServicio.ObtenerPropietarioLogueado();
+
+                ActualizarPropietario(propietario);
 
                 try
                 {
-                    Master.PropietariosServicio.ActualizarPropietario(Master.Propietario);
+                    Master.PropietariosServicio.ActualizarPropietario(propietario);
                     lblResultado.Text = "Operación exitosa";
                 }
                 catch (Exception ex)
@@ -43,18 +39,18 @@ namespace AlquilaCocheras.Web.propietarios
 
         private void CargarFormulioPerfil()
         {
-            txtNombre.Text = Master.Propietario.Usuario.Nombre;
-            txtApellido.Text = Master.Propietario.Usuario.Apellido;
-            txtEmail.Text = Master.Propietario.Usuario.Email;
-            rblPerfil.SelectedValue = ((int)Master.Propietario.Usuario.IdTipoPerfilUsuario).ToString();
+            txtNombre.Text = Master.Propietario.Nombre;
+            txtApellido.Text = Master.Propietario.Apellido;
+            txtEmail.Text = Master.Propietario.Email;
+            rblPerfil.SelectedValue = ((int)Master.Propietario.Perfil).ToString();
         }
 
-        private void MapearUsuario()
+        private void ActualizarPropietario(Usuarios propietario)
         {
-            Master.Propietario.Usuario.Nombre = txtNombre.Text;
-            Master.Propietario.Usuario.Apellido = txtApellido.Text;
-            Master.Propietario.Usuario.Password = txtContrasenia.Text;
-            Master.Propietario.Usuario.IdTipoPerfilUsuario = rblPerfil.SelectedItem.Text.Contains("cliente") ? (int)Data.Enums.TipoPerfilUsuario.Cliente : (int)Data.Enums.TipoPerfilUsuario.Propietario;
+            propietario.Nombre = txtNombre.Text;
+            propietario.Apellido = txtApellido.Text;
+            propietario.Contrasenia = txtConfContrasenia.Text;
+            propietario.Perfil = (short)int.Parse(rblPerfil.SelectedValue);
         }
 
         #endregion

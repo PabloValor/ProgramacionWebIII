@@ -24,34 +24,34 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         #region Métodos Publicos
 
-        public List<Cochera> ObtenerTodas()
+        public List<Cocheras> ObtenerTodas()
         {
             var reservas = _cocherasRepositorio.Obtener();
 
             return reservas;
         }
 
-        public List<Cochera> ObtenerTodasDisponibles(string txtUbicacion, string txtFechaInicio, string txtFechaFin)
+        public List<Cocheras> ObtenerTodasDisponibles(string txtUbicacion, string txtFechaInicio, string txtFechaFin)
         {
-            var cocherasDisponibles = _cocherasRepositorio.Obtener().Where(c => c.Disponible.Value).ToList(); // (!) Hacer la validación correspondiente por ubicación y fechas
+            var cocherasDisponibles = _cocherasRepositorio.Obtener().ToList(); // (!) Hacer la validación correspondiente por ubicación y fechas
             return cocherasDisponibles;
         }
 
-        public Cochera ObtenerCocheraPorId(int id)
+        public Cocheras ObtenerCocheraPorId(int id)
         {
             var cochera = _cocherasRepositorio.ObtenerCocheraPorId(id);
             return cochera;
         }
 
-        public void Guardar(Cochera cochera)
+        public void Guardar(Cocheras cochera)
         {
             _cocherasRepositorio.Guardar(cochera);
         }
 
-        public void ActualizarDisponibilidad(int idCochera, bool disponibilidad)
-        {
-            _cocherasRepositorio.ActualizarDisponibilidad(idCochera, disponibilidad);
-        }
+        //public void ActualizarDisponibilidad(int idCochera, bool disponibilidad)
+        //{
+        //    _cocherasRepositorio.ActualizarDisponibilidad(idCochera, disponibilidad);
+        //}
 
         #endregion
     }

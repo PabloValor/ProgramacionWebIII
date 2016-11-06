@@ -29,13 +29,13 @@ namespace AlquilaCocheras.Web
                         throw new Exception("Error: el email que ingresó ya se encuentra en uso. Por favor, elegí otro");
                     }
 
-                    var usuario = new Usuario
+                    var usuario = new Usuarios
                     {
                         Nombre = txtNombre.Text,
                         Apellido = txtApellido.Text,
                         Email = txtEmail.Text,
-                        Password = txtContrasenia.Text,
-                        IdTipoPerfilUsuario = int.Parse(rblPerfil.SelectedItem.Value),
+                        Contrasenia = txtContrasenia.Text,
+                        Perfil = (short)int.Parse(rblPerfil.SelectedItem.Value),
                         // Avatar = 
                     };
 

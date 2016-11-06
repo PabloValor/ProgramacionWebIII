@@ -8,7 +8,7 @@ namespace AlquilaCocheras.Web.clientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            rpReservas.DataSource = ReservaMap.ClienteReservasMap(Master.Cliente.Reserva.ToList());
+            rpReservas.DataSource = ReservaMap.ClienteReservasMap(Master.Cliente.Reservas.ToList());
             rpReservas.DataBind();
         }
     }

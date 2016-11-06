@@ -8,7 +8,7 @@ namespace AlquilaCocheras.Data.Repositorios
     {
         #region Miembros
 
-        private readonly EstacionaloEntities _db;
+        private readonly TP_20162CEntities _db;
 
         #endregion
 
@@ -16,30 +16,33 @@ namespace AlquilaCocheras.Data.Repositorios
 
         public PropietariosRepositorio()
         {
-            _db = new EstacionaloEntities();
+            _db = new TP_20162CEntities();
         }
         #endregion
 
         #region Métodos Publicos
 
-        public Propietario ObtenerPropietarioPorIdUsuario(int idUsuario)
+        public Usuarios ObtenerPropietarioPorId(int id)
         {
 
-            var query = (from p in _db.Propietario
-                         join u in _db.Usuario on p.IdUsuario equals u.Id
-                         where u.Id == idUsuario
-                         select new { p }).First().p;
+            var propietario =
+                _db.Usuarios.FirstOrDefault(
+                    p => p.IdUsuario == id && p.Perfil == (int) Enums.TipoPerfilUsuario.Propietario);
 
-            return query;
+            return propietario;
         }
 
-        public void ActualizarPropietario(Propietario propietarioActualizado)
+        public void ActualizarPropietario(Usuarios propietarioActualizado)
         {
-            var propietario = _db.Propietario.FirstOrDefault(u => u.Id == propietarioActualizado.Id);
-            if (propietario == null) throw new Exception("Error: Usuario inexistente");
-
-            _db.Propietario.AddOrUpdate(propietarioActualizado);
-            _db.SaveChanges();
+            try
+            {
+                _db.Usuarios.AddOrUpdate(propietarioActualizado);
+                _db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error: no se pudo actualizar el usuario");
+            }
         }
 
         #endregion

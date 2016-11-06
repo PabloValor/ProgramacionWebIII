@@ -8,28 +8,28 @@ namespace AlquilaCocheras.Negocio.Mapeos
 {
     public static class ReservaMap
     {
-        public static List<CocheraDisponibleMap> Mapear(IList<Reserva> reservas)
+        public static List<CocheraDisponibleMap> Mapear(IList<Reservas> reservas)
         {
             return reservas.Select(r =>
                 new CocheraDisponibleMap
                 {
-                    Id = r.Id,
-                    NombrePropietario = r.Cochera.Propietario.Usuario.Nombre,
-                    ApellidoPropietario = r.Cochera.Propietario.Usuario.Apellido,
-                    Imagen = r.Cochera.Imagen,
-                    Latitud = r.Cochera.Latitud,
-                    Longitud = r.Cochera.Longitud
+                    Id = r.IdCochera,
+                    NombrePropietario = r.Usuarios.Nombre,
+                    ApellidoPropietario = r.Usuarios.Apellido,
+                    Imagen = r.Cocheras.Imagen,
+                    Latitud = r.Cocheras.Latitud,
+                    Longitud = r.Cocheras.Longitud
                 }
             ).ToList();
         }
 
-        public static List<ClienteReservaMap> ClienteReservasMap(List<Reserva> reservas)
+        public static List<ClienteReservaMap> ClienteReservasMap(List<Reservas> reservas)
         {
             return reservas.Select(r =>
             new ClienteReservaMap
             {
                 Horario = DateTime.Now.ToString("hh:mm"),
-                PrecioFinal = ((double)r.Cochera.PrecioHora) * r.CantidadHoras,
+                PrecioFinal = r.Cocheras.Precio * r.CantidadHoras,
                 Puntuacion = 1,
                 FechaInicio = DateTime.Now.ToString("dd/MM/yyyy"),
                 FechaFin = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy"),

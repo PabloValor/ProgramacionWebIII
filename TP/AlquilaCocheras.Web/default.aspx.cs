@@ -11,8 +11,8 @@ namespace AlquilaCocheras.Web
         #region Miembros
 
         private UsuarioService _usuarioService = new UsuarioService();
-        private Usuario _usuario;
-        private List<Cochera> _listadoCocherasDisponibles;
+        private Usuarios _usuario;
+        private List<Cocheras> _listadoCocherasDisponibles;
 
         #endregion
 
@@ -23,7 +23,7 @@ namespace AlquilaCocheras.Web
 
             if (_usuario != null)
             {
-                Response.Redirect(_usuario.IdTipoPerfilUsuario == (int)Data.Enums.TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
+                Response.Redirect(_usuario.Perfil == (int)Data.Enums.TipoPerfilUsuario.Cliente ? "/clientes/reservas.aspx" : "/propietarios/reservas.aspx");
             }
         }
     }

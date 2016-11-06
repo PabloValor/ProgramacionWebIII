@@ -11,7 +11,7 @@ namespace AlquilaCocheras.Web.MasterPages
     {
         #region Propiedades
 
-        public Cliente Cliente { get; set; }
+        public Usuarios Cliente { get; set; }
         public ClientesServicio ClientesServicio { get; set; }
 
         #endregion
@@ -27,7 +27,7 @@ namespace AlquilaCocheras.Web.MasterPages
             ClientesServicio = new ClientesServicio();
             Cliente = ClientesServicio.ObtenerClienteLogueado();
 
-            if (Cliente == null || Cliente.Usuario.IdTipoPerfilUsuario != (int)Data.Enums.TipoPerfilUsuario.Cliente)
+            if (Cliente == null || Cliente.Perfil != (int)Data.Enums.TipoPerfilUsuario.Cliente)
             {
                 Response.Redirect("~/default.aspx");
             }

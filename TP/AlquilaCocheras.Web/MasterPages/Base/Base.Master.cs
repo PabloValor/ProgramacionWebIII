@@ -11,7 +11,7 @@ namespace AlquilaCocheras.Web.MasterPages
     {
         #region Propiedades
 
-        public Usuario Usuario { get; set; }
+        public Usuarios Usuario { get; set; }
 
         #endregion
 

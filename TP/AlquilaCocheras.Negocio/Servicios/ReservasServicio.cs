@@ -27,30 +27,23 @@ namespace AlquilaCocheras.Negocio.Servicios
 
         #region Métodos Publicos
 
-        public List<Reserva> ObtenerTodas()
+        public List<Reservas> ObtenerTodas()
         {
             var reservas = _reservasRepositorio.Obtener();
 
             return reservas;
         }
 
-        public List<Reserva> ObtenerReservas(string ubicacion, DateTime fechaInicio, DateTime fechaFin)
+        public Reservas ObtenerReservaPorId(int id)
         {
-            var reservas = _reservasRepositorio.Obtener(ubicacion, fechaInicio, fechaFin);
-
-            return reservas;
-        }
-
-        public Reserva ObtenerReservaPorId(int id)
-        {
-            var reserva = ObtenerTodas().FirstOrDefault(r => r.Id == id);
+            var reserva = ObtenerTodas().FirstOrDefault(r => r.IdReserva == id);
 
             return reserva;
         }
 
         public void GenerarReserva(int idCliente, DateTime fechaInicio, DateTime fechaFin, int cantidadHoras, int idCochera)
         {
-            var reserva = new Reserva
+            var reserva = new Reservas
             {
                 IdCliente = idCliente,
                 FechaInicio = fechaInicio,
@@ -60,7 +53,7 @@ namespace AlquilaCocheras.Negocio.Servicios
             };
 
             _reservasRepositorio.Guardar(reserva);
-            _cocherasServicio.ActualizarDisponibilidad(idCochera, false);
+            //_cocherasServicio.ActualizarDisponibilidad(idCochera, false);
         }
 
         #endregion

@@ -9,7 +9,7 @@ namespace AlquilaCocheras.Data.Repositorios
     {
         #region Miembros
 
-        private readonly EstacionaloEntities _db;
+        private readonly TP_20162CEntities _db;
 
         #endregion
 
@@ -17,30 +17,30 @@ namespace AlquilaCocheras.Data.Repositorios
 
         public CocherasRepositorio()
         {
-            _db = new EstacionaloEntities();
+            _db = new TP_20162CEntities();
         }
 
         #endregion
 
         #region Métodos Publicos
 
-        public List<Cochera> Obtener()
+        public List<Cocheras> Obtener()
         {
-            var cocheras = _db.Cochera.ToList();
+            var cocheras = _db.Cocheras.ToList();
             return cocheras;
         }
 
-        public Cochera ObtenerCocheraPorId(int id)
+        public Cocheras ObtenerCocheraPorId(int id)
         {
-            var cochera = _db.Cochera.FirstOrDefault(c => c.Id == id);
+            var cochera = _db.Cocheras.FirstOrDefault(c => c.IdCochera == id);
             return cochera;
         }
 
-        public void Guardar(Cochera cochera)
+        public void Guardar(Cocheras cochera)
         {
             try
             {
-                _db.Cochera.Add(cochera);
+                _db.Cocheras.Add(cochera);
                 _db.SaveChanges();
             }
             catch (Exception e)
@@ -49,63 +49,27 @@ namespace AlquilaCocheras.Data.Repositorios
             }
         }
 
-        public void ActualizarDisponibilidad(int idCochera, bool disponibilidad)
-        {
-            try
-            {
-                var cochera = _db.Cochera.FirstOrDefault(c => c.Id == idCochera);
+        //public void ActualizarDisponibilidad(int idCochera, bool disponibilidad)
+        //{
+        //    try
+        //    {
+        //        var cochera = _db.Cochera.FirstOrDefault(c => c.Id == idCochera);
 
-                if (cochera == null) throw new Exception("Error: No se pudo actualizar la disponibilidad, la cochera no existe");
+        //        if (cochera == null) throw new Exception("Error: No se pudo actualizar la disponibilidad, la cochera no existe");
 
-                cochera.Disponible = disponibilidad;
+        //        cochera.Disponible = disponibilidad;
 
-                _db.Cochera.AddOrUpdate(cochera);
-            }
-            catch (Exception)
-            {
-                throw new Exception("Error: no se pudo actualizar la disponibilidad de la cochera");
-            }
-        }
+        //        _db.Cochera.AddOrUpdate(cochera);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw new Exception("Error: no se pudo actualizar la disponibilidad de la cochera");
+        //    }
+        //}
 
         #endregion
 
         #region Métodos Privados
-
-        //private List<Cochera> ObtenerListadoCocherasMock()
-        //{
-        //    var cochera = new Cochera
-        //    {
-        //        Id = 123,
-        //        Ubicacion = "Florencio Varela 1903, San Justo, Buenos Aires, AR",
-        //        Latitud = "-34.670370",
-        //        Longitud = "-58.563390",
-        //        Imagen = "http://www.el1digital.com.ar/multimedia/imagen/56860_falcodesa2.jpg",
-        //        Disponible = true,
-        //        PrecioPorHora = 14,
-        //        Puntaje = new Puntaje
-        //        {
-        //            CantidadVotos = 41,
-        //            PuntajeTotal = 300
-        //        },
-        //        Propietario = new Propietario
-        //        {
-        //            Nombre = "Carlos",
-        //            Apellido = "Lopez",
-        //            Avatar = "https://image.freepik.com/iconos-gratis/user-avatar-fotografia-principal_318-85015.jpg",
-        //            Email = "propietario@gmail.com",
-        //            Password = "Password1",
-        //            Id = 2,
-        //            Perfil = TipoPerfilUsuario.Propietario
-        //        }
-        //    };
-
-        //    for (var i = 0; i < 10; i++)
-        //    {
-        //        _cocheras.Add(cochera);
-        //    }
-
-        //    return _cocheras;
-        //}
         #endregion
     }
 }

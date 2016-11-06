@@ -5,11 +5,11 @@
         public int Id { get; set; }
         public string NombrePropietario { get; set; }
         public string ApellidoPropietario { get; set; }
-        public double PrecioPorHora { get; set; }
+        public decimal PrecioPorHora { get; set; }
         public string Imagen { get; set; }
-        public string Latitud { get; set; }
-        public string Longitud { get; set; }
-        public double PuntajePromedioCochera { get; set; }
+        public decimal Latitud { get; set; }
+        public decimal Longitud { get; set; }
+        public decimal PuntajePromedioCochera { get; set; }
         public string Ubicacion { get; set; }
     }
 }
