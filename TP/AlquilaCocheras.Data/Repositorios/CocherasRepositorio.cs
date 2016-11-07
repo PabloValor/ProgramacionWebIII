@@ -30,6 +30,13 @@ namespace AlquilaCocheras.Data.Repositorios
             return cocheras;
         }
 
+        public List<Cocheras> Obtener(string txtUbicacion, DateTime fechaInicio, DateTime fechaFin)
+        {
+            var cocheras = _db.Cocheras
+                .Where(c => c.Ubicacion.ToLower().Contains(txtUbicacion) && fechaInicio.CompareTo(c.FechaInicio) >= 0 && fechaFin.CompareTo(c.FechaFin) <= 0).ToList();
+            return cocheras;
+        }
+
         public Cocheras ObtenerCocheraPorId(int id)
         {
             var cochera = _db.Cocheras.FirstOrDefault(c => c.IdCochera == id);

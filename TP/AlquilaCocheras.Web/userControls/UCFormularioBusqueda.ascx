@@ -62,8 +62,7 @@
         <div class="col s12">
             <div class="listado-reservas">
                 <div class="row">
-                    <h3>
-                        <asp:Label runat="server" ID="CantidadCocherasDisponibles"></asp:Label></h3>
+                    <h3 class="center-align"><asp:Label runat="server" ID="CantidadCocherasDisponibles" ClientIDMode="Static"></asp:Label></h3>
 
                     <asp:Repeater runat="server" ID="rResultadoCocherasDisponiblesFiltradas">
                         <ItemTemplate>
@@ -92,16 +91,16 @@
                                             <div class="cabecera">Precio por hora</div>
                                             <div class="dato center-align"><%# Eval("PrecioPorHora", "${0}") %></div>
                                         </div>
-                                        <div class="fila-dato">
+                                        <%--<div class="fila-dato">
                                             <div class="cabecera">Puntaje de cochera</div>
                                             <div class="dato center-align"><%# Eval("PuntajePromedioCochera") %></div>
-                                        </div>  
+                                        </div>  --%>
 
                                         <p class="center-align botones">
                                             <a class="waves-effect waves-light btn modal-trigger btn-modal-mapa" href="#modal1"
                                                 data-latitud="<%# Eval("Latitud") %>"
                                                 data-longitud="<%# Eval("Longitud") %>">Ver mapa</a>
-                                            <asp:HyperLink CssClass="btn blue white-text margin-top-5" ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("Id","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
+                                            <asp:HyperLink CssClass="btn blue white-text margin-top-5" ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("IdCochera","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
                                         </p>
                                     </div>
                                 </div>

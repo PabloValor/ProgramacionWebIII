@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AlquilaCocheras.Data;
 using AlquilaCocheras.Data.Repositorios;
@@ -31,10 +32,11 @@ namespace AlquilaCocheras.Negocio.Servicios
             return reservas;
         }
 
-        public List<Cocheras> ObtenerTodasDisponibles(string txtUbicacion, string txtFechaInicio, string txtFechaFin)
+        public List<Cocheras> ObtenerTodasDisponibles(string txtUbicacion, DateTime txtFechaInicio, DateTime txtFechaFin)
         {
-            var cocherasDisponibles = _cocherasRepositorio.Obtener().ToList(); // (!) Hacer la validación correspondiente por ubicación y fechas
-            return cocherasDisponibles;
+            var listadoCocheras = _cocherasRepositorio.Obtener(txtUbicacion, txtFechaInicio, txtFechaFin).ToList();
+
+            return listadoCocheras;
         }
 
         public Cocheras ObtenerCocheraPorId(int id)

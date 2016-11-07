@@ -50,6 +50,7 @@
     <Compile Include="Servicios\PropietariosServicio.cs" />
     <Compile Include="Servicios\ReservasServicio.cs" />
     <Compile Include="Servicios\UsuarioService.cs" />
+    <Compile Include="ViewModels\CocheraViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlquilaCocheras.Data\AlquilaCocheras.Data.csproj">

@@ -243,6 +243,7 @@
     <Compile Include="userControls\UCFormularioBusqueda.ascx.designer.cs">
       <DependentUpon>UCFormularioBusqueda.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CocheraViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\css\04-responsive\" />
