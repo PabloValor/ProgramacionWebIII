@@ -49,11 +49,15 @@ namespace AlquilaCocheras.Negocio.Servicios
                 FechaInicio = fechaInicio,
                 FechaFin = fechaFin,
                 CantidadHoras = cantidadHoras,
-                IdCochera = idCochera
+                IdCochera = idCochera,
+                Puntuacion = 1,
+                FechaCarga = DateTime.Now,
+                HoraInicio = "10:00",
+                HoraFin = "11:00",
+                Precio = 45
             };
 
             _reservasRepositorio.Guardar(reserva);
-            //_cocherasServicio.ActualizarDisponibilidad(idCochera, false);
         }
 
         #endregion

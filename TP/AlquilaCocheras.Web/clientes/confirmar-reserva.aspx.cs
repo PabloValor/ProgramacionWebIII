@@ -41,11 +41,12 @@ namespace AlquilaCocheras.Web.clientes
 
             try
             {
-                _reservasServicio.GenerarReserva(cliente.IdUsuario, DateTime.Now, new DateTime().AddDays(1), 99, Cochera.IdCochera); //  (!) Fechas hardcodeadas
+                _reservasServicio.GenerarReserva(cliente.IdUsuario, DateTime.Now, DateTime.Now.AddDays(1), 99, Cochera.IdCochera); //  (!) Fechas hardcodeadas
             }
             catch (Exception ex)
             {
                 MensajeResultadoOperacion = ex.Message;
+                return;
             }
 
             MensajeResultadoOperacion = "La cochera se ha reservado con éxito";

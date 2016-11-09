@@ -9,6 +9,9 @@
         img {
                 height: 210px;
         }
+        &.no-disponible {
+            background-color: gray!important;
+        }
         .card-content {
             text-align: center;
             .link-reservar {

@@ -4,7 +4,7 @@ namespace AlquilaCocheras.Negocio.ViewModels
 {
     public class CocheraViewModel
     {
-        public bool Disponible { get; set; }
+        public bool NoDisponible { get; set; }
         public int IdCochera { get; set; }
         public int IdPropietario { get; set; }
         public string Ubicacion { get; set; }

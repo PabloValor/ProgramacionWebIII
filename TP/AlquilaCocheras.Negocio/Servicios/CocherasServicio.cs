@@ -50,11 +50,6 @@ namespace AlquilaCocheras.Negocio.Servicios
             _cocherasRepositorio.Guardar(cochera);
         }
 
-        //public void ActualizarDisponibilidad(int idCochera, bool disponibilidad)
-        //{
-        //    _cocherasRepositorio.ActualizarDisponibilidad(idCochera, disponibilidad);
-        //}
-
         #endregion
     }
 }

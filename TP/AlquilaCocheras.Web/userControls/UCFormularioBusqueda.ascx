@@ -67,7 +67,7 @@
                     <asp:Repeater runat="server" ID="rResultadoCocherasDisponiblesFiltradas">
                         <ItemTemplate>
                             <div class="col s12 m6 l4">
-                                <div class="card cochera">
+                                <div class="card cochera <%# (bool)Eval("NoDisponible") ? "no-disponible" : "" %>">
                                     <div class="card-image waves-effect waves-block waves-light">
                                         <img class="activator" src="<%# Eval("Imagen") ?? "/assets/img/cocheras/default.png" %>">
                                     </div>

@@ -15,7 +15,7 @@ namespace AlquilaCocheras.Negocio.Mapeos
 
             var cocherasViewModel = cocheras.Select(c => new CocheraViewModel
             {
-                Disponible = listadoReservas.All(r => r.IdCochera != c.IdCochera),
+                NoDisponible = listadoReservas.Any(r => r.Cocheras.IdCochera == c.IdCochera),
                 IdCochera = c.IdCochera,
                 NombrePropietario = c.Usuarios.Nombre,
                 ApellidoPropietario = c.Usuarios.Apellido,
