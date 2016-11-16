@@ -100,7 +100,9 @@
                                             <a class="waves-effect waves-light btn modal-trigger btn-modal-mapa" href="#modal1"
                                                 data-latitud="<%# Eval("Latitud") %>"
                                                 data-longitud="<%# Eval("Longitud") %>">Ver mapa</a>
-                                            <asp:HyperLink CssClass="btn blue white-text margin-top-5" ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("IdCochera","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
+                                            <span class="<%# (bool) Eval("NoDisponible") ? "hide" : "" %>">
+                                                <asp:HyperLink CssClass="btn blue white-text margin-top-5" ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("IdCochera","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
+                                            </span>
                                         </p>
                                     </div>
                                 </div>

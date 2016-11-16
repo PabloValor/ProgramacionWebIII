@@ -10,7 +10,14 @@
                 height: 210px;
         }
         &.no-disponible {
-            background-color: gray!important;
+			a.activator {
+				color: gray;
+			}
+			img {
+				-webkit-filter: grayscale(1);
+				-moz-filter: grayscale(1);
+				filter: grayscale(1);
+			}
         }
         .card-content {
             text-align: center;
