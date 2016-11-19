@@ -54,6 +54,7 @@
       <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Constantes\Constantes.cs" />
+    <Compile Include="DTOs\CocheraDTO.cs" />
     <Compile Include="Enums\TipoPerfilUsuario.cs" />
     <Compile Include="Enums\TipoVehiculo.cs" />
     <Compile Include="Mapeos\ClienteReservaMap.cs" />

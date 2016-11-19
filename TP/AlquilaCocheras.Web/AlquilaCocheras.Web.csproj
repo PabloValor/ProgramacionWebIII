@@ -48,6 +48,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -100,6 +102,10 @@
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="assets\css\03-componentes\quienes-somos.scss" />
+    <Content Include="Service References\ServiceReference1\AlquilaCocheras.Web.ServiceReference1.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\CocherasWebService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="clientes\confirmar-reserva.aspx" />
@@ -113,7 +119,15 @@
     <Content Include="propietarios\perfil.aspx" />
     <Content Include="propietarios\reservas.aspx" />
     <Content Include="registracion.aspx" />
-    <Content Include="userControls\UCFormularioBusqueda.ascx" />
+    <Content Include="Service References\ServiceReference1\CocherasWebService.disco" />
+    <Content Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <Content Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Servicios\CocherasWebService.asmx" />
+    <Content Include="UserControls\UCFormularioBusqueda.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -229,11 +243,20 @@
     <Compile Include="registracion.aspx.designer.cs">
       <DependentUpon>registracion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="userControls\UCFormularioBusqueda.ascx.cs">
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\CocherasWebService.asmx.cs">
+      <DependentUpon>CocherasWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCFormularioBusqueda.ascx.cs">
       <DependentUpon>UCFormularioBusqueda.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="userControls\UCFormularioBusqueda.ascx.designer.cs">
+    <Compile Include="UserControls\UCFormularioBusqueda.ascx.designer.cs">
       <DependentUpon>UCFormularioBusqueda.ascx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CocheraViewModel.cs" />
@@ -251,6 +274,12 @@
       <Project>{f46f4abf-2fcf-455a-93b1-168a0ce1535e}</Project>
       <Name>AlquilaCocheras.Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

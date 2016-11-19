@@ -1,8 +1,6 @@
-﻿using AlquilaCocheras.Data;
-
-namespace AlquilaCocheras.Negocio.ViewModels
+﻿namespace AlquilaCocheras.Data.DTOs
 {
-    public class CocheraViewModel
+    public class CocheraDTO
     {
         public bool NoDisponible { get; set; }
         public int IdCochera { get; set; }

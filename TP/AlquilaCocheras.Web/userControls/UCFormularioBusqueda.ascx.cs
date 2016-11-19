@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using AlquilaCocheras.Data;
+using AlquilaCocheras.Data.DTOs;
 using AlquilaCocheras.Negocio.Mapeos;
 using AlquilaCocheras.Negocio.Servicios;
 using AlquilaCocheras.Web.Extensiones;
+using AlquilaCocheras.Web.Servicios;
 
 namespace AlquilaCocheras.Web.userControls
 {
@@ -12,9 +14,8 @@ namespace AlquilaCocheras.Web.userControls
         #region Miembros
 
         private Usuarios _usuario;
-        private List<Cocheras> _listadoCocheras;
-        private CocherasServicio _cocherasServicio = new CocherasServicio();
-        private CocherasMap _cocherasMap = new CocherasMap();
+        private List<CocheraDTO> _listadoCocheras;
+        private CocherasWebService _cocherasWebService = new CocherasWebService();
 
         #endregion
 
@@ -26,9 +27,10 @@ namespace AlquilaCocheras.Web.userControls
         {
             if (Page.IsValid)
             {
-                _listadoCocheras = new List<Cocheras>();
+                _listadoCocheras = new List<CocheraDTO>();
 
-                _listadoCocheras = _cocherasServicio.ObtenerTodasDisponibles(txtUbicacion.Text.ToLower(), txtFechaInicio.Text.ToDateTime(), txtFechaFin.Text.ToDateTime());
+                _listadoCocheras = _cocherasWebService.ObtenerCocheras(txtUbicacion.Text.ToLower(),
+                    txtFechaInicio.Text.ToDateTime(), txtFechaFin.Text.ToDateTime());
 
                 CantidadCocherasDisponibles.Text = _listadoCocheras.Count > 0 ?
                     string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocheras.Count)
@@ -42,7 +44,7 @@ namespace AlquilaCocheras.Web.userControls
 
         private void CargarListaFiltradaCocherasDisponibles()
         {
-            rResultadoCocherasDisponiblesFiltradas.DataSource = _cocherasMap.MapearCocheraViewModel(_listadoCocheras);
+            rResultadoCocherasDisponiblesFiltradas.DataSource = _listadoCocheras;
             rResultadoCocherasDisponiblesFiltradas.DataBind();
         }
 
