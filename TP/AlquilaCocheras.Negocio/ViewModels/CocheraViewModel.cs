@@ -22,6 +22,6 @@ namespace AlquilaCocheras.Negocio.ViewModels
         public string NombrePropietario { get; set; }
         public string ApellidoPropietario { get; set; }
         public decimal PrecioPorHora { get; set; }
-        public decimal PuntajePromedioCochera { get; set; }
+        public double PuntajePromedioCochera { get; set; }
     }
 }

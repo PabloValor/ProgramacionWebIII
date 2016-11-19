@@ -14,6 +14,7 @@ namespace AlquilaCocheras.Web.userControls
         private Usuarios _usuario;
         private List<Cocheras> _listadoCocheras;
         private CocherasServicio _cocherasServicio = new CocherasServicio();
+        private CocherasMap _cocherasMap = new CocherasMap();
 
         #endregion
 
@@ -41,7 +42,7 @@ namespace AlquilaCocheras.Web.userControls
 
         private void CargarListaFiltradaCocherasDisponibles()
         {
-            rResultadoCocherasDisponiblesFiltradas.DataSource = CocherasMap.MapearCocheraViewModel(_listadoCocheras);
+            rResultadoCocherasDisponiblesFiltradas.DataSource = _cocherasMap.MapearCocheraViewModel(_listadoCocheras);
             rResultadoCocherasDisponiblesFiltradas.DataBind();
         }
 

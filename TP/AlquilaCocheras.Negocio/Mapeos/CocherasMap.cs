@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AlquilaCocheras.Data;
 using AlquilaCocheras.Negocio.Servicios;
@@ -6,12 +7,21 @@ using AlquilaCocheras.Negocio.ViewModels;
 
 namespace AlquilaCocheras.Negocio.Mapeos
 {
-    public static class CocherasMap
+    public class CocherasMap
     {
-        public static List<CocheraViewModel> MapearCocheraViewModel(List<Cocheras> cocheras)
+        #region Miembros
+        private readonly ReservasServicio _reservasServicio;
+        #endregion
+
+        public CocherasMap()
         {
-            var reservasServicio = new ReservasServicio();
-            var listadoReservas = reservasServicio.ObtenerTodas();
+            _reservasServicio = new ReservasServicio();
+        }
+
+        public List<CocheraViewModel> MapearCocheraViewModel(List<Cocheras> cocheras)
+        {
+            
+            var listadoReservas = _reservasServicio.ObtenerTodas();
 
             var cocherasViewModel = cocheras.Select(c => new CocheraViewModel
             {
@@ -23,10 +33,20 @@ namespace AlquilaCocheras.Negocio.Mapeos
                 Imagen = c.Imagen,
                 Latitud = c.Latitud,
                 Longitud = c.Longitud,
-                Ubicacion = c.Ubicacion
+                Ubicacion = c.Ubicacion,
+                PuntajePromedioCochera = ObtenerPromedioPuntuacion(c.IdCochera)
             }).ToList();
 
             return cocherasViewModel;
+        }
+
+        private double ObtenerPromedioPuntuacion(int idCochera)
+        {
+            var listadoPuntuaciones = _reservasServicio.ObtenerTodas().Where(r => r.IdCochera == idCochera).Select(r => r.Puntuacion).ToList();
+
+            var promedio = listadoPuntuaciones.Sum(x => x) / listadoPuntuaciones.Count();
+
+            return Math.Round((double)promedio, 1);
         }
     }
 }

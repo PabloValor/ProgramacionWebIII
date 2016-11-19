@@ -78,15 +78,15 @@
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\img\cocheras\default.png" />
     <Content Include="assets\img\usuarios\usuario-avatar-default.jpg" />
+    <Content Include="assets\js\componentes\clientes.js" />
     <Content Include="assets\js\dist\componentes.js" />
     <Content Include="assets\js\dist\estacionalo.js" />
     <Content Include="assets\js\dist\estacionalo.min.js" />
     <Content Include="assets\js\dist\vendors.js" />
-    <Content Include="assets\js\shared\base-master.js" />
-    <Content Include="assets\js\shared\mapas.js" />
+    <Content Include="assets\js\componentes\base-master.js" />
+    <Content Include="assets\js\componentes\mapas.js" />
     <Content Include="assets\js\vendor\googleMaps.js" />
     <Content Include="assets\js\vendor\jquery.mask.js" />
-    <Content Include="clientes\puntuacion.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
@@ -125,13 +125,6 @@
     </Compile>
     <Compile Include="clientes\confirmar-reserva.aspx.designer.cs">
       <DependentUpon>confirmar-reserva.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="clientes\puntuacion.aspx.cs">
-      <DependentUpon>puntuacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="clientes\puntuacion.aspx.designer.cs">
-      <DependentUpon>puntuacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="clientes\reservar.aspx.cs">
       <DependentUpon>reservar.aspx</DependentUpon>

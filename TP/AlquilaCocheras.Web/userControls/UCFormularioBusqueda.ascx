@@ -91,10 +91,10 @@
                                             <div class="cabecera">Precio por hora</div>
                                             <div class="dato center-align"><%# Eval("PrecioPorHora", "${0}") %></div>
                                         </div>
-                                        <%--<div class="fila-dato">
-                                            <div class="cabecera">Puntaje de cochera</div>
+                                        <div class="fila-dato">
+                                            <div class="cabecera">Puntaje promedio</div>
                                             <div class="dato center-align"><%# Eval("PuntajePromedioCochera") %></div>
-                                        </div>  --%>
+                                        </div>
 
                                         <p class="center-align botones">
                                             <a class="waves-effect waves-light btn modal-trigger btn-modal-mapa" href="#modal1"

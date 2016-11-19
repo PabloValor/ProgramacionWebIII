@@ -60,6 +60,11 @@ namespace AlquilaCocheras.Negocio.Servicios
             _reservasRepositorio.Guardar(reserva);
         }
 
+        public void PuntuarReserva(int idReserva, int puntuacion)
+        {
+            _reservasRepositorio.PuntuarReserva(idReserva, puntuacion);
+        }
+
         #endregion
     }
 }

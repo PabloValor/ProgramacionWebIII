@@ -22,6 +22,15 @@ namespace AlquilaCocheras.Web.clientes {
         protected global::System.Web.UI.WebControls.Repeater rpReservas;
         
         /// <summary>
+        /// hdIdReserva control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdIdReserva;
+        
+        /// <summary>
         /// ddlPuntuacion control.
         /// </summary>
         /// <remarks>

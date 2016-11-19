@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace AlquilaCocheras.Data.Repositorios
@@ -47,6 +48,22 @@ namespace AlquilaCocheras.Data.Repositorios
             catch (Exception)
             {
                 throw new Exception("Error: No se pudo generar la reserva. Intente de nuevo");
+            }
+        }
+
+        public void PuntuarReserva(int idReserva, int puntuacion)
+        {
+            try
+            {
+                var reserva = _db.Reservas.FirstOrDefault(r => r.IdReserva == idReserva);
+                reserva.Puntuacion = (short)puntuacion;
+
+                _db.Reservas.AddOrUpdate(reserva);
+                _db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error: No se pudo puntuar la reserva");
             }
         }
 

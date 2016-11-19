@@ -25,8 +25,9 @@ var paths = {
 			jqueryMask: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\vendor\\jquery.mask.js'
 		},
 		componentes: {
-			baseMaster: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\shared\\base-master.js',
-			mapas: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\shared\\mapas.js'
+			baseMaster: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\componentes\\base-master.js',
+			mapas: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\componentes\\mapas.js',
+			clientes: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\componentes\\clientes.js'
 		},
 		dist: BASE_PATH + 'AlquilaCocheras.Web\\assets\\js\\dist'
 	},
@@ -61,7 +62,8 @@ gulp.task('js.vendor', function(){
 gulp.task('js.componentes', function(){
 	return gulp.src([
 		paths.js.componentes.baseMaster,
-		paths.js.componentes.mapas
+		paths.js.componentes.mapas,
+		paths.js.componentes.clientes
 		])
 		.pipe(concat('componentes.js'))
 		//.pipe(jslint({this: true}))
