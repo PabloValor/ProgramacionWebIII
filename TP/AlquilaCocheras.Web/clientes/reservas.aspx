@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Clientes.Master" AutoEventWireup="true" CodeBehind="reservas.aspx.cs" Inherits="AlquilaCocheras.Web.clientes.reservas" %>
+
 <%@ MasterType VirtualPath="../MasterPages/Clientes.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_Head" runat="server">
@@ -16,9 +17,14 @@
                             <div class="card-content">
                                 <p>Fecha Inicio: <%# Eval("FechaInicio") %></p>
                                 <p>Fecha Fin: <%# Eval("FechaFin") %></p>
-                                <p>Horario: <%# Eval("Horario") %></p>
-                                <p>Precio Final: <%# Eval("PrecioFinal") %></p>
+                                <p>Horario Inicio: <%# Eval("HorarioInicio") %></p>
+                                <p>Horario Fin: <%# Eval("HorarioFin") %></p>
+                                <p>Precio Final: $<%# Eval("PrecioFinal") %></p>
                                 <p>Puntuación: <%# Eval("Puntuacion") %></p>
+                                <br />
+                                <p class="center-align">
+                                    <a href="#modal-puntuacion" class="btn blue white-text modal-trigger">Puntuar</a>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -26,26 +32,14 @@
             </asp:Repeater>
         </div>
     </div>
-    <%--    LISTADO DE RESERVAS (gridview, repeater o datalist)
-        
-            fecha inicio.
-            fecha fin
-            horario
-            precio total.
-            puntuación 
-        
-    --%>
-    <asp:HyperLink ID="aConfirmar" runat="server" ClientIDMode="Static" NavigateUrl="/clientes/confirmar-reserva.aspx?idcochera=123">Reservar</asp:HyperLink>
-
 
     <!-- Modal -->
-    <div id="miModal" class="modal">
-        <!-- Contenido Modal -->
+    <div id="modal-puntuacion" class="modal">
         <div class="modal-content">
-            <span class="close">x</span>
-            <div>
-                <%--hidden donde se guarda el id de la reserva elegida para que desde el codebehind se pueda identificar--%>
-                <input type="hidden" id="hdIdReserva" />
+            <%--hidden donde se guarda el id de la reserva elegida para que desde el codebehind se pueda identificar--%>
+            <h3 class="center-align">Puntuación de cochera</h3>
+            <input type="hidden" id="hdIdReserva" />
+            <div class="input-field col s12">
                 <asp:DropDownList runat="server" ID="ddlPuntuacion" ClientIDMode="Static">
                     <asp:ListItem Text="1" Value="1" />
                     <asp:ListItem Text="2" Value="2" />
@@ -53,10 +47,11 @@
                     <asp:ListItem Text="4" Value="4" />
                     <asp:ListItem Text="5" Value="5" />
                 </asp:DropDownList>
-
-                <asp:Button Text="Confirmar" runat="server" ID="btnConfirmar" ClientIDMode="Static" />
-                <button class="cerrar">Cerrar</button>
             </div>
+            <p class="center-align">
+                <asp:Button Text="Confirmar" runat="server" ID="btnConfirmarPuntuacion" ClientIDMode="Static" CssClass="btn blue white-text" />
+            </p>
         </div>
     </div>
+    <!-- Fin Modal -->
 </asp:Content>

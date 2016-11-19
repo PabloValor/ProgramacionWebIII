@@ -22,15 +22,6 @@ namespace AlquilaCocheras.Web.clientes {
         protected global::System.Web.UI.WebControls.Repeater rpReservas;
         
         /// <summary>
-        /// aConfirmar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink aConfirmar;
-        
-        /// <summary>
         /// ddlPuntuacion control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,13 @@ namespace AlquilaCocheras.Web.clientes {
         protected global::System.Web.UI.WebControls.DropDownList ddlPuntuacion;
         
         /// <summary>
-        /// btnConfirmar control.
+        /// btnConfirmarPuntuacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmar;
+        protected global::System.Web.UI.WebControls.Button btnConfirmarPuntuacion;
         
         /// <summary>
         /// Master property.

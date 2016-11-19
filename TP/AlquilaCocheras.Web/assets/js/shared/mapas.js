@@ -2,7 +2,6 @@
     'use strict';
 
     this.cargar = function () {
-        $('.modal-trigger').leanModal();
 
         function initMap(lat, lon) {
             var map = new google.maps.Map(document.getElementById('modal-mapa-contenedor'), {

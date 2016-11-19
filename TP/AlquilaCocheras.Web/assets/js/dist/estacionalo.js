@@ -18069,6 +18069,8 @@ var BaseMaster = function() {
     this.cargar = function() {
         cargarMascarasInputs();
         cargarSidenav();
+        cargarModals();
+        cargarCombos();
     }
 
     function cargarSidenav() {
@@ -18082,13 +18084,20 @@ var BaseMaster = function() {
           $inputsFecha.mask('00/00/0000');
           $inputsHora.mask('00:00');
     }
+
+    function cargarModals() {
+        $('.modal-trigger').leanModal();
+    }
+
+    function cargarCombos() {
+        $('select').material_select();
+    }
 };
 
 var Mapas = function () {
     'use strict';
 
     this.cargar = function () {
-        $('.modal-trigger').leanModal();
 
         function initMap(lat, lon) {
             var map = new google.maps.Map(document.getElementById('modal-mapa-contenedor'), {

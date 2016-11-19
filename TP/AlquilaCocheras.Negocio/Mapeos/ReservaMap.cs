@@ -28,12 +28,13 @@ namespace AlquilaCocheras.Negocio.Mapeos
             return reservas.Select(r =>
             new ClienteReservaMap
             {
-                Horario = DateTime.Now.ToString("hh:mm"),
-                PrecioFinal = r.Cocheras.Precio * r.CantidadHoras,
+                HorarioInicio = r.HoraInicio,
+                HorarioFin = r.HoraFin,
+                PrecioFinal = Math.Round(r.Cocheras.Precio * r.CantidadHoras, 1),
                 Puntuacion = 1,
-                FechaInicio = DateTime.Now.ToString("dd/MM/yyyy"),
-                FechaFin = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy"),
-                EsReservaYaUtilizada = DateTime.Today.AddDays(1) > DateTime.Today ? "" : "gray"  // (!) Validación de fechas hardcodeada
+                FechaInicio = r.FechaInicio.ToString("dd/MM/yyyy"),
+                FechaFin = r.FechaFin.ToString("dd/MM/yyyy"),
+                EsReservaYaUtilizada = DateTime.Today > r.FechaFin ? "" : "gray"
             }
             ).ToList();
         }
