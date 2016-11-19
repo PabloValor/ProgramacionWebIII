@@ -46,7 +46,7 @@ namespace AlquilaCocheras.Web.propietarios
 
                     _cocherasServicio.Guardar(cochera);
 
-                    lblResultado.Text = "Operacion Exitosa";
+                    lblResultado.Text = "Operación Exitosa";
                 }
                 catch (Exception ex)
                 {

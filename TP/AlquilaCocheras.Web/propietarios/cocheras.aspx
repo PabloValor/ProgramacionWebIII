@@ -23,7 +23,7 @@
 
                 <div class="col s12 m6">
                     <asp:Label ID="label2" runat="server" Text="Fecha Inicio: "></asp:Label>
-                    <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static" CssClass="fecha"></asp:TextBox>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaInicio" runat="server" ErrorMessage="Ingrese una Fecha de Inicio"
@@ -38,7 +38,7 @@
 
                 <div class="col s12 m6">
                     <asp:Label ID="label11" runat="server" Text="Fecha Fin: "></asp:Label>
-                    <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static" CssClass="fecha"></asp:TextBox>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorFechaFin" runat="server" ErrorMessage="Ingrese una Fecha de Fin"
@@ -57,7 +57,7 @@
 
                 <div class="col s12 m6">
                     <asp:Label ID="label3" runat="server" Text="Horario Inicio: "></asp:Label>
-                    <asp:TextBox ID="txtHorarioInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="txtHorarioInicio" runat="server" ClientIDMode="Static" CssClass="hora"></asp:TextBox>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorHorarioInicio" runat="server" ErrorMessage="Ingrese un Horario de Inicio"
@@ -72,7 +72,7 @@
 
                 <div class="col s12 m6">
                     <asp:Label ID="label12" runat="server" Text="Horario Fin: "></asp:Label>
-                    <asp:TextBox ID="txtHorarioFin" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <asp:TextBox ID="txtHorarioFin" runat="server" ClientIDMode="Static" CssClass="hora"></asp:TextBox>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorHorarioFin" runat="server"
