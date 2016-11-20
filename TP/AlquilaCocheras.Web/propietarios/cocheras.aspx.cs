@@ -44,6 +44,20 @@ namespace AlquilaCocheras.Web.propietarios
                         HoraFin = txtHorarioFin.Text
                     };
 
+                    var cantidadTipoVehiculoSeleccionados = lbTipoVehiculo.GetSelectedIndices();
+
+                    if (cantidadTipoVehiculoSeleccionados.Length > 1)
+                    {
+                        foreach (var tipoVehiculo in cantidadTipoVehiculoSeleccionados)
+                        {
+                            // guardar la cochera modificando la Descripción
+                        }
+                    }
+                    else
+                    {
+                        // guardar normalmente
+                    }
+
                     _cocherasServicio.Guardar(cochera);
 
                     lblResultado.Text = "Operación Exitosa";

@@ -35,7 +35,8 @@ namespace AlquilaCocheras.Negocio.Mapeos
                 Puntuacion = 1,
                 FechaInicio = r.FechaInicio.ToString("dd/MM/yyyy"),
                 FechaFin = r.FechaFin.ToString("dd/MM/yyyy"),
-                EsReservaYaUtilizada = DateTime.Today > r.FechaFin
+                EsReservaYaUtilizada = DateTime.Today > r.FechaFin,
+                Ubicacion = r.Cocheras.Ubicacion
             }
             ).ToList();
         }

@@ -12,5 +12,6 @@ namespace AlquilaCocheras.Data.Mapeos
         public decimal PrecioFinal { get; set; }
         public double Puntuacion { get; set; }
         public bool EsReservaYaUtilizada { get; set; }
+        public string Ubicacion { get; set; }
     }
 }

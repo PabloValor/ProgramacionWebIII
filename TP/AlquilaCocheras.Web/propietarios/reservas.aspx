@@ -9,7 +9,7 @@
 
             <div class="input-field col s12 m6">       
                 <i class="material-icons prefix">date_range</i>
-                <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static"></asp:TextBox>
+                <asp:TextBox ID="txtFechaInicio" runat="server" ClientIDMode="Static" CssClass="fecha"></asp:TextBox>
                 <label for="txtFechaInicio">Período de inicio</label>
 
                  <div class="mensaje-error-validacion">
@@ -26,7 +26,7 @@
 
             <div class="input-field col s12 m6">
                 <i class="material-icons prefix">date_range</i>
-                <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static"></asp:TextBox>
+                <asp:TextBox ID="txtFechaFin" runat="server" ClientIDMode="Static" CssClass="fecha"></asp:TextBox>
                 <label for="txtFechaFin">Período de fin</label>
         
 

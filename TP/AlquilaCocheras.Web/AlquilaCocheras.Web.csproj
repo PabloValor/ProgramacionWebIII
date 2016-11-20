@@ -126,7 +126,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Servicios\CocherasWebService.asmx" />
+    <Content Include="WebServices\CocherasWebService.asmx" />
     <Content Include="UserControls\UCFormularioBusqueda.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -248,7 +248,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Servicios\CocherasWebService.asmx.cs">
+    <Compile Include="WebServices\CocherasWebService.asmx.cs">
       <DependentUpon>CocherasWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>

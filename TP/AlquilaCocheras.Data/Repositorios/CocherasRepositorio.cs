@@ -56,24 +56,6 @@ namespace AlquilaCocheras.Data.Repositorios
             }
         }
 
-        //public void ActualizarDisponibilidad(int idCochera, bool disponibilidad)
-        //{
-        //    try
-        //    {
-        //        var cochera = _db.Cochera.FirstOrDefault(c => c.Id == idCochera);
-
-        //        if (cochera == null) throw new Exception("Error: No se pudo actualizar la disponibilidad, la cochera no existe");
-
-        //        cochera.Disponible = disponibilidad;
-
-        //        _db.Cochera.AddOrUpdate(cochera);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw new Exception("Error: no se pudo actualizar la disponibilidad de la cochera");
-        //    }
-        //}
-
         #endregion
 
         #region Métodos Privados

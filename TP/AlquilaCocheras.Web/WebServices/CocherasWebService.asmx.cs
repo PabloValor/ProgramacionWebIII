@@ -51,8 +51,14 @@ namespace AlquilaCocheras.Web.Servicios
 
         private double ObtenerPromedioPuntuacion(int idCochera)
         {
-            var promedioListadoPuntuaciones = _reservasServicio.ObtenerTodas().Where(r => r.IdCochera == idCochera).Select(r => r.Puntuacion).Average(s => s);
-            return Math.Round(promedioListadoPuntuaciones, 1);
+            var todasLasReservas = _reservasServicio.ObtenerTodas().Where(r => r.IdCochera == idCochera).ToList();
+
+            if (todasLasReservas.Count > 0)
+            {
+                var promedioListadoPuntuaciones = todasLasReservas.Select(r => r.Puntuacion).Average(s => s);
+                return Math.Round(promedioListadoPuntuaciones, 1);
+            }
+            return 0;
         }
     }
 }

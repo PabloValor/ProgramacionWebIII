@@ -31,15 +31,6 @@ namespace AlquilaCocheras.Web.propietarios {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorUbicacion;
         
         /// <summary>
-        /// label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label2;
-        
-        /// <summary>
         /// txtFechaInicio control.
         /// </summary>
         /// <remarks>
@@ -65,15 +56,6 @@ namespace AlquilaCocheras.Web.propietarios {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorFechaInicio;
-        
-        /// <summary>
-        /// label11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label11;
         
         /// <summary>
         /// txtFechaFin control.
@@ -112,15 +94,6 @@ namespace AlquilaCocheras.Web.propietarios {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorFecha;
         
         /// <summary>
-        /// label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label3;
-        
-        /// <summary>
         /// txtHorarioInicio control.
         /// </summary>
         /// <remarks>
@@ -146,15 +119,6 @@ namespace AlquilaCocheras.Web.propietarios {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorHorarioInicio;
-        
-        /// <summary>
-        /// label12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label12;
         
         /// <summary>
         /// txtHorarioFin control.
@@ -193,15 +157,6 @@ namespace AlquilaCocheras.Web.propietarios {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorHorario;
         
         /// <summary>
-        /// label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label5;
-        
-        /// <summary>
         /// txtLatitud control.
         /// </summary>
         /// <remarks>
@@ -229,15 +184,6 @@ namespace AlquilaCocheras.Web.propietarios {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorLatitud;
         
         /// <summary>
-        /// label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label6;
-        
-        /// <summary>
         /// txtLongitud control.
         /// </summary>
         /// <remarks>
@@ -263,15 +209,6 @@ namespace AlquilaCocheras.Web.propietarios {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorLongitud;
-        
-        /// <summary>
-        /// label7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label7;
         
         /// <summary>
         /// txtMetrosCuadrados control.
@@ -310,15 +247,6 @@ namespace AlquilaCocheras.Web.propietarios {
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorMetroCuadrados;
         
         /// <summary>
-        /// label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label4;
-        
-        /// <summary>
         /// txtDescripcion control.
         /// </summary>
         /// <remarks>
@@ -337,15 +265,6 @@ namespace AlquilaCocheras.Web.propietarios {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDescripcion;
         
         /// <summary>
-        /// label8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label8;
-        
-        /// <summary>
         /// lbTipoVehiculo control.
         /// </summary>
         /// <remarks>
@@ -362,15 +281,6 @@ namespace AlquilaCocheras.Web.propietarios {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorTipoVehiculo;
-        
-        /// <summary>
-        /// label9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label9;
         
         /// <summary>
         /// txtPrecioHora control.
@@ -407,15 +317,6 @@ namespace AlquilaCocheras.Web.propietarios {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorPrecioHora;
-        
-        /// <summary>
-        /// label10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label10;
         
         /// <summary>
         /// fuFoto control.

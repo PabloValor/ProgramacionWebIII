@@ -15,6 +15,7 @@
                     <div class="col s12 m6 l4">
                         <div class="card <%# (bool)Eval("EsReservaYaUtilizada") ? "reserva-utilizada" : ""%>">
                             <div class="card-content">
+                                <p>Ubicacion: <%# Eval("Ubicacion") %></p>
                                 <p>Fecha Inicio: <%# Eval("FechaInicio") %></p>
                                 <p>Fecha Fin: <%# Eval("FechaFin") %></p>
                                 <p>Horario Inicio: <%# Eval("HorarioInicio") %></p>
