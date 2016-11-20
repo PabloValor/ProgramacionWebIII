@@ -65,6 +65,16 @@ namespace AlquilaCocheras.Negocio.Servicios
             _reservasRepositorio.PuntuarReserva(idReserva, puntuacion);
         }
 
+        public List<Reservas> ObtenerReservas(int idPropietario)
+        {
+            return _reservasRepositorio.ObtenerReservas(idPropietario);
+        }
+
+        public List<Reservas> ObtenerReservasPorFechas(int idPropietario, DateTime fechaInicio, DateTime fechaFin)
+        {
+            return _reservasRepositorio.ObtenerReservasPorFechas(idPropietario, fechaInicio, fechaFin);
+        }
+
         #endregion
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Net.Mime;
 
 namespace AlquilaCocheras.Web.Extensiones
 {

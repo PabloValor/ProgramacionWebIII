@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Propietarios.Master" AutoEventWireup="true" CodeBehind="reservas.aspx.cs" Inherits="AlquilaCocheras.Web.propietarios.reservas" %>
+
 <%@ MasterType VirtualPath="../MasterPages/Propietarios.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder_Head" runat="server">
@@ -53,11 +54,13 @@
 
             <div class="input-field col s12 center-align">
                 <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" ClientIDMode="Static" ValidationGroup="3" CssClass="waves-effect waves-light btn-large " OnClick="btnFiltrar_Click" />
+                <asp:Button ID="Button2" runat="server" Text="Ver Todas" ClientIDMode="Static" CssClass="waves-effect waves-light btn-large " OnClick="btnVerTodas_Click" />
             </div>
 
             <div class="row">
                 <div class="col s12">
                     <div class="listado-reservas">
+                        <p class="center-align"><asp:Label runat="server" ID="lblResultado" ClientIDMode="Static"></asp:Label></p>
                         <div class="row">
                             <asp:Repeater runat="server" ID="rpReservas">
                                 <ItemTemplate>

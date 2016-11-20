@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
 using AlquilaCocheras.Data;
 using AlquilaCocheras.Negocio.Mapeos;
+using AlquilaCocheras.Negocio.Servicios;
 using AlquilaCocheras.Web.Extensiones;
 
 namespace AlquilaCocheras.Web.propietarios
@@ -11,17 +9,28 @@ namespace AlquilaCocheras.Web.propietarios
     public partial class reservas : System.Web.UI.Page
     {
         private readonly TP_20162CEntities _db = new TP_20162CEntities();
+        private readonly ReservasServicio _reservasServicio = new ReservasServicio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            rpReservas.DataSource = ReservaMap.PropietarioReservasMap(ObtenerReservas());
-            rpReservas.DataBind();
+            CargarTodas();
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid) {
+            if (Page.IsValid)
+            {
+                var listado = _reservasServicio.ObtenerReservasPorFechas(Master.Propietario.IdUsuario, txtFechaInicio.Text.ToDateTime(), txtFechaFin.Text.ToDateTime());
+                rpReservas.DataSource = ReservaMap.PropietarioReservasMap(listado);
+                rpReservas.DataBind();
+
+                lblResultado.Text = listado.Count > 0 ? string.Format("Se encontraron {0} reservas en ese rango de fechas", listado.Count) : "No hay reservas de tus cocheras con ese rango de fechas";
             }
+        }
+
+        protected void btnVerTodas_Click(object sender, EventArgs e)
+        {
+            CargarTodas();
         }
 
         protected void CustomValidatorFecha_ServerValidate(object source, System.Web.UI.WebControls.ServerValidateEventArgs args)
@@ -30,19 +39,17 @@ namespace AlquilaCocheras.Web.propietarios
             DateTime txtMyDateFin = DateTime.Parse(txtFechaFin.Text);
 
             args.IsValid = (txtMyDateFin - txtMyDateInicio).TotalDays < 90;
-
         }
 
-        private List<Reservas> ObtenerReservas()
+        private void CargarTodas()
         {
-            var listado = (from propietario in _db.Usuarios
-                join cochera in _db.Cocheras on propietario.IdUsuario equals cochera.IdPropietario
-                join reserva in _db.Reservas on cochera.IdCochera equals reserva.IdCochera
-                select reserva).ToList();
-
+            var listado = _reservasServicio.ObtenerReservas(Master.Propietario.IdUsuario);
             listado.ForEach(x => x.Cocheras.Ubicacion = x.Cocheras.Ubicacion.Truncar(20));
 
-            return listado.OrderBy(x => x.FechaFin).ToList();
-        } 
+            rpReservas.DataSource = ReservaMap.PropietarioReservasMap(listado);
+            rpReservas.DataBind();
+
+            lblResultado.Text = listado.Count > 0 ? string.Format("Se encontraron {0} reservas de tus cocheras", listado.Count) : "No hay reservas de tus cocheras";   
+        }
     }
 }

@@ -31,13 +31,6 @@ namespace AlquilaCocheras.Data.Repositorios
             return reservas;
         }
 
-        //public List<Reservas> Obtener(string ubicacion, DateTime fechaInicio, DateTime fechaFin)
-        //{
-        //    var reservas = _db.Reservas.Where(r => r.Cocheras.Ubicacion == ubicacion && reser)
-
-        //    return reservas;
-        //}
-
         public void Guardar(Reservas reserva)
         {
             try
@@ -67,9 +60,29 @@ namespace AlquilaCocheras.Data.Repositorios
             }
         }
 
-        #endregion
+        public List<Reservas> ObtenerReservas(int idPropietario)
+        {
+            var listado = (from propietario in _db.Usuarios
+                           join cochera in _db.Cocheras on propietario.IdUsuario equals cochera.IdPropietario
+                           where propietario.IdUsuario == idPropietario
+                           join reserva in _db.Reservas on cochera.IdCochera equals reserva.IdCochera
+                           select reserva).ToList();
 
-        #region Métodos Privados
+            return listado.OrderBy(x => x.FechaFin).ToList();
+        }
+
+        public List<Reservas> ObtenerReservasPorFechas(int idPropietario, DateTime fechaInicio, DateTime fechaFin)
+        {
+            var listado = (from propietario in _db.Usuarios
+                           join cochera in _db.Cocheras on propietario.IdUsuario equals cochera.IdPropietario
+                           where propietario.IdUsuario == idPropietario 
+                           join reserva in _db.Reservas on cochera.IdCochera equals reserva.IdCochera
+                           where reserva.FechaInicio.CompareTo(fechaInicio) >= 0 && reserva.FechaFin.CompareTo(fechaFin) <= 0
+                           select reserva).ToList();
+
+            return listado.OrderBy(x => x.FechaFin).ToList();
+        }
+
         #endregion
     }
 }
