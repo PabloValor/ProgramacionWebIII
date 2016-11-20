@@ -1,5 +1,4 @@
 ﻿using System;
-using AlquilaCocheras.Data;
 using AlquilaCocheras.Negocio.Mapeos;
 using AlquilaCocheras.Negocio.Servicios;
 using AlquilaCocheras.Web.Extensiones;
@@ -8,7 +7,6 @@ namespace AlquilaCocheras.Web.propietarios
 {
     public partial class reservas : System.Web.UI.Page
     {
-        private readonly TP_20162CEntities _db = new TP_20162CEntities();
         private readonly ReservasServicio _reservasServicio = new ReservasServicio();
 
         protected void Page_Load(object sender, EventArgs e)

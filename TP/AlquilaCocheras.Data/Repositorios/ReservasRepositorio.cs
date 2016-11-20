@@ -66,9 +66,9 @@ namespace AlquilaCocheras.Data.Repositorios
                            join cochera in _db.Cocheras on propietario.IdUsuario equals cochera.IdPropietario
                            where propietario.IdUsuario == idPropietario
                            join reserva in _db.Reservas on cochera.IdCochera equals reserva.IdCochera
-                           select reserva).ToList();
+                           select reserva).OrderBy(x => x.FechaFin).ToList();
 
-            return listado.OrderBy(x => x.FechaFin).ToList();
+            return listado;
         }
 
         public List<Reservas> ObtenerReservasPorFechas(int idPropietario, DateTime fechaInicio, DateTime fechaFin)
@@ -78,9 +78,9 @@ namespace AlquilaCocheras.Data.Repositorios
                            where propietario.IdUsuario == idPropietario 
                            join reserva in _db.Reservas on cochera.IdCochera equals reserva.IdCochera
                            where reserva.FechaInicio.CompareTo(fechaInicio) >= 0 && reserva.FechaFin.CompareTo(fechaFin) <= 0
-                           select reserva).ToList();
+                           select reserva).OrderBy(x => x.FechaFin).ToList();
 
-            return listado.OrderBy(x => x.FechaFin).ToList();
+            return listado;
         }
 
         #endregion
