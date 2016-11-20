@@ -40,5 +40,20 @@ namespace AlquilaCocheras.Negocio.Mapeos
             }
             ).ToList();
         }
+
+        public static List<PropietarioReservaMap> PropietarioReservasMap(List<Reservas> reservas)
+        {
+            return reservas.Select(r =>
+            new PropietarioReservaMap
+            {
+                PrecioCobrado = Math.Round(r.Cocheras.Precio * r.CantidadHoras, 1),
+                Puntuacion = 1,
+                FechaInicio = r.FechaInicio.ToString("dd/MM/yyyy"),
+                FechaFin = r.FechaFin.ToString("dd/MM/yyyy"),
+                EsReservaYaUtilizada = DateTime.Today > r.FechaFin,
+                Ubicacion = r.Cocheras.Ubicacion
+            }
+            ).ToList();
+        }
     }
 }
