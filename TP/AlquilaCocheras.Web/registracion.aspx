@@ -8,9 +8,10 @@
         <h2 class="titulo-pagina center-align">Registrarse</h2>
         <div class="formulario">
             <div class="row">
-                <div class="col s12 m6">
-                    <asp:Label ID="label1" runat="server" Text="Nombre: "></asp:Label>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">perm_identity</i>
                     <asp:TextBox ID="txtNombre" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <label for="txtNombre">Nombre</label>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre"
@@ -23,9 +24,10 @@
                         </asp:RegularExpressionValidator>
                     </div>
                 </div>
-                <div class="col s12 m6">
-                    <asp:Label ID="label2" runat="server" Text="Apellido: "></asp:Label>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">perm_identity</i>
                     <asp:TextBox ID="txtApellido" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <label for="txtApellido">Apellido</label>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorApellido" runat="server"
@@ -39,9 +41,11 @@
                     </div>
                 </div>
 
-                <div class="col s12">
-                    <asp:Label ID="label3" runat="server" Text="Email: "></asp:Label>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">perm_identity</i>
                     <asp:TextBox ID="txtEmail" runat="server" ClientIDMode="Static"></asp:TextBox>
+                    <label for="txtEmail">Email</label>
+
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server"
                             ErrorMessage="Ingrese un email" ControlToValidate="txtEmail" Display="Dynamic">
@@ -54,9 +58,10 @@
                     </div>
                 </div>
 
-                <div class="col s12 m6">
-                    <asp:Label ID="label4" runat="server" Text="Contraseña: "></asp:Label>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">perm_identity</i>
                     <asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+                    <label for="txtContrasenia">Contraseña</label>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorContrasenia" runat="server"
@@ -70,9 +75,10 @@
                     </div>
                 </div>
 
-                <div class="col s12 m6">
-                    <asp:Label ID="label5" runat="server" Text="Confirme Contraseña: "></asp:Label>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">perm_identity</i>
                     <asp:TextBox ID="txtConfContrasenia" runat="server" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+                    <label for="txtConfContrasenia">Confirme contraseña</label>
                 </div>
                 <div class="mensaje-error-validacion">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorConfContrasenia" runat="server"
@@ -84,11 +90,12 @@
                     </asp:CompareValidator>
                 </div>
 
-                <div class="col s12">
+                <div class="input-field col s12">
                     <asp:RadioButtonList ID="rblPerfil" runat="server" ClientIDMode="Static">
                         <asp:ListItem Text="Cliente" Value="1" />
                         <asp:ListItem Text="Propietario" Value="2" />
                     </asp:RadioButtonList>
+                    <label for="rblPerfil">Seleccione perfil</label>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorPerfil" runat="server"
