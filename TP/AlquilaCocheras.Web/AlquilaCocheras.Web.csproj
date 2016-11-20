@@ -76,12 +76,18 @@
     <None Include="assets\css\02-base\99-main.scss" />
     <None Include="assets\css\01-variables\colores.scss" />
     <Content Include="assets\css\03-componentes\99-main.scss" />
+    <Content Include="assets\css\02-base\base.scss" />
+    <Content Include="assets\css\02-base\footer.scss" />
     <None Include="assets\css\02-base\pagina.scss" />
+    <Content Include="assets\css\03-componentes\cliente-reservar.scss" />
+    <Content Include="assets\css\03-componentes\cliente-reservas.scss" />
     <None Include="assets\css\03-componentes\confirmar-reserva.scss" />
+    <Content Include="assets\css\03-componentes\form.scss" />
     <None Include="assets\css\03-componentes\home.scss" />
     <None Include="assets\css\03-componentes\listado-reservas.scss" />
     <Content Include="assets\css\dist\estacionalo.min.css" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\img\cocheras\default.png" />
     <Content Include="assets\img\usuarios\usuario-avatar-default.jpg" />
     <Content Include="assets\js\componentes\clientes.js" />
@@ -105,11 +111,40 @@
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\css\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\css\03-componentes\login.scss" />
     <None Include="assets\css\03-componentes\quienes-somos.scss" />
     <Content Include="Service References\ServiceReference1\AlquilaCocheras.Web.ServiceReference1.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ServiceReference1\CocherasWebService.wsdl" />
+    <Content Include="assets\css\03-componentes\usuario-registracion.scss" />
+    <Content Include="assets\css\04-responsive\00-medium.scss" />
+    <Content Include="assets\css\04-responsive\01-large.scss" />
+    <Content Include="assets\css\04-responsive\99-main.scss" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Bold.eot" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Bold.ttf" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Light.eot" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Light.ttf" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Medium.eot" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Medium.ttf" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Regular.eot" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Regular.ttf" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Thin.eot" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Thin.ttf" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="assets\css\fonts\roboto\Roboto-Thin.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="clientes\confirmar-reserva.aspx" />
@@ -266,7 +301,6 @@
     <Compile Include="ViewModels\CocheraViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\css\04-responsive\" />
     <Folder Include="assets\css\05-keyframes\" />
   </ItemGroup>
   <ItemGroup>

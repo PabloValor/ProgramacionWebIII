@@ -81,7 +81,7 @@
                                         <br />
                                         <div class="fila-dato">
                                             <div class="cabecera">Ubicación</div>
-                                            <div class="dato left-align"><%# Eval("Ubicacion") %></div>
+                                            <div class="dato center-align"><%# Eval("Ubicacion") %></div>
                                         </div>
                                         <div class="fila-dato">
                                             <div class="cabecera">Propietario</div>
