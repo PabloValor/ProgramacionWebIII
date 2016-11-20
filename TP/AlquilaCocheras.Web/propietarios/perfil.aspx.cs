@@ -24,7 +24,8 @@ namespace AlquilaCocheras.Web.propietarios
                 try
                 {
                     Master.PropietariosServicio.ActualizarPropietario(propietario);
-                    lblResultado.Text = "Operación exitosa";
+                    lblResultado.Text = "Operación exitosa, por favor vuelva a loguearse.";
+                    Session.Abandon();
                 }
                 catch (Exception ex)
                 {

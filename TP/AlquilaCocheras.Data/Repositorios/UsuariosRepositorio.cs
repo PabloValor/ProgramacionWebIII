@@ -81,8 +81,5 @@ namespace AlquilaCocheras.Data.Repositorios
             return emails.Contains(email);
         }
         #endregion
-
-        #region Métodos Privados
-        #endregion
     }
 }
