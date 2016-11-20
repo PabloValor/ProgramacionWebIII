@@ -39,11 +39,16 @@ var Mapas = function () {
                 scrollwheel: false,
                 zoom: 14
             });
+            var marker = new google.maps.Marker({
+                position: { lat: lat, lng: lon },
+                map: map,
+                title: 'Ubicación de cochera'
+            });
         };
 
         $('.btn-modal-mapa').on('click', function() {
-            var lat = parseInt($(this).data('latitud'));
-            var lon = parseInt($(this).data('longitud'));
+            var lat = parseFloat($(this).data('latitud'));
+            var lon = parseFloat($(this).data('longitud'));
             initMap(lat, lon);
         });
     }
