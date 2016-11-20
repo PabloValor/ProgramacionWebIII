@@ -7,7 +7,7 @@
             var map = new google.maps.Map(document.getElementById('modal-mapa-contenedor'), {
                 center: { lat: lat, lng: lon },
                 scrollwheel: false,
-                zoom: 14
+                zoom: 16
             });
             var marker = new google.maps.Marker({
                 position: { lat: lat, lng: lon },
