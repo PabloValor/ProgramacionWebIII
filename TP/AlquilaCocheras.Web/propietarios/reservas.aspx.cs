@@ -42,7 +42,7 @@ namespace AlquilaCocheras.Web.propietarios
 
             listado.ForEach(x => x.Cocheras.Ubicacion = x.Cocheras.Ubicacion.Truncar(20));
 
-            return listado.OrderByDescending(x => x.FechaFin).ToList();
+            return listado.OrderBy(x => x.FechaFin).ToList();
         } 
     }
 }
