@@ -28,7 +28,10 @@ namespace AlquilaCocheras.Web.propietarios
 
         protected void btnVerTodas_Click(object sender, EventArgs e)
         {
-            CargarTodas();
+            if (!Page.IsPostBack)
+            {
+                CargarTodas();
+            }
         }
 
         protected void CustomValidatorFecha_ServerValidate(object source, System.Web.UI.WebControls.ServerValidateEventArgs args)
@@ -47,7 +50,7 @@ namespace AlquilaCocheras.Web.propietarios
             rpReservas.DataSource = ReservaMap.PropietarioReservasMap(listado);
             rpReservas.DataBind();
 
-            lblResultado.Text = listado.Count > 0 ? string.Format("Se encontraron {0} reservas de tus cocheras", listado.Count) : "No hay reservas de tus cocheras";   
+            lblResultado.Text = listado.Count > 0 ? string.Format("Se encontraron {0} reservas de tus cocheras", listado.Count) : "No hay reservas de tus cocheras";
         }
     }
 }
