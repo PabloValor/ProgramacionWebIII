@@ -1,4 +1,4 @@
-﻿w<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UCFormularioBusqueda.ascx.cs" Inherits="AlquilaCocheras.Web.userControls.UCFormularioBusqueda" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UCFormularioBusqueda.ascx.cs" Inherits="AlquilaCocheras.Web.userControls.UCFormularioBusqueda" %>
 
 <div class="container" id="form-buscador-servicio">
     <div class="row">
