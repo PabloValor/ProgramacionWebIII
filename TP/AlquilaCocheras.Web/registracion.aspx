@@ -95,7 +95,6 @@
                         <asp:ListItem Text="Cliente" Value="1" />
                         <asp:ListItem Text="Propietario" Value="2" />
                     </asp:RadioButtonList>
-                    <label for="rblPerfil">Seleccione perfil</label>
 
                     <div class="mensaje-error-validacion">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorPerfil" runat="server"

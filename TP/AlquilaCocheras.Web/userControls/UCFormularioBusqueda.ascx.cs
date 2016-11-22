@@ -33,7 +33,7 @@ namespace AlquilaCocheras.Web.userControls
                     txtFechaInicio.Text.ToDateTime(), txtFechaFin.Text.ToDateTime());
 
                 CantidadCocherasDisponibles.Text = _listadoCocheras.Count > 0 ?
-                    string.Format("Se han encontrado {0} cocheras disponibles", _listadoCocheras.Count)
+                    string.Format("Se han encontrado {0} cocheras relacionadas con tu búsqueda", _listadoCocheras.Count)
                     : "No se encontraron resultados";
 
                 CargarListaFiltradaCocherasDisponibles();

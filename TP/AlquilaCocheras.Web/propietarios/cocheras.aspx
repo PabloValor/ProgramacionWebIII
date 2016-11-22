@@ -12,7 +12,7 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">pin_drop</i>
                     <asp:TextBox ID="txtUbicacion" runat="server" ClientIDMode="Static"></asp:TextBox>
-                    <label>Ubicación</label>
+                    <label for="txtUbicacion">Ubicación</label>
                 </div>
                 <div class="mensaje-error-validacion">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorUbicacion" runat="server" ErrorMessage="Ingrese una Ubicacion"
