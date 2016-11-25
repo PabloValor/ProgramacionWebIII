@@ -38,7 +38,30 @@ namespace AlquilaCocheras.Web.clientes
 
             try
             {
-                _reservasServicio.GenerarReserva(cliente.IdUsuario, txtFechaInicio.Text.ToDateTime(txtHorarioInicio.Text), txtFechaFin.Text.ToDateTime(txtHorarioFin.Text), Cochera.IdCochera);
+                var fechaInicio = txtFechaInicio.Text.ToDateTime(txtHorarioInicio.Text);
+                var fechaFin = txtFechaFin.Text.ToDateTime(txtHorarioFin.Text);
+
+                var reserva = new Reservas
+                {
+                    IdCliente = cliente.IdUsuario,
+                    IdCochera = Cochera.IdCochera,
+                    FechaInicio = fechaInicio,
+                    FechaFin = fechaFin,
+                    CantidadHoras = Convert.ToDecimal((fechaFin - fechaInicio).TotalHours),
+                    FechaCarga = DateTime.Now,
+                    HoraInicio = string.Format("{0}:{1}", fechaInicio.Hour, fechaInicio.Minute),
+                    HoraFin = string.Format("{0}:{1}", fechaFin.Hour, fechaFin.Minute),
+                    Precio = Cochera.Precio * Convert.ToDecimal((fechaFin - fechaInicio).TotalHours)
+                };
+
+                if (_reservasServicio.EsReservaDisponible(reserva))
+                {
+                    _reservasServicio.GenerarReserva(reserva);   
+                }
+                else
+                {
+                    throw new Exception("Error: La cochera no está disponible en ese rango de horarios");
+                }
             }
             catch (Exception ex)
             {

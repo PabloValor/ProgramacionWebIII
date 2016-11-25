@@ -41,23 +41,15 @@ namespace AlquilaCocheras.Negocio.Servicios
             return reserva;
         }
 
-        public void GenerarReserva(int idCliente, DateTime fechaInicio, DateTime fechaFin, int idCochera)
+        public List<Reservas> ObtenerReservasDeCocheraPorIdCochera(int idCochera)
         {
-            var cochera = _cocherasServicio.ObtenerCocheraPorId(idCochera);
+            var reservas = ObtenerTodas().Where(r => r.IdCochera == idCochera).ToList();
 
-            var reserva = new Reservas
-            {
-                IdCliente = idCliente,
-                FechaInicio = fechaInicio,
-                FechaFin = fechaFin,
-                CantidadHoras = Convert.ToDecimal((fechaFin - fechaInicio).TotalHours),
-                IdCochera = idCochera,
-                FechaCarga = DateTime.Now,
-                HoraInicio = string.Format("{0}:{1}", fechaInicio.Hour, fechaInicio.Minute),
-                HoraFin = string.Format("{0}:{1}", fechaFin.Hour, fechaFin.Minute),
-                Precio = cochera.Precio * Convert.ToDecimal((fechaFin - fechaInicio).TotalHours)
-            };
+            return reservas;
+        }
 
+        public void GenerarReserva(Reservas reserva)
+        {
             _reservasRepositorio.Guardar(reserva);
         }
 
@@ -74,6 +66,28 @@ namespace AlquilaCocheras.Negocio.Servicios
         public List<Reservas> ObtenerReservasPorFechas(int idPropietario, DateTime fechaInicio, DateTime fechaFin)
         {
             return _reservasRepositorio.ObtenerReservasPorFechas(idPropietario, fechaInicio, fechaFin);
+        }
+
+        public bool EsReservaDisponible(Reservas reservaPendiente)
+        {
+            var cocheraDisponible = _cocherasServicio.ObtenerCocheraPorId(reservaPendiente.IdCochera);
+
+            // Se valida que la cochera este en el rango de horarios indicado, ya que el buscador de cocheras no contempla la hora
+            if (cocheraDisponible.FechaInicio.CompareTo(reservaPendiente.FechaInicio) <= 0 &&
+                cocheraDisponible.FechaFin.CompareTo(reservaPendiente.FechaFin) >= 0)
+            {
+                // se valida que la cochera no esté reservada en el rango solicitado
+                var reservasDisponible = !ObtenerReservasDeCocheraPorIdCochera(reservaPendiente.IdCochera)
+                .Any(x => x.FechaInicio.CompareTo(reservaPendiente.FechaInicio) >= 0 && x.FechaFin.CompareTo(reservaPendiente.FechaFin) <= 0);
+
+                return reservasDisponible;
+            }
+            return false;
+        }
+
+        public double ObtenerPuntuacionPromedio(int idCochera)
+        {
+            return _reservasRepositorio.ObtenerPuntuacionPromedio(idCochera);
         }
 
         #endregion

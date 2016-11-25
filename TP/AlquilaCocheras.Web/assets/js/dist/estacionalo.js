@@ -18189,10 +18189,10 @@ var Clientes = function () {
 
         try {
 
-            var date1 = new Date(fecha1[2], fecha1[1], fecha1[0], horario1[1], horario1[0], 0, 0);
-            var date2 = new Date(fecha2[2], fecha2[1], fecha2[0], horario2[1], horario2[0], 0, 0);
+            var date1 = new Date(fecha1[2], fecha1[1], fecha1[0] - 1 , horario1[1], horario1[0], 0, 0);
+            var date2 = new Date(fecha2[2], fecha2[1], fecha2[0] - 1, horario2[1] , horario2[0], 0, 0);
 
-            var totalHoras = new Date(date2 - date1).getHours();
+            var totalHoras = Math.abs(date1 - date2) / 36e5;;
             var precioPorhora = parseFloat($('#hdPrecioHora')[0].value);
             var precioTotal = totalHoras * precioPorhora || 0;
             lblPrecioTotal.text('Precio total: $' + precioTotal);

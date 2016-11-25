@@ -21,7 +21,7 @@
                                 <p>Horario Inicio: <%# Eval("HorarioInicio") %></p>
                                 <p>Horario Fin: <%# Eval("HorarioFin") %></p>
                                 <p>Precio Final: $<%# Eval("PrecioFinal") %></p>
-                                <p>Puntuación: <%# Eval("Puntuacion") %></p>
+                                <p>Puntuación Promedio: <%# Eval("Puntuacion") %></p>
                                 <br />
                                 <p class="center-align">
                                     <a href="#modal-puntuacion" class="btn blue white-text modal-trigger btn-reserva <%# (bool)Eval("EsReservaYaUtilizada") ? "" : "hide"%>" data-idreserva="<%# Eval("IdReserva") %>">Puntuar</a>

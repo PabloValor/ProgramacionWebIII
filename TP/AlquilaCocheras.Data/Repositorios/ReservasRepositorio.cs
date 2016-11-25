@@ -49,6 +49,7 @@ namespace AlquilaCocheras.Data.Repositorios
             try
             {
                 var reserva = _db.Reservas.FirstOrDefault(r => r.IdReserva == idReserva);
+
                 reserva.Puntuacion = (short)puntuacion;
 
                 _db.Reservas.AddOrUpdate(reserva);
@@ -58,6 +59,13 @@ namespace AlquilaCocheras.Data.Repositorios
             {
                 throw new Exception("Error: No se pudo puntuar la reserva");
             }
+        }
+
+        public double ObtenerPuntuacionPromedio(int idCochera)
+        {
+            var listadoReservasDeCochera = _db.Reservas.Where(x => x.Cocheras.IdCochera == idCochera).ToList();
+            var cantidad = listadoReservasDeCochera.Count() == 0 ? 1 : listadoReservasDeCochera.Count();
+            return listadoReservasDeCochera.Sum(x => x.Puntuacion) / cantidad;
         }
 
         public List<Reservas> ObtenerReservas(int idPropietario)
@@ -75,7 +83,7 @@ namespace AlquilaCocheras.Data.Repositorios
         {
             var listado = (from propietario in _db.Usuarios
                            join cochera in _db.Cocheras on propietario.IdUsuario equals cochera.IdPropietario
-                           where propietario.IdUsuario == idPropietario 
+                           where propietario.IdUsuario == idPropietario
                            join reserva in _db.Reservas on cochera.IdCochera equals reserva.IdCochera
                            where reserva.FechaInicio.CompareTo(fechaInicio) >= 0 && reserva.FechaFin.CompareTo(fechaFin) <= 0
                            select reserva).OrderBy(x => x.FechaFin).ToList();
