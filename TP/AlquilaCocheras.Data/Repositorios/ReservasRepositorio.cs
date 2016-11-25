@@ -85,7 +85,7 @@ namespace AlquilaCocheras.Data.Repositorios
                            join cochera in _db.Cocheras on propietario.IdUsuario equals cochera.IdPropietario
                            where propietario.IdUsuario == idPropietario
                            join reserva in _db.Reservas on cochera.IdCochera equals reserva.IdCochera
-                           where reserva.FechaInicio.CompareTo(fechaInicio) >= 0 && reserva.FechaFin.CompareTo(fechaFin) <= 0
+                           where reserva.FechaInicio.CompareTo(fechaInicio) <= 0 && reserva.FechaFin.CompareTo(fechaFin) >= 0
                            select reserva).OrderBy(x => x.FechaFin).ToList();
 
             return listado;
