@@ -49,12 +49,13 @@ namespace AlquilaCocheras.Negocio.Mapeos
             return reservas.Select(r =>
             new PropietarioReservaMap
             {
-                PrecioCobrado = Math.Round(r.Cocheras.Precio * r.CantidadHoras, 1),
-                Puntuacion = 1,
+                PrecioCobrado = r.Precio,
+                Puntuacion = r.Puntuacion,
                 FechaInicio = r.FechaInicio.ToString("dd/MM/yyyy"),
                 FechaFin = r.FechaFin.ToString("dd/MM/yyyy"),
                 EsReservaYaUtilizada = DateTime.Today > r.FechaFin,
-                Ubicacion = r.Cocheras.Ubicacion
+                Ubicacion = r.Cocheras.Ubicacion,
+                CantidadHoras = (int)r.CantidadHoras
             }
             ).ToList();
         }
