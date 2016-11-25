@@ -4,10 +4,13 @@ namespace AlquilaCocheras.Web.Extensiones
 {
     public static class StringExtension
     {
-        public static DateTime ToDateTime(this string fecha)
+        public static DateTime ToDateTime(this string fechaEntrada, string hora)
         {
-            var array = fecha.Split('/');
-            return new DateTime(int.Parse(array[2]), int.Parse(array[1]), int.Parse(array[0]));
+            var arrayFecha = fechaEntrada.Split('/');
+            var arrayHora = hora.Split(':');
+
+                return new DateTime(int.Parse(arrayFecha[2]), int.Parse(arrayFecha[1]), int.Parse(arrayFecha[0]),
+                    int.Parse(arrayHora[0]), int.Parse(arrayHora[1]), 0);
         }
 
         public static string Truncar(this string textoOriginal, int largoMaximo)

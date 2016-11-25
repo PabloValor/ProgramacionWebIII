@@ -55,11 +55,4 @@
         </div>
     </div>
     <!-- Fin Modal -->
-
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            var clientes = new Clientes();
-            clientes.cargar();
-        });
-    </script>
 </asp:Content>

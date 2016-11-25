@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using AlquilaCocheras.Data;
 using AlquilaCocheras.Negocio.Mapeos;
 using AlquilaCocheras.Negocio.Servicios;
+using AlquilaCocheras.Web.Extensiones;
 
 namespace AlquilaCocheras.Web.clientes
 {
@@ -13,7 +16,10 @@ namespace AlquilaCocheras.Web.clientes
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            rpReservas.DataSource = ReservaMap.ClienteReservasMap(Master.Cliente.Reservas.OrderBy(x => x.FechaFin).ToList());
+            var reservas = Master.Cliente.Reservas.OrderBy(x => x.FechaFin).ToList();
+            TruncarUbicaciones(reservas);
+            var reservasMapeadas = ReservaMap.ClienteReservasMap(reservas);
+            rpReservas.DataSource = reservasMapeadas;
             rpReservas.DataBind();
         }
 
@@ -26,6 +32,12 @@ namespace AlquilaCocheras.Web.clientes
             catch (Exception ex)
             {
             }
+        }
+
+
+        private void TruncarUbicaciones(List<Reservas> reservas)
+        {
+            reservas.ForEach(x => x.Cocheras.Ubicacion = x.Cocheras.Ubicacion.Truncar(20));
         }
     }
 }

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using AlquilaCocheras.Data;
 using AlquilaCocheras.Data.DTOs;
-using AlquilaCocheras.Negocio.Mapeos;
-using AlquilaCocheras.Negocio.Servicios;
 using AlquilaCocheras.Web.Extensiones;
 using AlquilaCocheras.Web.Servicios;
 
@@ -30,7 +28,7 @@ namespace AlquilaCocheras.Web.userControls
                 _listadoCocheras = new List<CocheraDTO>();
 
                 _listadoCocheras = _cocherasWebService.ObtenerCocheras(txtUbicacion.Text.ToLower(),
-                    txtFechaInicio.Text.ToDateTime(), txtFechaFin.Text.ToDateTime());
+                    txtFechaInicio.Text.ToDateTime("00:00"), txtFechaFin.Text.ToDateTime("00:00"));
 
                 CantidadCocherasDisponibles.Text = _listadoCocheras.Count > 0 ?
                     string.Format("Se han encontrado {0} cocheras relacionadas con tu búsqueda", _listadoCocheras.Count)

@@ -101,7 +101,7 @@
                                                 data-latitud="<%# Eval("Latitud") %>"
                                                 data-longitud="<%# Eval("Longitud") %>">Ver mapa</a>
                                             <span class="<%# (bool) Eval("NoDisponible") ? "hide" : "" %>">
-                                                <asp:HyperLink CssClass="btn blue white-text margin-top-5" ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("IdCochera","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
+                                                <asp:HyperLink CssClass="btn blue white-text margin-top-5 btn-reservar" ID="HyperLink1" runat="server" ClientIDMode="Static" NavigateUrl='<%# Eval("IdCochera","~/clientes/confirmar-reserva.aspx?idcochera={0}") %>'>Reservar</asp:HyperLink>
                                             </span>
                                         </p>
                                     </div>
@@ -126,6 +126,8 @@
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
         var mapas = new Mapas();
+        var clientes = new Clientes();
         mapas.cargar();
+        clientes.GuardarFechasInicioFinReserva();
     });
 </script>

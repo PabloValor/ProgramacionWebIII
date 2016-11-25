@@ -37,8 +37,8 @@ namespace AlquilaCocheras.Web.propietarios
                         MetrosCuadrados = int.Parse(txtMetrosCuadrados.Text),
                         Descripcion = txtDescripcion.Text,
                         Precio = Convert.ToDecimal(txtPrecioHora.Text),
-                        FechaInicio = txtFechaInicio.Text.ToDateTime(),
-                        FechaFin = txtFechaFin.Text.ToDateTime(),
+                        FechaInicio = txtFechaInicio.Text.ToDateTime(txtHorarioInicio.Text),
+                        FechaFin = txtFechaFin.Text.ToDateTime(txtHorarioFin.Text),
                         Imagen = fuFoto.Text,
                         HoraInicio = txtHorarioInicio.Text,
                         HoraFin = txtHorarioFin.Text

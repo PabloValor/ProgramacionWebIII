@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Web;
-using AlquilaCocheras.Data.Constantes;
 using AlquilaCocheras.Data;
-using AlquilaCocheras.Negocio.Managers;
 using AlquilaCocheras.Negocio.Servicios;
+using AlquilaCocheras.Web.Extensiones;
 
 namespace AlquilaCocheras.Web.clientes
 {
@@ -20,7 +19,6 @@ namespace AlquilaCocheras.Web.clientes
 
         private ReservasServicio _reservasServicio = new ReservasServicio();
         private CocherasServicio _cocherasServicio = new CocherasServicio();
-        private ClientesServicio _clienteService = new ClientesServicio();
         private Usuarios _usuario;
 
         #endregion
@@ -28,20 +26,19 @@ namespace AlquilaCocheras.Web.clientes
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            var idCochera = int.Parse(HttpContext.Current.Request.QueryString.Get("idcochera")); // TODO: Validar que no metan cualquier cosa
+            var idCochera = int.Parse(HttpContext.Current.Request.QueryString.Get("idcochera"));
 
             Cochera = _cocherasServicio.ObtenerCocheraPorId(Math.Abs(idCochera));
+            hdPrecioHora.Value = Cochera.Precio.ToString();
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            var idCliente = VariblesSesionManager.Obtener<int>(Constantes.USUARIO_LOGUEADO_ID);
-
-            var cliente = _clienteService.ObtenerClientePorId(idCliente);
+            var cliente = Master.Cliente;
 
             try
             {
-                _reservasServicio.GenerarReserva(cliente.IdUsuario, DateTime.Now, DateTime.Now.AddDays(1), 99, Cochera.IdCochera); //  (!) Fechas hardcodeadas
+                _reservasServicio.GenerarReserva(cliente.IdUsuario, txtFechaInicio.Text.ToDateTime(txtHorarioInicio.Text), txtFechaFin.Text.ToDateTime(txtHorarioFin.Text), Cochera.IdCochera);
             }
             catch (Exception ex)
             {

@@ -18,7 +18,7 @@ namespace AlquilaCocheras.Web.propietarios
         {
             if (Page.IsValid)
             {
-                var listado = _reservasServicio.ObtenerReservasPorFechas(Master.Propietario.IdUsuario, txtFechaInicio.Text.ToDateTime(), txtFechaFin.Text.ToDateTime());
+                var listado = _reservasServicio.ObtenerReservasPorFechas(Master.Propietario.IdUsuario, txtFechaInicio.Text.ToDateTime("00:00"), txtFechaFin.Text.ToDateTime("00:00"));
                 rpReservas.DataSource = ReservaMap.PropietarioReservasMap(listado);
                 rpReservas.DataBind();
 
